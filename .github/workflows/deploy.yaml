@@ -31,6 +31,7 @@ jobs:
           terragrunt plan -var-file=./vars.tfvars -out tfplan
   terraform-apply:
     if: github.event_name == 'push'
+    needs: terraform-plan
     runs-on: ubuntu-latest
     container: alpine/terragrunt:1.8.4 
     steps:
