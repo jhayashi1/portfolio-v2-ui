@@ -1,6 +1,9 @@
-name: deploy
+name: build and deploy
 on:
   push:
+    branches:
+      - main
+  pull_request:
     branches:
       - main
 permissions:
@@ -10,8 +13,9 @@ env:
   AWS_REGION: "us-east-1"
 
 jobs:
-  build-and-deploy:
+  terraform-plan:
     runs-on: ubuntu-latest
+    container: alpine/terragrunt:1.8.4 
     steps:
       - name: checkout code
         uses: actions/checkout@v2
@@ -21,3 +25,28 @@ jobs:
           role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_NUMBER }}:role/${{ secrets.AWS_DEPLOY_ROLE }}
           role-session-name: portfolio-deploy
           aws-region: ${{ env.AWS_REGION }}
+      - name: terraform plan
+        run: |
+          cd terraform
+          terragrunt plan -var-file=./vars.tfvars -out tfplan
+  terraform-apply:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    container: alpine/terragrunt:1.8.4 
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v2
+      - name: configure aws credentials
+        uses: aws-actions/configure-aws-credentials@v3
+        with:
+          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_NUMBER }}:role/${{ secrets.AWS_DEPLOY_ROLE }}
+          role-session-name: portfolio-deploy
+          aws-region: ${{ env.AWS_REGION }}
+      - name: terraform plan
+        run: |
+          cd terraform
+          terragrunt plan -var-file=./vars.tfvars -out tfplan
+      - name: terraform apply
+        run: |
+          cd terraform
+          terragrunt apply tfplan
