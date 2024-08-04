@@ -3,7 +3,7 @@ resource "aws_s3_bucket" "cloudfront_bucket" {
 }
 
 resource "aws_s3_bucket_public_access_block" "access_block" {
-    bucket = aws_s3_bucket.cloudfront_bucket
+    bucket = aws_s3_bucket.cloudfront_bucket.id
     
     block_public_acls   = true
     block_public_policy = true
