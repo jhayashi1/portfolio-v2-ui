@@ -15,7 +15,7 @@ env:
 jobs:
   terraform-plan:
     runs-on: ubuntu-latest
-    container: alpine/terragrunt:1.8.4 
+    container: hashicorp/terraform:1.9.3 
     steps:
       - name: checkout code
         uses: actions/checkout@v2
@@ -33,7 +33,7 @@ jobs:
     if: github.event_name == 'push' && false 
     needs: terraform-plan
     runs-on: ubuntu-latest
-    container: alpine/terragrunt:1.8.4 
+    container: hashicorp/terraform:1.9.3 
     steps:
       - name: checkout code
         uses: actions/checkout@v2
