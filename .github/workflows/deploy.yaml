@@ -28,7 +28,7 @@ jobs:
       - name: terraform plan
         run: |
           cd terraform
-          terragrunt plan -var-file=./vars.tfvars -out tfplan
+          terraform plan -var-file=./vars.tfvars -out tfplan
   terraform-apply:
     if: github.event_name == 'push' && false 
     needs: terraform-plan
@@ -46,8 +46,8 @@ jobs:
       - name: terraform plan
         run: |
           cd terraform
-          terragrunt plan -var-file=./vars.tfvars -out tfplan
+          terraform plan -var-file=./vars.tfvars -out tfplan
       - name: terraform apply
         run: |
           cd terraform
-          terragrunt apply tfplan
+          terraform apply tfplan
