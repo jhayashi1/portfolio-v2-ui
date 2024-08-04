@@ -25,7 +25,7 @@ resource "aws_s3_bucket_policy" "cloudfront_bucket_policy" {
     {
       "Effect": "Allow",
       "Principal": {
-        "AWS": "${cloudfront_oai.iam_arn}"
+        "AWS": "${aws_cloudfront_origin_access_identity.cloudfront_oai.iam_arn}"
       },
       "Action": "s3:GetObject",
       "Resource": "arn:aws:s3:::${aws_s3_bucket.cloudfront_bucket.bucket}/*"
