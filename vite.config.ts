@@ -5,15 +5,7 @@ export default defineConfig({
     plugins: [
         react(),
     ],
-    build: {
-        rollupOptions: {
-            input: {
-                app: './src/index.html',
-            },
-        },
-    },
     server: {
-        open: './src/index.html',
-        port: 8080
+        port: 8080,
     },
 });

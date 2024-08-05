@@ -37,6 +37,16 @@ export default [{
             'error',
             'as-needed',
         ],
+        'react/jsx-sort-props': [
+            2,
+            {
+                callbacksLast: true,
+                shorthandFirst: false,
+                shorthandLast: true,
+                ignoreCase: true,
+                noSortAlphabetically: false,
+            },
+        ],
     },
     ignores: ['dist/**'],
 }];
