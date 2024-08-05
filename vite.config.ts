@@ -14,5 +14,6 @@ export default defineConfig({
     },
     server: {
         open: './src/index.html',
+        port: 8080
     },
 });
