@@ -1,19 +1,20 @@
 import { AppBar, Box, Button, Container, IconButton, Menu, MenuItem, Toolbar, Typography } from '@mui/material';
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const pages: Record<string, string> = {
     Home: '/',
+    Work: '/work',
     Projects: '/projects',
     About: '/about',
 };
 
 export const TopNav = () => {
     return (
-        <AppBar position='static'>
+        <AppBar position='static' sx={{pb: 2}}>
             <Container maxWidth="xl">
                 <Toolbar>
                     <Typography
+                        noWrap
                         component="h2"
                         sx={{
                             mr: 2,
@@ -22,12 +23,12 @@ export const TopNav = () => {
                             textDecoration: 'none',
                         }}
                         variant="h6"
-                        noWrap
                     >
                         Jared Hayashi
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                         <Menu
+                            keepMounted
                             id="menu-appbar"
                             open={true}
                             sx={{
@@ -37,7 +38,6 @@ export const TopNav = () => {
                                 vertical: 'top',
                                 horizontal: 'left',
                             }}
-                            keepMounted
                         >
                             {Object.keys(pages).map((page) => (
                                 <MenuItem key={page}>
