@@ -4,14 +4,14 @@ import { Card, List, ListItemButton, ListItemText, Paper, TextField } from '@mui
 export const Main = () => {
     const [isLoading, setIsLoading] = useState(true);
 
-    if (isLoading) {
+    if (!isLoading) {
         return (
             <Card sx={{flexDirection: 'column', flex: 1}} variant='outlined'>loading</Card>
         );
     }
 
     return (
-        <Paper sx={{flex: 1}}>
+        <Paper sx={{flex: 1, height: '100vh'}}>
             Test
         </Paper>
     );
