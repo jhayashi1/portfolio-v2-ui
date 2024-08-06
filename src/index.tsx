@@ -28,10 +28,12 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <CssBaseline />
         <ThemeProvider theme={theme}>
             <BrowserRouter>
-                <TopNav />
-                <Routes>
-                    {routes}
-                </Routes>
+                <Paper sx={{flex: 1, height: '100vh'}}>
+                    <TopNav />
+                    <Routes>
+                        {routes}
+                    </Routes>
+                </Paper>
             </BrowserRouter>
         </ThemeProvider>
     </React.StrictMode>

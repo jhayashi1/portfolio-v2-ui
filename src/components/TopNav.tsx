@@ -1,30 +1,22 @@
 import { AppBar, Box, Button, Container, IconButton, Menu, MenuItem, Toolbar, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
-
-const pages: Record<string, string> = {
-    Home: '/',
-    Work: '/work',
-    Projects: '/projects',
-    About: '/about',
-};
+import { content, pages } from '../constants';
 
 export const TopNav = () => {
     return (
-        <AppBar position='static' sx={{pb: 2}}>
-            <Container maxWidth="xl">
-                <Toolbar>
+        <AppBar position='static' sx={{height: 100}}>
+            <Container maxWidth="xl" sx={{height: '100%'}}>
+                <Toolbar sx={{height: '100%'}}>
                     <Typography
                         noWrap
-                        component="h2"
                         sx={{
                             mr: 2,
-                            display: { xs: 'none', md: 'flex' },
                             color: 'inherit',
-                            textDecoration: 'none',
+                            fontWeight: 'bold',
                         }}
-                        variant="h6"
+                        variant="h5"
                     >
-                        Jared Hayashi
+                        {content.name}
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                         <Menu
@@ -46,15 +38,30 @@ export const TopNav = () => {
                             ))}
                         </Menu>
                     </Box>
-                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+                    <Box 
+                        sx={{ 
+                            flexGrow: 1,
+                            display: { xs: 'none', md: 'flex' },
+                            height: '100%' }}
+                        textAlign='center'
+                    >
                         {Object.keys(pages).map((page) => (
                             <Button
                                 component={Link}
                                 key={page}
-                                sx={{ my: 2, mx: 2, color: 'inherit', display: 'block' }}
+                                sx={{
+                                    display: 'flex',
+                                    px: 2,
+                                    mx: 2,
+                                    color: 'inherit',
+                                    justifyContent: 'center',
+                                    alignItems: 'center',
+                                }}
                                 to={pages[page]}
                             >
-                                {page}
+                                <Typography noWrap variant="subtitle1">
+                                    {page}
+                                </Typography>
                             </Button>
                         ))}
                     </Box>

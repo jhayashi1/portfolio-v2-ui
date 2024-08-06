@@ -1,4 +1,11 @@
-export const homeContent = {
+export const pages: Record<string, string> = {
+    Home: '/',
+    Work: '/work',
+    Projects: '/projects',
+    About: '/about',
+};
+
+export const content = {
     name: 'Jared Hayashi',
     title: 'Software Engineer', 
     statement: 'I build efficient and robust fullstack applications for the cloud',
