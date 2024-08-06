@@ -1,4 +1,4 @@
-import { Card, CardContent, Container, Grid, Typography } from '@mui/material';
+import { Card, CardContent, Container, Divider, Grid, Typography } from '@mui/material';
 import { content } from '../constants';
 
 export const Introduction = () => (
@@ -17,26 +17,26 @@ export const Introduction = () => (
                 xs={12}
             >
                 <Card
+                    raised
                     sx={{ height: '100%' }}
                     variant='outlined'
                 >
                     <CardContent>
                         <Typography
                             noWrap
-                            sx={{ mx: 2, mt: 2, fontWeight: 'bold' }}
+                            sx={{ mb: 0, fontWeight: 'bold' }}
                             variant="h3"
                         >
                             {content.name}
                         </Typography>
                         <Typography
                             noWrap
-                            sx={{ mx: 2 }}
+                            sx={{ mt: 0, opacity: 0.6 }}
                             variant="h5"
                         >
                             {content.title}
                         </Typography>
                         <Typography
-                            sx={{ m: 2 }}
                             variant="h6"
                         >
                             {content.statement}
@@ -62,5 +62,6 @@ export const Introduction = () => (
                 </Card>
             </Grid>
         </Grid>
+        <Divider sx={{ mt: 2 }} variant='middle' />
     </Container>
 );

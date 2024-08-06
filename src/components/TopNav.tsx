@@ -7,13 +7,6 @@ export const TopNav = () => {
         <AppBar position='static' sx={{ height: 100 }}>
             <Container maxWidth="xl" sx={{ height: '100%' }}>
                 <Toolbar sx={{ height: '100%' }}>
-                    <Typography
-                        noWrap
-                        sx={{ mr: 2, color: 'inherit', fontWeight: 'bold' }}
-                        variant="h5"
-                    >
-                        {content.name}
-                    </Typography>
                     <Box
                         sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
                     >

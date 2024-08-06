@@ -41,6 +41,13 @@ const reactRules = {
             noSortAlphabetically: false,
         },
     ],
+    'react/jsx-tag-spacing': ['error',
+        {
+            beforeSelfClosing: 'always',
+            afterOpening: 'never',
+            beforeClosing: 'never',
+        },
+    ],
 };
 
 export default [{
