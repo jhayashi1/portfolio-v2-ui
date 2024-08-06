@@ -8,7 +8,10 @@ export const Main = () => {
 
     if (!isLoading) {
         return (
-            <Card sx={{flexDirection: 'column', flex: 1}} variant='outlined'>loading</Card>
+            <Card
+                sx={{flexDirection: 'column', flex: 1}}
+                variant='outlined'
+            >loading</Card>
         );
     }
 

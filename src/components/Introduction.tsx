@@ -2,10 +2,24 @@ import { Card, CardContent, Container, Grid, Typography } from '@mui/material';
 import { content } from '../constants';
 
 export const Introduction = () => (
-    <Container maxWidth='xl' sx={{pt: 5}}>
-        <Grid container display='flex' spacing={2}>
-            <Grid item sm={4} xs={12}>
-                <Card sx={{height: '100%'}} variant='outlined'>
+    <Container
+        maxWidth='xl'
+        sx={{pt: 5}}
+    >
+        <Grid
+            container
+            display='flex'
+            spacing={2}
+        >
+            <Grid
+                item
+                sm={4}
+                xs={12}
+            >
+                <Card
+                    sx={{height: '100%'}}
+                    variant='outlined'
+                >
                     <CardContent>
                         <Typography
                             noWrap
@@ -30,8 +44,15 @@ export const Introduction = () => (
                     </CardContent>
                 </Card>
             </Grid>
-            <Grid item sm={8} xs={12}>
-                <Card sx={{height: '100%'}} variant='outlined'>
+            <Grid
+                item
+                sm={8}
+                xs={12}
+            >
+                <Card
+                    sx={{height: '100%'}}
+                    variant='outlined'
+                >
                     <Typography
                         sx={{m: 2}}
                         variant="h6"
