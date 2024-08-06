@@ -4,7 +4,7 @@ import { content } from '../constants';
 export const Introduction = () => (
     <Container
         maxWidth='xl'
-        sx={{pt: 5}}
+        sx={{ pt: 5 }}
     >
         <Grid
             container
@@ -17,26 +17,26 @@ export const Introduction = () => (
                 xs={12}
             >
                 <Card
-                    sx={{height: '100%'}}
+                    sx={{ height: '100%' }}
                     variant='outlined'
                 >
                     <CardContent>
                         <Typography
                             noWrap
-                            sx={{mx: 2, mt: 2, fontWeight: 'bold'}}
+                            sx={{ mx: 2, mt: 2, fontWeight: 'bold' }}
                             variant="h3"
                         >
                             {content.name}
                         </Typography>
                         <Typography
                             noWrap
-                            sx={{mx: 2}}
+                            sx={{ mx: 2 }}
                             variant="h5"
                         >
                             {content.title}
                         </Typography>
                         <Typography
-                            sx={{m: 2}}
+                            sx={{ m: 2 }}
                             variant="h6"
                         >
                             {content.statement}
@@ -50,11 +50,11 @@ export const Introduction = () => (
                 xs={12}
             >
                 <Card
-                    sx={{height: '100%'}}
+                    sx={{ height: '100%' }}
                     variant='outlined'
                 >
                     <Typography
-                        sx={{m: 2}}
+                        sx={{ m: 2 }}
                         variant="h6"
                     >
                         {content.introduction}

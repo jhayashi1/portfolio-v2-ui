@@ -9,14 +9,18 @@ export const Main = () => {
     if (!isLoading) {
         return (
             <Card
-                sx={{flexDirection: 'column', flex: 1}}
+                sx={{ flexDirection: 'column', flex: 1 }}
                 variant='outlined'
-            >loading</Card>
+            >
+                loading
+            </Card>
         );
     }
 
     return (
-        <Paper sx={{borderRadius: 0, flex: 1, height: '100vh'}}>
+        <Paper
+            sx={{ borderRadius: 0, flex: 1, height: '100vh' }}
+        >
             <Introduction />
         </Paper>
     );

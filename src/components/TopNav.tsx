@@ -4,33 +4,25 @@ import { content, pages } from '../constants';
 
 export const TopNav = () => {
     return (
-        <AppBar position='static' sx={{height: 100}}>
-            <Container maxWidth="xl" sx={{height: '100%'}}>
-                <Toolbar sx={{height: '100%'}}>
+        <AppBar position='static' sx={{ height: 100 }}>
+            <Container maxWidth="xl" sx={{ height: '100%' }}>
+                <Toolbar sx={{ height: '100%' }}>
                     <Typography
                         noWrap
-                        sx={{
-                            mr: 2,
-                            color: 'inherit',
-                            fontWeight: 'bold',
-                        }}
+                        sx={{ mr: 2, color: 'inherit', fontWeight: 'bold' }}
                         variant="h5"
                     >
                         {content.name}
                     </Typography>
-                    <Box sx={{ 
-                        flexGrow: 1,
-                        display: { xs: 'flex', md: 'none' },
-                    }}>
+                    <Box
+                        sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
+                    >
                         <Menu
                             keepMounted
                             id="menu-appbar"
                             open={true}
-                            sx={{display: { xs: 'block', md: 'none' }}}
-                            transformOrigin={{
-                                vertical: 'top',
-                                horizontal: 'left',
-                            }}
+                            sx={{ display: { xs: 'block', md: 'none' } }}
+                            transformOrigin={{ vertical: 'top', horizontal: 'left' }}
                         >
                             {Object.keys(pages).map((page) => (
                                 <MenuItem key={page}>
@@ -39,11 +31,11 @@ export const TopNav = () => {
                             ))}
                         </Menu>
                     </Box>
-                    <Box 
-                        sx={{ 
+                    <Box
+                        sx={{
                             flexGrow: 1,
                             display: { xs: 'none', md: 'flex' },
-                            height: '100%', 
+                            height: '100%',
                         }}
                         textAlign='center'
                     >
