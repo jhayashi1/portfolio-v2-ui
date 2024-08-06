@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { Main } from './components/main';
 import { ThemeProvider } from '@emotion/react';
 import { createTheme, useTheme } from '@mui/material/styles';
 import { blue } from '@mui/material/colors';
@@ -9,31 +8,17 @@ import { BrowserRouter, Routes } from 'react-router-dom';
 import { routes } from './routes';
 import { Paper } from '@mui/material';
 import { TopNav } from './components/TopNav';
-
-const theme = createTheme({
-    palette: {
-        mode: 'dark', 
-        primary: {
-            main: blue[500], 
-        },
-        background: {
-            default: '#121212', 
-            paper: '#1d1d1d', 
-        },
-    },
-});
+import { theme } from './theme';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
         <CssBaseline />
         <ThemeProvider theme={theme}>
             <BrowserRouter>
-                <Paper sx={{flex: 1, height: '100vh'}}>
-                    <TopNav />
-                    <Routes>
-                        {routes}
-                    </Routes>
-                </Paper>
+                <TopNav />
+                <Routes>
+                    {routes}
+                </Routes>
             </BrowserRouter>
         </ThemeProvider>
     </React.StrictMode>

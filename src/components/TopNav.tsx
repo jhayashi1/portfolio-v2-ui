@@ -18,14 +18,15 @@ export const TopNav = () => {
                     >
                         {content.name}
                     </Typography>
-                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+                    <Box sx={{ 
+                        flexGrow: 1,
+                        display: { xs: 'flex', md: 'none' },
+                    }}>
                         <Menu
                             keepMounted
                             id="menu-appbar"
                             open={true}
-                            sx={{
-                                display: { xs: 'block', md: 'none' },
-                            }}
+                            sx={{display: { xs: 'block', md: 'none' }}}
                             transformOrigin={{
                                 vertical: 'top',
                                 horizontal: 'left',
@@ -42,7 +43,8 @@ export const TopNav = () => {
                         sx={{ 
                             flexGrow: 1,
                             display: { xs: 'none', md: 'flex' },
-                            height: '100%' }}
+                            height: '100%', 
+                        }}
                         textAlign='center'
                     >
                         {Object.keys(pages).map((page) => (
