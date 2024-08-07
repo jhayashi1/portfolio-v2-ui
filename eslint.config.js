@@ -33,7 +33,7 @@ const typescriptRules = {
     ...TypeScriptESLint.configs.recommendedTypeChecked,
     ...TypeScriptESLint.configs.strictTypeChecked,
     ...TypeScriptESLint.configs.stylisticTypeChecked,
-    indent                                            : 0,
+    indent                                            : 2,
     'new-cap'                                         : [2, {capIsNew: false}],
     '@typescript-eslint/consistent-type-definitions'  : 2,
     '@typescript-eslint/consistent-type-exports'      : 2,

@@ -25,7 +25,7 @@ export const workContent = [
     {
         company: 'John Deere',
         description: content.introduction,
-        skills: ['Python', 'Java', 'AWS', 'Azure', 'Github Actions', 'Terraform', 'Docker'],
+        skills: ['Python', 'Java', 'Springboot', 'AWS', 'Azure', 'Github Actions', 'Terraform', 'Docker'],
         team: 'Landing Zone',
         time: '2023 - 2024',
         title: 'Software Engineer',
@@ -37,5 +37,13 @@ export const workContent = [
         team: undefined,
         time: '2022',
         title: 'Application Developer Intern',
+    },
+];
+
+export const projectContent = [
+    {
+        title: 'Portfolio v2',
+        description: content.introduction,
+        skills: ['Typescript', 'React', 'AWS', 'Terraform', 'Github Actions'],
     },
 ];

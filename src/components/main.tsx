@@ -4,6 +4,7 @@ import {Card, Paper} from '@mui/material';
 import {Introduction} from './Introduction';
 import {About} from './About';
 import {Work} from './Work';
+import {Projects} from './Projects';
 
 export const Main: FC = () => {
     const [isLoading, setIsLoading] = useState(true);
@@ -24,6 +25,7 @@ export const Main: FC = () => {
             <Introduction />
             <About />
             <Work />
+            <Projects />
         </Paper>
     );
 };
