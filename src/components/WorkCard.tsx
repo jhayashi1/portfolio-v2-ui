@@ -28,7 +28,7 @@ export const WorkCard: FC<WorkCardProps> = ({
             >
                 {`${team ?? title}, ${time}`}
             </Typography>
-            <Divider sx={{mt: '1rem', backgroundColor: 'white', width: '10%'}} variant='middle' />
+            <Divider sx={{mt: '1rem', backgroundColor: 'white', width: '7.5%'}} variant='middle' />
             <Box
                 display='flex'
                 flexWrap='wrap'
