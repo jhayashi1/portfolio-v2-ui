@@ -1,6 +1,7 @@
-import { Box, Card, Container, Divider, Typography } from '@mui/material';
+import {Box, Card, Divider, Typography} from '@mui/material';
+import type {FC} from 'react';
 
-export const WorkCard = ({
+export const WorkCard: FC<WorkCardProps> = ({
     company,
     title,
     time,
@@ -11,33 +12,33 @@ export const WorkCard = ({
     return (
         <Card
             raised
-            sx={{ height: '100%', mb: '2rem' }}
+            sx={{height: '100%', mb: '2rem'}}
             variant='outlined'
         >
             <Typography
-                sx={{ mb: 0, fontWeight: 'bold' }}
+                sx={{mb: 0, fontWeight: 'bold'}}
                 variant='h4'
             >
                 {company}
             </Typography>
             <Typography
                 noWrap
-                sx={{ mt: 0, opacity: 0.6 }}
+                sx={{mt: 0, opacity: 0.6}}
                 variant='h5'
             >
                 {`${team ?? title}, ${time}`}
             </Typography>
-            <Divider sx={{ mt: '1rem', backgroundColor: 'white', width: '10%' }} variant='middle' />
+            <Divider sx={{mt: '1rem', backgroundColor: 'white', width: '10%'}} variant='middle' />
             <Box
                 display='flex'
                 flexWrap='wrap'
                 justifyContent='left'
-                sx={{ m: '1rem' }}
+                sx={{m: '1rem'}}
             >
                 {skills.map((skill) => (
-                    <Card sx={{ mr: '1rem', borderWidth: '0.15rem' }} variant='outlined'>
+                    <Card sx={{mr: '1rem', borderWidth: '0.15rem'}} variant='outlined'>
                         <Typography
-                            sx={{ m: '0.5rem' }}
+                            sx={{m: '0.5rem'}}
                             variant="subtitle1"
                         >
                             {skill}
@@ -46,7 +47,7 @@ export const WorkCard = ({
                 ))}
             </Box>
             <Typography
-                sx={{ m: '1rem' }}
+                sx={{m: '1rem'}}
                 variant="h6"
             >
                 {description}
@@ -56,10 +57,10 @@ export const WorkCard = ({
 };
 
 interface WorkCardProps {
-    company: string;
-    title: string;
-    time: string;
-    team?: string;
+    company    : string;
+    title      : string;
+    time       : string;
+    team?      : string;
     description: string;
-    skills: string[];
+    skills     : string[];
 }

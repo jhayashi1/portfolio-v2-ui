@@ -1,27 +1,28 @@
-import { Box, Card, Container, Divider, Typography } from '@mui/material';
-import { content } from '../constants';
-import { CenteredTitle } from './CenteredTitle';
+import {Card, Container, Divider, Typography} from '@mui/material';
+import {content} from '../constants';
+import {CenteredTitle} from './CenteredTitle';
+import type {FC} from 'react';
 
-export const About = () => {
+export const About: FC = () => {
     return (
         <Container
             maxWidth='lg'
-            sx={{ p: '1rem' }}
+            sx={{p: '1rem'}}
         >
             <CenteredTitle title={'About me'} />
             <Card
                 raised
-                sx={{ height: '100%' }}
+                sx={{height: '100%'}}
                 variant='outlined'
             >
                 <Typography
-                    sx={{ m: '1rem' }}
+                    sx={{m: '1rem'}}
                     variant="h6"
                 >
                     {content.about}
                 </Typography>
             </Card>
-            <Divider sx={{ mt: '2rem' }} variant='middle' />
+            <Divider sx={{mt: '2rem'}} variant='middle' />
         </Container>
     );
 };

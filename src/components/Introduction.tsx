@@ -1,10 +1,11 @@
-import { Card, CardContent, Container, Divider, Grid, Typography } from '@mui/material';
-import { content } from '../constants';
+import {Card, CardContent, Container, Divider, Grid, Typography} from '@mui/material';
+import {content} from '../constants';
+import type {FC} from 'react';
 
-export const Introduction = () => (
+export const Introduction: FC = () => (
     <Container
         maxWidth='lg'
-        sx={{ pt: 5 }}
+        sx={{pt: 5}}
     >
         <Grid
             container
@@ -18,20 +19,20 @@ export const Introduction = () => (
             >
                 <Card
                     raised
-                    sx={{ height: '100%' }}
+                    sx={{height: '100%'}}
                     variant='outlined'
                 >
                     <CardContent>
                         <Typography
                             noWrap
-                            sx={{ mb: 0, fontWeight: 'bold' }}
+                            sx={{mb: 0, fontWeight: 'bold'}}
                             variant="h4"
                         >
                             {content.name}
                         </Typography>
                         <Typography
                             noWrap
-                            sx={{ mt: 0, opacity: 0.6 }}
+                            sx={{mt: 0, opacity: 0.6}}
                             variant="h5"
                         >
                             {content.title}
@@ -48,11 +49,11 @@ export const Introduction = () => (
                 xs={12}
             >
                 <Card
-                    sx={{ height: '100%' }}
+                    sx={{height: '100%'}}
                     variant='outlined'
                 >
                     <Typography
-                        sx={{ m: 2 }}
+                        sx={{m: 2}}
                         variant="h6"
                     >
                         {content.introduction}
@@ -60,6 +61,6 @@ export const Introduction = () => (
                 </Card>
             </Grid>
         </Grid>
-        <Divider sx={{ mt: '2rem' }} variant='middle' />
+        <Divider sx={{mt: '2rem'}} variant='middle' />
     </Container>
 );

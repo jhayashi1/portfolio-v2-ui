@@ -1,15 +1,16 @@
-import { Box, Divider, Typography } from '@mui/material';
+import {Box, Divider, Typography} from '@mui/material';
+import type {FC} from 'react';
 
-export const CenteredTitle = ({ title }: CenteredTitleProps) => {
+export const CenteredTitle: FC<CenteredTitleProps> = ({title}: CenteredTitleProps) => {
     return (
-        <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+        <Box sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
             <Typography
-                sx={{ mb: 0 }}
+                sx={{mb: 0}}
                 variant='h2'
             >
                 {title}
             </Typography>
-            <Divider sx={{ mt: '1rem', mb: '2rem', backgroundColor: 'white', width: '10%' }} />
+            <Divider sx={{mt: '1rem', mb: '2rem', backgroundColor: 'white', width: '10%'}} />
         </Box>
     );
 };

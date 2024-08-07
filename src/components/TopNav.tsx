@@ -1,26 +1,27 @@
-import { AppBar, Box, Button, Container, IconButton, Menu, MenuItem, Toolbar, Typography } from '@mui/material';
-import { Link } from 'react-router-dom';
-import { content, pages } from '../constants';
+import {AppBar, Box, Button, Container, Menu, MenuItem, Toolbar, Typography} from '@mui/material';
+import {Link} from 'react-router-dom';
+import {pages} from '../constants';
+import type {FC} from 'react';
 
-export const TopNav = () => {
+export const TopNav: FC = () => {
     return (
         <AppBar
             color='secondary'
             position='fixed'
-            sx={{ height: '10vh' }}
+            sx={{height: '10vh'}}
         >
-            <Container maxWidth="xl" sx={{ height: '100%' }}>
-                <Toolbar sx={{ height: '100%' }}>
+            <Container maxWidth="xl" sx={{height: '100%'}}>
+                <Toolbar sx={{height: '100%'}}>
                     <Box
-                        sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
+                        sx={{flexGrow: 1, display: {xs: 'flex', md: 'none'}}}
                     >
                         <Menu
                             keepMounted
                             disableScrollLock={true}
                             id="menu-appbar"
                             open={true}
-                            sx={{ display: { xs: 'block', md: 'none' } }}
-                            transformOrigin={{ vertical: 'top', horizontal: 'left' }}
+                            sx={{display: {xs: 'block', md: 'none'}}}
+                            transformOrigin={{vertical: 'top', horizontal: 'left'}}
                         >
                             {Object.keys(pages).map((page) => (
                                 <MenuItem key={page}>
@@ -32,7 +33,7 @@ export const TopNav = () => {
                     <Box
                         sx={{
                             flexGrow: 1,
-                            display: { xs: 'none', md: 'flex' },
+                            display: {xs: 'none', md: 'flex'},
                             height: '100%',
                         }}
                         textAlign='center'

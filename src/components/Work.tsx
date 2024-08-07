@@ -1,13 +1,14 @@
-import { Box, Card, Container, Divider, Typography } from '@mui/material';
-import { content } from '../constants';
-import { CenteredTitle } from './CenteredTitle';
-import { WorkCard } from './WorkCard';
+import {Container, Divider} from '@mui/material';
+import {content} from '../constants';
+import {CenteredTitle} from './CenteredTitle';
+import {WorkCard} from './WorkCard';
+import type {FC} from 'react';
 
-export const Work = () => {
+export const Work: FC = () => {
     return (
         <Container
             maxWidth='lg'
-            sx={{ p: '1rem' }}
+            sx={{p: '1rem'}}
         >
             <CenteredTitle title={'Work'} />
             <WorkCard
@@ -34,7 +35,7 @@ export const Work = () => {
                 time='2022'
                 title='Application Developer Intern'
             />
-            <Divider sx={{ mt: 2 }} variant='middle' />
+            <Divider sx={{mt: 2}} variant='middle' />
         </Container>
     );
 };
