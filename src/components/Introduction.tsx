@@ -25,7 +25,7 @@ export const Introduction: FC = () => (
                     <CardContent>
                         <Typography
                             noWrap
-                            sx={{mb: 0, fontWeight: 'bold'}}
+                            sx={{mb: 0, fontWeight: 'semibold'}}
                             variant="h4"
                         >
                             {content.name}

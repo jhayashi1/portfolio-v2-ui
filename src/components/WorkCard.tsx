@@ -16,7 +16,7 @@ export const WorkCard: FC<WorkCardProps> = ({
             variant='outlined'
         >
             <Typography
-                sx={{mb: 0, fontWeight: 'bold'}}
+                sx={{mb: 0, fontWeight: 'semibold'}}
                 variant='h4'
             >
                 {company}
@@ -36,7 +36,7 @@ export const WorkCard: FC<WorkCardProps> = ({
                 sx={{m: '1rem'}}
             >
                 {skills.map((skill) => (
-                    <Card sx={{mr: '1rem', borderWidth: '0.15rem'}} variant='outlined'>
+                    <Card sx={{mr: '1rem', borderWidth: '0.15rem', borderColor: 'steelblue'}} variant='outlined'>
                         <Typography
                             sx={{m: '0.5rem'}}
                             variant="subtitle1"

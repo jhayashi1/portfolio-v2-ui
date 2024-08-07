@@ -5,7 +5,7 @@ export const CenteredTitle: FC<CenteredTitleProps> = ({title}: CenteredTitleProp
     return (
         <Box sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
             <Typography
-                sx={{mb: 0}}
+                sx={{mb: 0, fontWeight: 'semibold'}}
                 variant='h2'
             >
                 {title}

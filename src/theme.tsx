@@ -45,8 +45,12 @@ export const theme = createTheme({
             styleOverrides: {
                 root: {
                     margin: '1rem',
+                    fontWeight: 'normal',
                 },
             },
         },
+    },
+    typography: {
+        fontFamily: 'Mulish',
     },
 });

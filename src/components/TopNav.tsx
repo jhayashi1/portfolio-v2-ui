@@ -44,15 +44,19 @@ export const TopNav: FC = () => {
                                 key={page}
                                 sx={{
                                     display: 'flex',
-                                    px: 2,
-                                    mx: 2,
+                                    px: '1rem',
+                                    mx: '1rem',
                                     color: 'inherit',
                                     justifyContent: 'center',
                                     alignItems: 'center',
                                 }}
                                 to={pages[page]}
                             >
-                                <Typography noWrap variant="subtitle1">
+                                <Typography
+                                    noWrap
+                                    sx={{fontWeight: 'semibold'}}
+                                    variant="h6"
+                                >
                                     {page}
                                 </Typography>
                             </Button>

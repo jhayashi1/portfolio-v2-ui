@@ -16,7 +16,7 @@ export const About: FC = () => {
                 variant='outlined'
             >
                 <Typography
-                    sx={{m: '1rem'}}
+                    sx={{m: '1rem', fontWeight: 'normal'}}
                     variant="h6"
                 >
                     {content.about}
