@@ -3,6 +3,7 @@ import { Card, Paper } from '@mui/material';
 import { content } from '../constants';
 import { Introduction } from './Introduction';
 import { About } from './About';
+import { Work } from './Work';
 
 export const Main = () => {
     const [isLoading, setIsLoading] = useState(true);
@@ -19,9 +20,10 @@ export const Main = () => {
     }
 
     return (
-        <Paper sx={{ borderRadius: 0, flex: 1, height: '100vh' }}>
+        <Paper sx={{ mt: '10vh', borderRadius: 0, flex: 1, height: '100%' }}>
             <Introduction />
             <About />
+            <Work />
         </Paper>
     );
 };

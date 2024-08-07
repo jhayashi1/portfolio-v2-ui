@@ -1,33 +1,27 @@
 import { Box, Card, Container, Divider, Typography } from '@mui/material';
 import { content } from '../constants';
+import { CenteredTitle } from './CenteredTitle';
 
 export const About = () => {
     return (
         <Container
-            maxWidth='xl'
-            sx={{ pt: 2 }}
+            maxWidth='lg'
+            sx={{ p: '1rem' }}
         >
+            <CenteredTitle title={'About me'} />
             <Card
                 raised
                 sx={{ height: '100%' }}
                 variant='outlined'
             >
-                <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-                    <Typography
-                        sx={{ mb: 0 }}
-                        variant='h2'
-                    >
-                        About me
-                    </Typography>
-                    <Divider sx={{ mt: '1rem', backgroundColor: 'white', width: '10%' }} />
-                </Box>
                 <Typography
-                    sx={{ m: 2 }}
+                    sx={{ m: '1rem' }}
                     variant="h6"
                 >
                     {content.about}
                 </Typography>
             </Card>
+            <Divider sx={{ mt: '2rem' }} variant='middle' />
         </Container>
     );
 };

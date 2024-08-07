@@ -3,7 +3,7 @@ import { content } from '../constants';
 
 export const Introduction = () => (
     <Container
-        maxWidth='xl'
+        maxWidth='lg'
         sx={{ pt: 5 }}
     >
         <Grid
@@ -25,7 +25,7 @@ export const Introduction = () => (
                         <Typography
                             noWrap
                             sx={{ mb: 0, fontWeight: 'bold' }}
-                            variant="h3"
+                            variant="h4"
                         >
                             {content.name}
                         </Typography>
@@ -36,9 +36,7 @@ export const Introduction = () => (
                         >
                             {content.title}
                         </Typography>
-                        <Typography
-                            variant="h6"
-                        >
+                        <Typography variant="h6">
                             {content.statement}
                         </Typography>
                     </CardContent>
@@ -62,6 +60,6 @@ export const Introduction = () => (
                 </Card>
             </Grid>
         </Grid>
-        <Divider sx={{ mt: 2 }} variant='middle' />
+        <Divider sx={{ mt: '2rem' }} variant='middle' />
     </Container>
 );

@@ -1,7 +1,8 @@
 import { createTheme } from '@mui/material';
 
-const primaryColor = '#1d1d1d';
-const secondaryColor = '#262626';
+const primaryColor = '#121212';
+const secondaryColor = '#282828';
+const tertiaryColor = '#424242';
 
 const createColorOverride = (color: string) => ({
     styleOverrides: {
@@ -15,19 +16,15 @@ export const theme = createTheme({
     palette: {
         primary: {
             main: primaryColor,
-            light: '#262626',
-            dark: '#121212',
             contrastText: '#FFFFFF',
         },
         secondary: {
             main: secondaryColor,
-            light: '#303030',
-            dark: '#121212',
             contrastText: '#FFFFFF',
         },
         background: {
-            default: '#121212',
-            paper: '#1d1d1d',
+            default: primaryColor,
+            paper: primaryColor,
         },
         text: {
             primary: '#FFFFFF',
@@ -35,8 +32,15 @@ export const theme = createTheme({
         },
     },
     components: {
-        MuiCard: createColorOverride(secondaryColor),
         MuiDivider: createColorOverride('#303030'),
+        MuiCard: {
+            styleOverrides: {
+                root: {
+                    backgroundColor: secondaryColor,
+                    borderColor: tertiaryColor,
+                },
+            },
+        },
         MuiTypography: {
             styleOverrides: {
                 root: {

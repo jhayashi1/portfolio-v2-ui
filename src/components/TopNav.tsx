@@ -4,7 +4,11 @@ import { content, pages } from '../constants';
 
 export const TopNav = () => {
     return (
-        <AppBar position='static' sx={{ height: 100 }}>
+        <AppBar
+            color='secondary'
+            position='fixed'
+            sx={{ height: '10vh' }}
+        >
             <Container maxWidth="xl" sx={{ height: '100%' }}>
                 <Toolbar sx={{ height: '100%' }}>
                     <Box
@@ -12,6 +16,7 @@ export const TopNav = () => {
                     >
                         <Menu
                             keepMounted
+                            disableScrollLock={true}
                             id="menu-appbar"
                             open={true}
                             sx={{ display: { xs: 'block', md: 'none' } }}
