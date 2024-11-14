@@ -47,6 +47,11 @@ export const theme = createTheme({
                     margin: '1rem',
                     fontWeight: 'normal',
                     whiteSpace: 'pre-wrap',
+                    fontSize: {
+                        xs: '1rem',
+                        md: '1.25rem',
+                        lg: '1.5rem',
+                    },
                 },
             },
         },

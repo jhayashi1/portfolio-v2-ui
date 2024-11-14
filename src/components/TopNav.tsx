@@ -8,15 +8,15 @@ export const TopNav: FC = () => {
         <AppBar
             color='secondary'
             elevation={0}
-            position='static'
-            sx={{height: '10vh'}}
+            position='fixed'
+            sx={{height: '6rem'}}
         >
-            <Container maxWidth="lg" sx={{height: '100%'}}>
+            <Container maxWidth='lg' sx={{height: '100%'}}>
                 <Toolbar disableGutters sx={{height: '100%'}}>
                     <Box
                         sx={{
                             flexGrow: 1,
-                            display: {xs: 'none', md: 'flex'},
+                            display: 'flex',
                             height: '100%',
                         }}
                         textAlign='center'

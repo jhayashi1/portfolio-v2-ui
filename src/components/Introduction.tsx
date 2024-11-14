@@ -68,8 +68,6 @@ export const Introduction: FC = () => (
                     </Grid>
                 </Grid>
             </Grid>
-
-            {/* <Divider sx={{mt: '2rem'}} variant='middle' /> */}
         </Grid>
     </Container>
 );
