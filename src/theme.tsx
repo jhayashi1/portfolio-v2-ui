@@ -44,7 +44,6 @@ export const theme = createTheme({
         MuiTypography: {
             styleOverrides: {
                 root: {
-                    margin: '1rem',
                     fontWeight: 'normal',
                     whiteSpace: 'pre-wrap',
                     fontSize: {

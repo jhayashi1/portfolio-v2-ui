@@ -27,8 +27,7 @@ export const TopNav: FC = () => {
                                 key={page}
                                 sx={{
                                     display: 'flex',
-                                    pr: '0.5rem',
-                                    mr: '0.5rem',
+                                    p: '2rem',
                                     color: 'inherit',
                                     justifyContent: 'center',
                                     alignItems: 'center',

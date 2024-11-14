@@ -12,23 +12,23 @@ export const WorkCard: FC<WorkCardProps> = ({
     return (
         <Card
             raised
-            sx={{height: '100%', mb: '2rem'}}
+            sx={{height: '100%', mt: '2rem'}}
             variant='outlined'
         >
             <Typography
-                sx={{mb: 0, fontWeight: 'semibold'}}
+                sx={{ml: '1rem', mt: '1rem', fontWeight: 'semibold'}}
                 variant='h4'
             >
                 {company}
             </Typography>
             <Typography
                 noWrap
-                sx={{mt: 0, opacity: 0.6}}
+                sx={{ml: '1rem', opacity: 0.6}}
                 variant='h5'
             >
                 {`${team ?? title}, ${time}`}
             </Typography>
-            <Divider sx={{mt: '0rem', backgroundColor: 'white', width: '7.5%'}} variant='middle' />
+            <Divider sx={{mt: '0.5rem', backgroundColor: 'white', width: '7.5%'}} variant='middle' />
             <Box
                 display='flex'
                 flexWrap='wrap'

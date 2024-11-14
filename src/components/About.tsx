@@ -1,18 +1,22 @@
 import {Card, Container, Typography} from '@mui/material';
 import {content} from '../constants';
-import {CenteredTitle} from './CenteredTitle';
 import type {FC} from 'react';
 
 export const About: FC = () => {
     return (
         <Container
             maxWidth='lg'
-            sx={{p: '1rem'}}
+            sx={{mt: '3rem'}}
         >
-            <CenteredTitle title={'About me'} />
+            <Typography
+                sx={{ml: 0, fontWeight: 'semibold'}}
+                variant='h2'
+            >
+                {'About me'}
+            </Typography>
             <Card
                 raised
-                sx={{height: '100%'}}
+                sx={{height: '100%', mt:'2rem'}}
                 variant='outlined'
             >
                 <Typography

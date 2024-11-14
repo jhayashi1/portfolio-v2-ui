@@ -1,6 +1,5 @@
-import {Container, Divider} from '@mui/material';
+import {Container, Typography} from '@mui/material';
 import {workContent} from '../constants';
-import {CenteredTitle} from './CenteredTitle';
 import {WorkCard} from './WorkCard';
 import type {FC} from 'react';
 
@@ -10,7 +9,12 @@ export const Work: FC = () => {
             maxWidth='lg'
             sx={{p: '1rem'}}
         >
-            <CenteredTitle title={'Work'} />
+            <Typography
+                sx={{ml: 0, fontWeight: 'semibold'}}
+                variant='h2'
+            >
+                {'Work Experience'}
+            </Typography>
             {workContent.map(({company, description, skills, team, time, title}) => (
                 <WorkCard
                     company={company}

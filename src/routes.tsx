@@ -1,6 +1,7 @@
 import {Route} from 'react-router-dom';
 import {Main} from './components/Main';
 import {About} from './components/About';
+import {Work} from './components/Work';
 
 export const routes = [
     <Route
@@ -19,7 +20,7 @@ export const routes = [
         path='/projects'
     />,
     <Route
-        element={<Main />}
+        element={<Work />}
         key='work'
         path='/work'
     />,

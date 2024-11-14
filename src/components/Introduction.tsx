@@ -8,7 +8,7 @@ export const Introduction: FC = () => (
         container
         direction="column"
         spacing={2}
-        sx={{pt: '5rem'}}
+        sx={{mt: '3rem'}}
     >
         <Grid
             item
@@ -18,22 +18,22 @@ export const Introduction: FC = () => (
         >
             <Typography
                 noWrap
-                sx={{my: 0, fontWeight: 'semibold'}}
-                variant="h2"
+                sx={{fontWeight: 'semibold'}}
+                variant="h1"
             >
                 {content.name}
             </Typography>
             <Typography
                 noWrap
                 sx={{mt: '1rem', opacity: 0.6}}
-                variant="h4"
+                variant="h3"
             >
                 {content.title}
             </Typography>
             <Typography
                 noWrap
                 sx={{mt: '4rem', opacity: 0.6}}
-                variant="h5"
+                variant="h4"
             >
                 {content.statement}
             </Typography>
