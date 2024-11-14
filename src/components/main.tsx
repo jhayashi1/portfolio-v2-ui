@@ -1,6 +1,6 @@
 import type {FC} from 'react';
 import {useState} from 'react';
-import {Card, Paper} from '@mui/material';
+import {Card} from '@mui/material';
 import {Introduction} from './Introduction';
 
 export const Main: FC = () => {
