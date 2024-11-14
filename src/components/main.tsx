@@ -18,8 +18,6 @@ export const Main: FC = () => {
     }
 
     return (
-        <Paper sx={{borderRadius: 0, flex: 1, height: '90vh'}}>
-            <Introduction />
-        </Paper>
+        <Introduction />
     );
 };
