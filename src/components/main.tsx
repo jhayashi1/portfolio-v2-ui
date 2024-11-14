@@ -2,9 +2,6 @@ import type {FC} from 'react';
 import {useState} from 'react';
 import {Card, Paper} from '@mui/material';
 import {Introduction} from './Introduction';
-import {About} from './About';
-import {Work} from './Work';
-import {Projects} from './Projects';
 
 export const Main: FC = () => {
     const [isLoading, setIsLoading] = useState(true);
@@ -21,11 +18,8 @@ export const Main: FC = () => {
     }
 
     return (
-        <Paper sx={{mt: '10vh', borderRadius: 0, flex: 1, height: '100%'}}>
+        <Paper sx={{borderRadius: 0, flex: 1, height: '90vh'}}>
             <Introduction />
-            <About />
-            <Work />
-            <Projects />
         </Paper>
     );
 };

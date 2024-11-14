@@ -1,8 +1,8 @@
 import {createTheme} from '@mui/material';
 
 const primaryColor = '#121212';
-const secondaryColor = '#282828';
-const tertiaryColor = '#424242';
+const secondaryColor = '#181818';
+const tertiaryColor = '#282828';
 
 const createColorOverride = (color: string): object => ({
     styleOverrides: {
@@ -46,6 +46,7 @@ export const theme = createTheme({
                 root: {
                     margin: '1rem',
                     fontWeight: 'normal',
+                    whiteSpace: 'pre-wrap',
                 },
             },
         },

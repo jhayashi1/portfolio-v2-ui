@@ -21,7 +21,7 @@ export const Work: FC = () => {
                     title={title}
                 />
             ))}
-            <Divider sx={{mt: 2}} variant='middle' />
+            {/* <Divider sx={{mt: 2}} variant='middle' /> */}
         </Container>
     );
 };

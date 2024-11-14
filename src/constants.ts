@@ -1,16 +1,16 @@
 export const pages: Record<string, string> = {
-    Home    : '/',
-    About   : '/about',
-    Work    : '/work',
-    Projects: '/projects',
+    home    : '/',
+    about   : '/about',
+    work    : '/work',
+    projects: '/projects',
 };
 
 export const content = {
     name        : 'Jared Hayashi',
-    title       : 'Software Engineer',
-    statement   : 'I build efficient and robust fullstack applications for the cloud',
-    introduction: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    about       : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    title       : 'Cloud Software Engineer',
+    statement   : 'I am a software engineer that is experienced in building efficient and robust fullstack applications for the cloud.',
+    introduction: 'Hi, my name is Jared Hayashi. \n\nI am a fullstack developer with about 2 years of experience. My main focus in on building cloud applications primarily using Typescript or Python paired with AWS.   \n\nIn my free time, I can usually be found playing video games, tennis, pickleball, ping pong, or rock climbing. ',
+    about       : 'Hi, my name is Jared Hayashi. I graduated from Iowa State University in Fall of 2022 with a Bachelor\'s in Software Engineering. Since graduating, I have had the privilege to employ my skills at John Deere where I discovered my passion for creating cloud applications. \n',
 };
 
 export const workContent = [
@@ -43,6 +43,16 @@ export const workContent = [
 export const projectContent = [
     {
         title: 'Portfolio v2',
+        description: content.introduction,
+        skills: ['Typescript', 'React', 'AWS', 'Terraform', 'Github Actions'],
+    },
+    {
+        title: 'Discord Bot',
+        description: content.introduction,
+        skills: ['Typescript', 'React', 'AWS', 'Terraform', 'Github Actions'],
+    },
+    {
+        title: 'Portfolio v4',
         description: content.introduction,
         skills: ['Typescript', 'React', 'AWS', 'Terraform', 'Github Actions'],
     },

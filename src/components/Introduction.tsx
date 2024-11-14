@@ -1,66 +1,75 @@
-import {Card, CardContent, Container, Divider, Grid, Typography} from '@mui/material';
-import {content} from '../constants';
+import {GitHub, LinkedIn} from '@mui/icons-material';
+import {Container, Grid, Typography} from '@mui/material';
 import type {FC} from 'react';
+import {content} from '../constants';
 
 export const Introduction: FC = () => (
     <Container
         maxWidth='lg'
-        sx={{pt: 5}}
+        sx={{pt: '5rem'}}
     >
         <Grid
             container
-            display='flex'
+            direction="column"
             spacing={2}
         >
             <Grid
                 item
-                sm={4}
+                sm={10}
+                sx={{minHeight: '70vh'}}
                 xs={12}
             >
-                <Card
-                    raised
-                    sx={{height: '100%'}}
-                    variant='outlined'
+                <Typography
+                    noWrap
+                    sx={{my: 0, fontWeight: 'semibold'}}
+                    variant="h2"
                 >
-                    <CardContent>
-                        <Typography
-                            noWrap
-                            sx={{mb: 0, fontWeight: 'semibold'}}
-                            variant="h4"
-                        >
-                            {content.name}
-                        </Typography>
-                        <Typography
-                            noWrap
-                            sx={{mt: 0, opacity: 0.6}}
-                            variant="h5"
-                        >
-                            {content.title}
-                        </Typography>
-                        <Typography variant="h6">
-                            {content.statement}
-                        </Typography>
-                    </CardContent>
-                </Card>
+                    {content.name}
+                </Typography>
+                <Typography
+                    noWrap
+                    sx={{mt: '1rem', opacity: 0.6}}
+                    variant="h4"
+                >
+                    {content.title}
+                </Typography>
+                <Typography
+                    noWrap
+                    sx={{mt: '4rem', opacity: 0.6}}
+                    variant="h5"
+                >
+                    {content.statement}
+                </Typography>
             </Grid>
             <Grid
                 item
-                sm={8}
+                sm={2}
                 xs={12}
             >
-                <Card
-                    sx={{height: '100%'}}
-                    variant='outlined'
+                <Grid
+                    container
+                    display='flex'
+                    justifyContent='left'
+                    spacing={2}
                 >
-                    <Typography
-                        sx={{m: 2}}
-                        variant="h6"
+                    <Grid
+                        item
+                        sm={1}
+                        xs={2}
                     >
-                        {content.introduction}
-                    </Typography>
-                </Card>
+                        <GitHub fontSize='large' />
+                    </Grid>
+                    <Grid
+                        item
+                        sm={1}
+                        xs={2}
+                    >
+                        <LinkedIn fontSize='large' />
+                    </Grid>
+                </Grid>
             </Grid>
+
+            {/* <Divider sx={{mt: '2rem'}} variant='middle' /> */}
         </Grid>
-        <Divider sx={{mt: '2rem'}} variant='middle' />
     </Container>
 );

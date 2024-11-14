@@ -1,35 +1,18 @@
-import {AppBar, Box, Button, Container, Menu, MenuItem, Toolbar, Typography} from '@mui/material';
+import {AppBar, Box, Button, Container, Toolbar, Typography} from '@mui/material';
+import type {FC} from 'react';
 import {Link} from 'react-router-dom';
 import {pages} from '../constants';
-import type {FC} from 'react';
 
 export const TopNav: FC = () => {
     return (
         <AppBar
             color='secondary'
-            position='fixed'
+            elevation={0}
+            position='static'
             sx={{height: '10vh'}}
         >
-            <Container maxWidth="xl" sx={{height: '100%'}}>
-                <Toolbar sx={{height: '100%'}}>
-                    <Box
-                        sx={{flexGrow: 1, display: {xs: 'flex', md: 'none'}}}
-                    >
-                        <Menu
-                            keepMounted
-                            disableScrollLock={true}
-                            id="menu-appbar"
-                            open={true}
-                            sx={{display: {xs: 'block', md: 'none'}}}
-                            transformOrigin={{vertical: 'top', horizontal: 'left'}}
-                        >
-                            {Object.keys(pages).map((page) => (
-                                <MenuItem key={page}>
-                                    <Typography textAlign="center">{page}</Typography>
-                                </MenuItem>
-                            ))}
-                        </Menu>
-                    </Box>
+            <Container maxWidth="lg" sx={{height: '100%'}}>
+                <Toolbar disableGutters sx={{height: '100%'}}>
                     <Box
                         sx={{
                             flexGrow: 1,
@@ -44,8 +27,8 @@ export const TopNav: FC = () => {
                                 key={page}
                                 sx={{
                                     display: 'flex',
-                                    px: '1rem',
-                                    mx: '1rem',
+                                    pr: '0.5rem',
+                                    mr: '0.5rem',
                                     color: 'inherit',
                                     justifyContent: 'center',
                                     alignItems: 'center',
@@ -54,7 +37,7 @@ export const TopNav: FC = () => {
                             >
                                 <Typography
                                     noWrap
-                                    sx={{fontWeight: 'semibold'}}
+                                    sx={{fontWeight: 'semibold', textTransform: 'none'}}
                                     variant="h6"
                                 >
                                     {page}

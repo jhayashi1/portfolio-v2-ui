@@ -1,5 +1,6 @@
 import {Route} from 'react-router-dom';
 import {Main} from './components/Main';
+import {About} from './components/About';
 
 export const routes = [
     <Route
@@ -8,7 +9,7 @@ export const routes = [
         path='/'
     />,
     <Route
-        element={<Main />}
+        element={<About />}
         key='about'
         path='/about'
     />,

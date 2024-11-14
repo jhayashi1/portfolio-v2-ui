@@ -108,5 +108,5 @@ export default [{
         ...typescriptRules,
         ...reactRules,
     },
-    ignores: ['dist/**'],
+    ignores: ['dist/**', 'vite.config.ts'],
 }];

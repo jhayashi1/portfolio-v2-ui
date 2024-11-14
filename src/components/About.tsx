@@ -1,4 +1,4 @@
-import {Card, Container, Divider, Typography} from '@mui/material';
+import {Card, Container, Typography} from '@mui/material';
 import {content} from '../constants';
 import {CenteredTitle} from './CenteredTitle';
 import type {FC} from 'react';
@@ -22,7 +22,7 @@ export const About: FC = () => {
                     {content.about}
                 </Typography>
             </Card>
-            <Divider sx={{mt: '2rem'}} variant='middle' />
+            {/* <Divider sx={{mt: '2rem'}} variant='middle' /> */}
         </Container>
     );
 };
