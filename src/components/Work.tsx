@@ -7,7 +7,7 @@ export const Work: FC = () => {
     return (
         <Container
             maxWidth='lg'
-            sx={{p: '1rem'}}
+            sx={{mt: '3rem'}}
         >
             <Typography
                 sx={{ml: 0, fontWeight: 'semibold'}}
