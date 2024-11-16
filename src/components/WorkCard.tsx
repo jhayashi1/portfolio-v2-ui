@@ -8,7 +8,7 @@ export const WorkCard: FC<WorkCardProps> = ({
     team,
     description,
     skills,
-}: WorkCardProps) => {
+}) => {
     return (
         <Card
             raised

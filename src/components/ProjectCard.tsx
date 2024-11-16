@@ -5,7 +5,7 @@ export const ProjectCard: FC<ProjectCardProps> = ({
     title,
     description,
     skills,
-}: ProjectCardProps) => {
+}) => {
     return (
         <Card
             raised
