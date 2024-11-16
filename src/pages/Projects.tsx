@@ -1,16 +1,20 @@
-import {Container} from '@mui/material';
-import {CenteredTitle} from './CenteredTitle';
+import {Container, Typography} from '@mui/material';
 import {projectContent} from '../constants';
 import type {FC} from 'react';
-import {ProjectCard} from './ProjectCard';
+import {ProjectCard} from '../components/ProjectCard';
 
 export const Projects: FC = () => {
     return (
         <Container
             maxWidth='lg'
-            sx={{p: '1rem'}}
+            sx={{mt: '3rem'}}
         >
-            <CenteredTitle title={'Projects'} />
+            <Typography
+                sx={{ml: 0, fontWeight: 'semibold'}}
+                variant='h2'
+            >
+                {'Projects'}
+            </Typography>
             {projectContent.map(({title, description, skills}) => (
                 <ProjectCard
                     description={description}

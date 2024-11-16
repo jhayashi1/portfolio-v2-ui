@@ -16,7 +16,7 @@ export const content = {
 export const workContent = [
     {
         company: 'John Deere',
-        description: content.introduction,
+        description: 'Currently developing and maintaining REST API\'s that provide automation for document processing and text extraction while maintaining General Data Protection Regulation (GDPR) compliance.\n\nThe API\'s are delivered in the form of a serverless design using API Gateway, Lambda, SQS, SNS, Eventbridge, and S3. They are rigorously tested using a combination of unit, fullstack, and regression tests utilizing Vitest and Cypress.\n\nMy current focus is on developing features for our API that utilizes AWS Textract\'s machine learning model to automate the extraction of information from PDFs and images.',
         skills: ['Typescript', 'React', 'Node', 'AWS', 'Terraform', 'API Gateway', 'PostgreSQL'],
         team: 'Digitize My Docs',
         time: '2024 - Present',
@@ -24,7 +24,7 @@ export const workContent = [
     },
     {
         company: 'John Deere',
-        description: content.introduction,
+        description: 'Developed and supported AWS and Azure applications to supply foundational infrastructure throughout the company. Primarily worked with VPC, Route53, Cloudformation, ECS, and Lambda in AWS as well as VNET and Virtual Machines in Azure to ensure proper connectivity in accounts.   \n\nI helped maintain Spring API\'s which were used to create and manage accounts as well as deploy infrastructure. I also provided support to other team\'s throughout the company with issues related to networking, DNS, migrations, etc.',
         skills: ['Python', 'Java', 'Springboot', 'AWS', 'Azure', 'Github Actions', 'Terraform', 'Docker'],
         team: 'Landing Zone',
         time: '2023 - 2024',
@@ -32,7 +32,7 @@ export const workContent = [
     },
     {
         company: 'Kent Corporation',
-        description: content.introduction,
+        description: 'Created and managed applications in Dynamics AX 2012 using X++ and Microsoft SQL. \n\nPrimarily updated various parts of their primary application to ensure compliance with updated TTB standards.',
         skills: ['X++', 'Dynamics AX 2012', 'MSSQL'],
         team: undefined,
         time: '2022',

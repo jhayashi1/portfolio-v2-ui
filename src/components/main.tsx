@@ -1,7 +1,7 @@
 import type {FC} from 'react';
 import {useState} from 'react';
 import {Card} from '@mui/material';
-import {Introduction} from './Introduction';
+import {Introduction} from '../pages/Introduction';
 
 export const Main: FC = () => {
     const [isLoading, setIsLoading] = useState(true);

@@ -9,11 +9,11 @@ export const ProjectCard: FC<ProjectCardProps> = ({
     return (
         <Card
             raised
-            sx={{height: '100%', mb: '2rem'}}
+            sx={{height: '100%', my: '2rem'}}
             variant='outlined'
         >
             <Typography
-                sx={{mb: 0, fontWeight: 'semibold'}}
+                sx={{ml: '1rem', mt: '1rem', fontWeight: 'semibold'}}
                 variant='h4'
             >
                 {title}

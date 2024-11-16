@@ -1,6 +1,6 @@
 import {Container, Typography} from '@mui/material';
 import {workContent} from '../constants';
-import {WorkCard} from './WorkCard';
+import {WorkCard} from '../components/WorkCard';
 import type {FC} from 'react';
 
 export const Work: FC = () => {

@@ -12,7 +12,7 @@ export const WorkCard: FC<WorkCardProps> = ({
     return (
         <Card
             raised
-            sx={{height: '100%', mt: '2rem'}}
+            sx={{height: '100%', my: '2rem'}}
             variant='outlined'
         >
             <Typography
