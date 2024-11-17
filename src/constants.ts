@@ -45,15 +45,18 @@ export const projectContent = [
         title: 'Portfolio v2',
         description: 'This website created using Typescript, React, Material UI, and Vite. Deployed to AWS Cloudfront using Terraform and GitHub Actions.',
         skills: ['Typescript', 'React', 'AWS', 'Terraform', 'Github Actions'],
+        image: 'portfolio-v2-image.png',
     },
     {
         title: 'Discord Bot',
         description: content.introduction,
         skills: ['Typescript', 'React', 'AWS', 'Terraform', 'Github Actions'],
+        image: 'portfolio-v2-image.png',
     },
     {
         title: 'Portfolio v4',
         description: content.introduction,
         skills: ['Typescript', 'React', 'AWS', 'Terraform', 'Github Actions'],
+        image: 'portfolio-v2-image.png',
     },
 ];

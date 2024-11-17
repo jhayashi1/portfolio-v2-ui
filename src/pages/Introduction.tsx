@@ -1,5 +1,5 @@
 import {GitHub, LinkedIn} from '@mui/icons-material';
-import {Grid, Typography} from '@mui/material';
+import {Button, Grid, IconButton, Typography} from '@mui/material';
 import type {FC} from 'react';
 import {content} from '../constants';
 
@@ -54,14 +54,24 @@ export const Introduction: FC = () => (
                     sm={1}
                     xs={2}
                 >
-                    <GitHub fontSize='large' />
+                    <IconButton
+                        href='https://www.linkedin.com/in/jared-hayashi-2656541b7/' size='large'
+                        sx={{color: 'white', p: 0}}
+                    >
+                        <GitHub fontSize='large' />
+                    </IconButton>
                 </Grid>
                 <Grid
                     item
                     sm={1}
                     xs={2}
                 >
-                    <LinkedIn fontSize='large' />
+                    <IconButton
+                        href='https://www.linkedin.com/in/jared-hayashi-2656541b7/' size='large'
+                        sx={{color: 'white', p: 0}}
+                    >
+                        <LinkedIn fontSize='large' />
+                    </IconButton>
                 </Grid>
             </Grid>
         </Grid>
