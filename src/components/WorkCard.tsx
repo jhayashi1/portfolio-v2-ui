@@ -1,5 +1,6 @@
-import {Box, Card, Divider, Typography} from '@mui/material';
+import {Card, Divider, Typography} from '@mui/material';
 import type {FC} from 'react';
+import {SkillsList} from './SkillsList';
 
 export const WorkCard: FC<WorkCardProps> = ({
     company,
@@ -29,23 +30,7 @@ export const WorkCard: FC<WorkCardProps> = ({
                 {`${team ?? title}, ${time}`}
             </Typography>
             <Divider sx={{mt: '0.5rem', backgroundColor: 'white', width: '7.5%'}} variant='middle' />
-            <Box
-                display='flex'
-                flexWrap='wrap'
-                justifyContent='left'
-                sx={{m: '1rem'}}
-            >
-                {skills.map((skill) => (
-                    <Card sx={{mr: '1rem', borderWidth: '0.15rem', borderColor: 'steelblue'}} variant='outlined'>
-                        <Typography
-                            sx={{m: '0.5rem'}}
-                            variant="subtitle1"
-                        >
-                            {skill}
-                        </Typography>
-                    </Card>
-                ))}
-            </Box>
+            <SkillsList skills={skills} />
             <Typography
                 sx={{m: '1rem'}}
                 variant="h6"
