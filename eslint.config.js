@@ -3,13 +3,13 @@ import parser from '@typescript-eslint/parser';
 import TypeScriptESLint from '@typescript-eslint/eslint-plugin';
 
 const commonRules = {
-    quotes: [2, 'single'],
-    semi: [2, 'always'],
-    'eol-last': 2,
-    'no-trailing-spaces': 2,
-    'no-multi-spaces': [2, {exceptions: {Property: true, TSPropertySignature: true}}],
-    'quote-props': [2, 'as-needed'],
-    'comma-spacing': [2, {before: false, after: true}],
+    quotes                : [2, 'single'],
+    semi                  : [2, 'always'],
+    'eol-last'            : 2,
+    'no-trailing-spaces'  : 2,
+    'no-multi-spaces'     : [2, {exceptions: {Property: true, TSPropertySignature: true}}],
+    'quote-props'         : [2, 'as-needed'],
+    'comma-spacing'       : [2, {before: false, after: true}],
     'object-curly-spacing': [2, 'never'],
     'object-curly-newline': [2, {
         ObjectExpression: {
@@ -20,12 +20,13 @@ const commonRules = {
         },
     }],
     'comma-dangle': [2, {
-        arrays: 'always-multiline',
-        imports: 'never',
-        exports: 'never',
+        arrays   : 'always-multiline',
+        imports  : 'never',
+        exports  : 'never',
         functions: 'never',
-        objects: 'always-multiline',
+        objects  : 'always-multiline',
     }],
+    'key-spacing': [2, {align: 'colon'}],
 };
 
 const typescriptRules = {
@@ -60,24 +61,24 @@ const typescriptRules = {
 };
 
 const reactRules = {
-    'react/jsx-first-prop-new-line': [2, 'multiline'],
-    'react/jsx-max-props-per-line': [2, {when: 'always', maximum: 2}],
+    'react/jsx-first-prop-new-line'     : [2, 'multiline'],
+    'react/jsx-max-props-per-line'      : [2, {when: 'always', maximum: 2}],
     'react/jsx-closing-bracket-location': [2, 'tag-aligned'],
-    'react/jsx-curly-newline': [2, {multiline: 'consistent', singleline: 'consistent'}],
-    'react/jsx-sort-props': [2,
+    'react/jsx-curly-newline'           : [2, {multiline: 'consistent', singleline: 'consistent'}],
+    'react/jsx-sort-props'              : [2,
         {
-            callbacksLast: true,
-            shorthandFirst: true,
-            shorthandLast: false,
-            ignoreCase: true,
+            callbacksLast       : true,
+            shorthandFirst      : true,
+            shorthandLast       : false,
+            ignoreCase          : true,
             noSortAlphabetically: false,
         },
     ],
     'react/jsx-tag-spacing': [2,
         {
             beforeSelfClosing: 'always',
-            afterOpening: 'never',
-            beforeClosing: 'never',
+            afterOpening     : 'never',
+            beforeClosing    : 'never',
         },
     ],
 };
@@ -87,19 +88,19 @@ export default [{
         react,
         '@typescript-eslint': TypeScriptESLint,
     },
-    files: ['**/*.js', '**/*.ts', '**/*.tsx'],
+    files          : ['**/*.js', '**/*.ts', '**/*.tsx'],
     languageOptions: {
         parser,
         parserOptions: {
             ecmaFeatures: {modules: true},
-            ecmaVersion: 'latest',
-            project: './tsconfig.json',
+            ecmaVersion : 'latest',
+            project     : './tsconfig.json',
         },
         ecmaVersion: 12,
-        globals: {
-            browser: true,
-            commonjs: true,
-            es2021: true,
+        globals    : {
+            browser      : true,
+            commonjs     : true,
+            es2021       : true,
             webextensions: true,
         },
     },

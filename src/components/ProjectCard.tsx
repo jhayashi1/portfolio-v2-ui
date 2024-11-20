@@ -1,4 +1,4 @@
-import {Card, Divider, Grid, ImageList, ImageListItem, Typography} from '@mui/material';
+import {Card, CardContent, Divider, Grid, ImageList, ImageListItem, Typography} from '@mui/material';
 import type {FC} from 'react';
 import {SkillsList} from './SkillsList';
 
@@ -7,11 +7,25 @@ export const ProjectCard: FC<ProjectCardProps> = ({
     description,
     skills,
     image,
+    link,
 }) => {
     return (
         <Card
             raised
-            sx={{height: '100%', my: '2rem'}}
+            component='a'
+            href={link}
+            sx={{
+                height    : '100%',
+                my        : '2rem',
+                transition: 'transform 0.2s, box-shadow 0.2s',
+                '&:hover' : {
+                    transform: 'scale(1.05)',
+                    boxShadow: 6,
+                },
+                textDecoration: 'none',
+                color         : 'inherit',
+                display       : 'block',
+            }}
             variant='outlined'
         >
             <Grid
@@ -54,9 +68,9 @@ export const ProjectCard: FC<ProjectCardProps> = ({
                     >
                         <ImageListItem
                             sx={{
-                                border: '0.15rem solid steelblue',
+                                border      : '0.15rem solid steelblue',
                                 borderRadius: '0.5rem',
-                                overflow: 'hidden',
+                                overflow    : 'hidden',
                             }}
                         >
                             <img src={`../../public/images/${image}`}></img>
@@ -72,5 +86,6 @@ interface ProjectCardProps {
     title      : string;
     description: string;
     skills     : string[];
-    image: string;
+    image      : string;
+    link       : string;
 }

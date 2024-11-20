@@ -15,10 +15,11 @@ export const Projects: FC = () => {
             >
                 {'Projects'}
             </Typography>
-            {projectContent.map(({title, description, skills, image}) => (
+            {projectContent.map(({title, description, skills, image, link}) => (
                 <ProjectCard
                     description={description}
                     image={image}
+                    link={link}
                     skills={skills}
                     title={title}
                 />

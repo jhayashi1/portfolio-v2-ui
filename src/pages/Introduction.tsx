@@ -1,5 +1,5 @@
 import {GitHub, LinkedIn} from '@mui/icons-material';
-import {Button, Grid, IconButton, Typography} from '@mui/material';
+import {Grid, IconButton, Typography} from '@mui/material';
 import type {FC} from 'react';
 import {content} from '../constants';
 
