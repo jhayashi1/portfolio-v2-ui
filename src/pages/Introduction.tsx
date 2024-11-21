@@ -55,7 +55,7 @@ export const Introduction: FC = () => (
                     xs={2}
                 >
                     <IconButton
-                        href='https://www.linkedin.com/in/jared-hayashi-2656541b7/' size='large'
+                        href='https://github.com/jhayashi1' size='large'
                         sx={{color: 'white', p: 0}}
                     >
                         <GitHub fontSize='large' />

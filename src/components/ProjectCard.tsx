@@ -73,7 +73,7 @@ export const ProjectCard: FC<ProjectCardProps> = ({
                                 overflow    : 'hidden',
                             }}
                         >
-                            <img src={`../../public/images/${image}`}></img>
+                            <img src={`/images/${image}`}></img>
                         </ImageListItem>
                     </ImageList>
                 </Grid>
