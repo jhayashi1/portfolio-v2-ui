@@ -1,4 +1,4 @@
-import {Card, CardContent, Divider, Grid, ImageList, ImageListItem, Typography} from '@mui/material';
+import {Card, Divider, Grid, ImageList, ImageListItem, Typography} from '@mui/material';
 import type {FC} from 'react';
 import {SkillsList} from './SkillsList';
 

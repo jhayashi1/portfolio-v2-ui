@@ -1,16 +1,15 @@
 export const pages: Record<string, string> = {
-    home    : '/',
-    about   : '/about',
-    work    : '/work',
-    projects: '/projects',
+    Home    : '/',
+    About   : '/about',
+    Work    : '/work',
+    Projects: '/projects',
 };
 
 export const content = {
-    name        : 'Jared Hayashi',
-    title       : 'Cloud Software Engineer',
-    statement   : 'I am a software engineer that is experienced in building efficient and robust fullstack applications for the cloud.',
-    introduction: 'Hi, my name is Jared Hayashi. \n\nI am a fullstack developer with about 2 years of experience. My main focus in on building cloud applications primarily using Typescript or Python paired with AWS.   \n\nIn my free time, I can usually be found playing video games, tennis, pickleball, ping pong, or rock climbing. ',
-    about       : 'Hi, my name is Jared Hayashi. I graduated from Iowa State University in Fall of 2022 with a Bachelor\'s in Software Engineering. Since graduating, I have had the privilege to employ my skills at John Deere where I discovered my passion for creating cloud applications. \n',
+    name     : 'Jared Hayashi',
+    title    : 'Cloud Software Engineer',
+    statement: 'I am a software engineer that is experienced in building efficient and robust fullstack applications for the cloud.',
+    about    : 'Hi, my name is Jared Hayashi. I graduated from Iowa State University in Fall of 2022 with a Bachelor\'s in Software Engineering. Since graduating, I have had the privilege to employ my skills at John Deere where I discovered my passion for creating cloud applications. \n\nIn my free time, I can usually be found playing video games, tennis, pickleball, ping pong, or rock climbing.',
 };
 
 export const workContent = [

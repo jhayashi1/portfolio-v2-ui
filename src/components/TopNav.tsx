@@ -16,8 +16,8 @@ export const TopNav: FC = () => {
                     <Box
                         sx={{
                             flexGrow: 1,
-                            display: 'flex',
-                            height: '100%',
+                            display : 'flex',
+                            height  : '100%',
                         }}
                         textAlign='center'
                     >
@@ -26,11 +26,11 @@ export const TopNav: FC = () => {
                                 component={Link}
                                 key={page}
                                 sx={{
-                                    display: 'flex',
-                                    p: '2rem',
-                                    color: 'inherit',
+                                    display       : 'flex',
+                                    p             : '2rem',
+                                    color         : 'inherit',
                                     justifyContent: 'center',
-                                    alignItems: 'center',
+                                    alignItems    : 'center',
                                 }}
                                 to={pages[page]}
                             >
