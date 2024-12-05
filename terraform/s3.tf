@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "cloudfront_bucket" {
-  bucket = "portfolio-v2"
+  bucket = "jaredhayashi.com"
 }
 
 resource "aws_s3_bucket_public_access_block" "access_block" {
@@ -9,10 +9,6 @@ resource "aws_s3_bucket_public_access_block" "access_block" {
     block_public_policy = true
     ignore_public_acls  = true
     restrict_public_buckets = true
-}
-
-resource "aws_cloudfront_origin_access_identity" "cloudfront_oai" {
-  comment = "Origin Access Identity for S3 bucket"
 }
 
 resource "aws_s3_bucket_policy" "cloudfront_bucket_policy" {

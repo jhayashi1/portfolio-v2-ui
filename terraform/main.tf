@@ -4,17 +4,21 @@ provider "aws" {
 
 data "aws_caller_identity" "current" {}
 
+resource "aws_cloudfront_origin_access_identity" "cloudfront_oai" {
+  comment = "Origin Access Identity for S3 bucket"
+}
+
 resource "aws_cloudfront_distribution" "cloudfront" {
     enabled             = true
     default_root_object = "index.html"
     price_class = "PriceClass_100"
 
     origin {
-        domain_name = "portfolio-v2.s3.amazonaws.com"
+        domain_name = aws_s3_bucket.cloudfront_bucket.bucket_regional_domain_name
         origin_id   = "portfolio-v2-origin-id"
 
         s3_origin_config {
-            origin_access_identity = "origin-access-identity/cloudfront/EXAMPLE"
+            origin_access_identity = aws_cloudfront_origin_access_identity.cloudfront_oai.cloudfront_access_identity_path
         }
     }
 
@@ -53,6 +57,12 @@ resource "aws_cloudfront_distribution" "cloudfront" {
     }
 
     viewer_certificate {
-        cloudfront_default_certificate = true
+        acm_certificate_arn = aws_acm_certificate.main_cert.arn
+        cloudfront_default_certificate = false
+        ssl_support_method = "sni_only"
     }
+}
+
+resource "aws_cloudfront_origin_access_identity" "identity" {
+    comment = "porfolio-v2"
 }
