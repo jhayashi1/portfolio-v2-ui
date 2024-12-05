@@ -27,6 +27,8 @@ jobs:
           cache:             pnpm
       - name: install
         run:  pnpm install
+      - name: test
+        run: ls /home/runner/work/portfolio-v2-ui/portfolio-v2-ui/src
     #   - name: types
     #     run:  pnpm run types
     #   - name: lint
