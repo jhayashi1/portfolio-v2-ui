@@ -1,12 +1,12 @@
 import {Route} from 'react-router-dom';
-import {Main} from './components/Main';
+import {Introduction} from './pages/Introduction';
 import {About} from './pages/About';
 import {Work} from './pages/Work';
 import {Projects} from './pages/Projects';
 
 export const routes = [
     <Route
-        element={<Main />}
+        element={<Introduction />}
         key='home'
         path='/'
     />,
