@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.tsx",
   "type": "module",
+  "packageManager": "pnpm@9.14.4",
   "scripts": {
     "start": "vite",
     "build": "vite build",
