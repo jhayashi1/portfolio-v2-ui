@@ -13,7 +13,33 @@ env:
   AWS_REGION: "us-east-1"
 
 jobs:
+  build: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v2
+      - name: pnpm setup
+        uses: pnpm/action-setup@v4
+      - name: node setup
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: package.json
+          cache:             pnpm
+      - name: install
+        run:  pnpm install
+    #   - name: types
+    #     run:  pnpm run types
+    #   - name: lint
+    #     run:  pnpm run lint
+      - name: build
+        run:  pnpm run build
+      - name: upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+            name: dist
+            path: dist/
   terraform-plan:
+    needs: build
     runs-on: ubuntu-latest
     container: hashicorp/terraform:1.9.3 
     steps:
