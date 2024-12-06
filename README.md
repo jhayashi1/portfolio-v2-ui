@@ -1,8 +1,31 @@
 # Portfolio v2 ui
 
-### todo
-- add navigation buttons to homepage
+Portfolio website hosted using Cloudfront
+
+## Setup
+
+Install [`pnpm`](https://pnpm.io/installation)
+and run: 
+```bash
+pnpm install
+```
+
+To run locally:
+```bash
+pnpm run start
+```
+
+To build ui:
+```bash
+pnpm run build:frontend
+```
+
+To build kill switch lambda:
+```bash
+pnpm run build:lambda
+```
+
+
+## todo
 - add about page text
-- add project page text
-- add images to project page
-- deploy to cloudfront
+- deploy to cloudfront and test
