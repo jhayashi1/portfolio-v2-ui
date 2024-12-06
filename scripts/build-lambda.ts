@@ -18,7 +18,7 @@ try {
 
     zip.folder('../dist/lambda');
     const file = await zip.generateAsync({type: 'string'});
-    writeFileSync(fromRoot('../terraform/lambda.zip'), file, {flag: 'w'});
+    writeFileSync(fromRoot('../lambda.zip'), file, {flag: 'w'});
 
     await rm(fromRoot('../dist/lambda'), {recursive: true, force: true});
 } catch (e) {
