@@ -14,20 +14,16 @@ resource "aws_route53_record" "website_record" {
   }
 }
 
-resource "aws_route53_record" "website_cname" {
-  zone_id = aws_route53_zone.main_zone.zone_id
-  name    = "www.jaredhayashi.com"
-  type    = "CNAME"
-  ttl     = 300
-  records = [aws_cloudfront_distribution.cloudfront.domain_name]
-}
-
-resource "aws_route53_record" "website_cname2" {
+resource "aws_route53_record" "website_record" {
   zone_id = aws_route53_zone.main_zone.zone_id
   name    = "jaredhayashi.com"
-  type    = "CNAME"
-  ttl     = 300
-  records = [aws_cloudfront_distribution.cloudfront.domain_name]
+  type    = "A"
+
+  alias {
+    name                   = aws_cloudfront_distribution.cloudfront.domain_name
+    zone_id                = aws_cloudfront_distribution.cloudfront.hosted_zone_id
+    evaluate_target_health = false
+  }
 }
 
 resource "aws_acm_certificate" "main_cert" {
