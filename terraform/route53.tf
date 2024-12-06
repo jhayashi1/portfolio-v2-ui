@@ -14,7 +14,7 @@ resource "aws_route53_record" "website_record" {
   }
 }
 
-resource "aws_route53_record" "website_record" {
+resource "aws_route53_record" "website_record2" {
   zone_id = aws_route53_zone.main_zone.zone_id
   name    = "jaredhayashi.com"
   type    = "A"
