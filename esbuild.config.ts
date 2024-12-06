@@ -6,6 +6,7 @@ export default {
     platform         : 'node',
     target           : 'node20.10',
     outdir           : 'dist/lambda',
+    outExtension     : {'.js': '.mjs'},
     loader           : {'.html': 'text', '.css': 'text'},
     bundle           : true,
     minifySyntax     : true,
