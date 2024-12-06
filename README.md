@@ -28,4 +28,3 @@ pnpm run build:lambda
 
 ## todo
 - add about page text
-- deploy to cloudfront and test
