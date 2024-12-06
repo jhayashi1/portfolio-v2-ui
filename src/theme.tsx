@@ -43,6 +43,7 @@ export const theme = createTheme({
         },
         MuiTypography: {
             styleOverrides: {
+                //@ts-ignore
                 root: {
                     fontWeight: 'normal',
                     whiteSpace: 'pre-wrap',

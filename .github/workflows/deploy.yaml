@@ -28,10 +28,10 @@ jobs:
           cache:             pnpm
       - name: install
         run:  pnpm install
-    #   - name: types
-    #     run:  pnpm run types
-    #   - name: lint
-    #     run:  pnpm run lint
+      - name: types
+        run:  pnpm run types
+      - name: lint
+        run:  pnpm run lint
       - name: build frontend
         run:  pnpm run build:frontend
       - name: build lambda
