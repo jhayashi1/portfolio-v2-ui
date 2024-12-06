@@ -4,7 +4,7 @@ resource "aws_cloudwatch_metric_alarm" "cloudfront_requests_alarm" {
   evaluation_periods  = 1
   metric_name         = "Requests"
   namespace           = "AWS/CloudFront"
-  period              = 30
+  period              = 300
   statistic           = "Sum"
   threshold           = 1000
   alarm_description   = "Alarm triggered when CloudFront requests exceed threshold"
