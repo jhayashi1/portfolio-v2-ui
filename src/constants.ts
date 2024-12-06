@@ -9,7 +9,7 @@ export const content = {
     name     : 'Jared Hayashi',
     title    : 'Cloud Software Engineer',
     statement: 'I am a software engineer that is experienced in building efficient and robust fullstack applications for the cloud.',
-    about    : 'Hi, my name is Jared Hayashi. I graduated from Iowa State University in Fall of 2022 with a Bachelor\'s in Software Engineering. Since graduating, I have had the privilege to employ my skills at John Deere where I discovered my passion for creating cloud applications. \n\nIn my free time, I can usually be found playing video games, tennis, pickleball, ping pong, or rock climbing.',
+    about    : 'Hi, my name is Jared Hayashi. I graduated from Iowa State University in Fall of 2022 with a Bachelor\'s in Software Engineering. Since graduating, I have had the privilege to employ my skills at John Deere where I discovered my passion for creating cloud applications. \n\nIn my free time, I can usually be found playing video games, tennis, pickleball, ping pong, or rock climbing.\n\nTODO',
 };
 
 export const workContent = [
