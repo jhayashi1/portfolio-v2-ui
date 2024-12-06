@@ -70,7 +70,7 @@ jobs:
           terraform init
           terraform plan -out tfplan
   terraform-apply:
-    if: github.event_name == 'push' && false 
+    if: github.event_name == 'push'
     needs: terraform-plan
     runs-on: ubuntu-latest
     container: hashicorp/terraform:1.9.3 
