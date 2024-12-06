@@ -20,7 +20,7 @@ export const handler = async (event): Promise<void> => {
 
         console.log(`CloudFront distribution ${distributionId} has been disabled.`);
     } catch (e) {
-        console.error(`Failed to disable CloudFront distribution: ${error.message}`);
+        console.error(`Failed to disable CloudFront distribution: ${e}`);
         throw e;
     }
 };
