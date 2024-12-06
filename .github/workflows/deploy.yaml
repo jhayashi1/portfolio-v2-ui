@@ -77,6 +77,12 @@ jobs:
     steps:
       - name: checkout code
         uses: actions/checkout@v2
+              # Install AWS CLI v2
+      - name: Install AWS CLI
+        run: |
+          curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+          unzip awscliv2.zip
+          sudo ./aws/install
       - name: Download artifact
         uses: actions/download-artifact@v4
         with:
