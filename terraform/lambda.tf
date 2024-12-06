@@ -1,13 +1,13 @@
 resource "aws_lambda_function" "cloudfront_kill_switch_lambda" {
   filename         = "lambda.zip"
-  function_name    = cloudfront-kill-switch
+  function_name    = "cloudfront-kill-switch"
   handler          = "index.handler"
   runtime          = "nodejs20.x"
   role             = aws_iam_role.cloudfront_kill_switch_role.arn
   source_code_hash = filebase64sha256("lambda.zip")
   environment {
     variables = {
-      CLOUDFRONT_DISTRIBUTION_ID = aws_cloudfront_distribution.cloudfront.DistributionId
+      CLOUDFRONT_DISTRIBUTION_ID = aws_cloudfront_distribution.cloudfront.id
     }
   }
 }

@@ -9,7 +9,7 @@ resource "aws_cloudwatch_metric_alarm" "cloudfront_requests_alarm" {
   threshold           = 1000
   alarm_description   = "Alarm triggered when CloudFront requests exceed threshold"
   dimensions = {
-    DistributionId = aws_cloudfront_distribution.cloudfront.DistributionId
+    DistributionId = aws_cloudfront_distribution.cloudfront.id
   }
   alarm_actions = [aws_sns_topic.cloudfront_kill_switch_topic.arn]
 }
