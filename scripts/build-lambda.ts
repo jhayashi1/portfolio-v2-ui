@@ -1,9 +1,9 @@
 import {build} from 'esbuild';
 import config from '../esbuild.config';
-import {rm} from 'node:fs/promises';
-import {writeFileSync} from 'node:fs';
 import JSZip from 'jszip';
-import {resolve} from 'node:path';
+import {rm} from 'node:fs/promises';
+import {writeFileSync, readdirSync, readFileSync} from 'node:fs';
+import {resolve, join} from 'node:path';
 
 const __dirname = resolve();
 const root = resolve(__dirname, 'lambda');
@@ -16,9 +16,15 @@ try {
     const zip = new JSZip();
     await build(config);
 
-    zip.folder('../dist/lambda');
-    const file = await zip.generateAsync({type: 'string'});
-    writeFileSync(fromRoot('../lambda.zip'), file, {flag: 'w'});
+    const files = readdirSync(fromRoot('../dist/lambda'));
+    files.forEach((file) => {
+        const path = join(fromRoot('../dist/lambda'), file);
+        const fileContent = readFileSync(path);
+        zip.file(file, fileContent);
+    });
+
+    const zipBuffer = await zip.generateAsync({type: 'nodebuffer'}) ?? '';
+    writeFileSync(fromRoot('../lambda.zip'), zipBuffer, {flag: 'w'});
 
     await rm(fromRoot('../dist/lambda'), {recursive: true, force: true});
 } catch (e) {
