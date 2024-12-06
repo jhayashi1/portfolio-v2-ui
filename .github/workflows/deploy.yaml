@@ -110,6 +110,12 @@ jobs:
         with:
           name: frontend
           path: dist 
+      - name: configure aws credentials
+        uses: aws-actions/configure-aws-credentials@v3
+        with:
+          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_NUMBER }}:role/${{ secrets.AWS_DEPLOY_ROLE }}
+          role-session-name: portfolio-deploy
+          aws-region: ${{ env.AWS_REGION }}
       - name: s3 sync
         run: |
           aws s3 sync dist ${{ env.S3_BUCKET_NAME }}
