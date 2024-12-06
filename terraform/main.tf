@@ -19,6 +19,7 @@ resource "aws_cloudfront_distribution" "cloudfront" {
     enabled             = true
     default_root_object = "index.html"
     price_class = "PriceClass_100"
+    aliases = [ "www.jaredhayashi.com", "jaredhayashi.com" ]
 
     origin {
         domain_name = aws_s3_bucket.cloudfront_bucket.bucket_regional_domain_name
