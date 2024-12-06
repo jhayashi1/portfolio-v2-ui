@@ -23,6 +23,7 @@
     "url": "https://github.com/jhayashi1/portfolio-v2-ui/issues"
   },
   "dependencies": {
+    "@aws-sdk/client-cloudfront": "^3.699.0",
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
     "@mui/icons-material": "^5.16.6",
