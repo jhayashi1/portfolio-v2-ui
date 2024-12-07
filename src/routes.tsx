@@ -10,11 +10,11 @@ export const routes = [
         key='home'
         path='/'
     />,
-    <Route
-        element={<About />}
-        key='about'
-        path='/about'
-    />,
+    // <Route
+    //     element={<About />}
+    //     key='about'
+    //     path='/about'
+    // />,
     <Route
         element={<Projects />}
         key='projects'

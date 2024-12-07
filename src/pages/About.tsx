@@ -16,7 +16,7 @@ export const About: FC = () => {
             </Typography>
             <Card
                 raised
-                sx={{height: '100%', mt: '2rem'}}
+                sx={{mt: '2rem'}}
                 variant='outlined'
             >
                 <Typography
