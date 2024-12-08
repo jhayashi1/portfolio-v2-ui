@@ -27,10 +27,10 @@ resource "aws_route53_record" "website_record2" {
 }
 
 resource "aws_acm_certificate" "main_cert" {
-  domain_name       = "www.jaredhayashi.com"
+  domain_name       = "jaredhayashi.com"
   validation_method = "DNS"
 
-  subject_alternative_names = ["jaredhayashi.com"]
+  subject_alternative_names = ["www.jaredhayashi.com"]
 }
 
 resource "aws_route53_record" "cert_validation" {
@@ -47,4 +47,9 @@ resource "aws_route53_record" "cert_validation" {
   type    = each.value.type
   records = [each.value.value]
   ttl     = 300
+}
+
+resource "aws_acm_certificate_validation" "main_cert_validation" {
+  certificate_arn         = aws_acm_certificate.main_cert.arn
+  validation_record_fqdns = [for record in aws_route53_record.cert_validation : record.fqdn]
 }
