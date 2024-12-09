@@ -65,8 +65,8 @@ resource "aws_cloudfront_distribution" "cloudfront" {
     }
 
     viewer_certificate {
-        acm_certificate_arn = aws_acm_certificate.main_cert.arn
-        cloudfront_default_certificate = false
+        # acm_certificate_arn = aws_acm_certificate.main_cert.arn
+        cloudfront_default_certificate = true
         ssl_support_method = "sni-only"
     }
 }
