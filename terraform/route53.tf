@@ -30,7 +30,7 @@ resource "aws_acm_certificate" "main_cert" {
   domain_name       = "jaredhayashi.com"
   validation_method = "DNS"
 
-  subject_alternative_names = ["www.jaredhayashi.com"]
+  subject_alternative_names = ["*.jaredhayashi.com"]
 }
 
 resource "aws_route53_record" "main_cert_validation_records" {
