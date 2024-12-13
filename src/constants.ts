@@ -49,7 +49,7 @@ export const projectContent = [
     },
     {
         title      : 'Discord Bot (js)',
-        description: 'Most recent discord bot created to start and stop EC2 instances to host game servers. Uses discord\'s new slash command API. Implemented using Typescript and Node. Still in development.',
+        description: 'Most recent discord bot created to start and stop EC2 instances to host game servers. Uses discord\'s new slash command API. Implemented using Typescript and Node. Bundled in a docker container and deployed to AWS ECS. Still in development.',
         skills     : ['Typescript', 'Node', 'AWS'],
         image      : 'discord-js-image.png',
         link       : 'https://github.com/jhayashi1/berry-bot-js',
