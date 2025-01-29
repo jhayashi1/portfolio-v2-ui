@@ -55,6 +55,13 @@ export const projectContent = [
         link       : 'https://github.com/jhayashi1/berry-bot-js',
     },
     {
+        title      : 'Shorts Extension',
+        description: 'Simple chrome extension to inject a button to redirect a youtube shorts video to the normal video player\n\nPlan to add other functionality to improve youtube experience.',
+        skills     : ['Typescript', 'React', 'Chrome'],
+        image      : 'shorts-extension-image.png',
+        link       : 'https://github.com/jhayashi1/shorts-extension',
+    },
+    {
         title      : 'Toolkit',
         description: 'Archive of tools that I use for development',
         skills     : ['Bash'],
