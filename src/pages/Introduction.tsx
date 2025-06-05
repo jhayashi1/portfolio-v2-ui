@@ -6,34 +6,33 @@ import {content} from '../constants';
 export const Introduction: FC = () => (
     <Grid
         container
-        direction="column"
+        direction='column'
         spacing={2}
-        sx={{mt: '3rem'}}
     >
         <Grid
             item
             sm={10}
-            sx={{minHeight: '70vh'}}
+            sx={{minHeight: '75vh'}}
             xs={12}
         >
             <Typography
                 noWrap
                 sx={{fontWeight: 'semibold'}}
-                variant="h1"
+                variant='h1'
             >
                 {content.name}
             </Typography>
             <Typography
                 noWrap
                 sx={{mt: '1rem', opacity: 0.6}}
-                variant="h3"
+                variant='h3'
             >
                 {content.title}
             </Typography>
             <Typography
                 noWrap
                 sx={{mt: '4rem', opacity: 0.6}}
-                variant="h4"
+                variant='h4'
             >
                 {content.statement}
             </Typography>
@@ -45,32 +44,31 @@ export const Introduction: FC = () => (
         >
             <Grid
                 container
+                columns={20}
                 display='flex'
                 justifyContent='left'
-                spacing={2}
             >
                 <Grid
                     item
-                    sm={1}
-                    xs={2}
+                    lg={1}
                 >
                     <IconButton
-                        href='https://github.com/jhayashi1' size='large'
+                        href='https://github.com/jhayashi1'
+                        size='large'
                         sx={{color: 'white', p: 0}}
                     >
-                        <GitHub fontSize='large' />
+                        <GitHub sx={{fontSize: '3rem'}} />
                     </IconButton>
                 </Grid>
                 <Grid
                     item
-                    sm={1}
-                    xs={2}
+                    lg={1}
                 >
                     <IconButton
                         href='https://www.linkedin.com/in/jared-hayashi-2656541b7/' size='large'
                         sx={{color: 'white', p: 0}}
                     >
-                        <LinkedIn fontSize='large' />
+                        <LinkedIn sx={{fontSize: '3rem'}} />
                     </IconButton>
                 </Grid>
             </Grid>

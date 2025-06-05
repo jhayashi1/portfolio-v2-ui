@@ -86,10 +86,10 @@ const reactRules = {
             beforeClosing    : 'never',
         },
     ],
+    'jsx-quotes': [2, 'prefer-single'],
 };
 
 export default [
-    // JS config (no type-aware rules)
     {
         files          : ['**/*.js', '**/*.mjs'],
         plugins        : {react},
@@ -100,7 +100,6 @@ export default [
         rules  : {...commonRules, ...reactRules},
         ignores: ['dist/**'],
     },
-    // TS config (with type-aware rules)
     {
         files          : ['**/*.ts', '**/*.tsx'],
         plugins        : {react, '@typescript-eslint': TypeScriptESLint},

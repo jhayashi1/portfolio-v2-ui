@@ -1,14 +1,11 @@
-import {Container, Typography} from '@mui/material';
+import {Box, Typography} from '@mui/material';
 import {projectContent} from '../constants';
 import type {FC} from 'react';
 import {ProjectCard} from '../components/ProjectCard';
 
 export const Projects: FC = () => {
     return (
-        <Container
-            maxWidth='lg'
-            sx={{mt: '3rem'}}
-        >
+        <Box>
             <Typography
                 sx={{ml: 0, fontWeight: 'semibold'}}
                 variant='h2'
@@ -25,6 +22,6 @@ export const Projects: FC = () => {
                 />
             ))}
             {/* <Divider sx={{mt: 2}} variant='middle' /> */}
-        </Container>
+        </Box>
     );
 };

@@ -33,7 +33,7 @@ export const WorkCard: FC<WorkCardProps> = ({
             <SkillsList skills={skills} />
             <Typography
                 sx={{m: '1rem'}}
-                variant="h6"
+                variant='h6'
             >
                 {description}
             </Typography>

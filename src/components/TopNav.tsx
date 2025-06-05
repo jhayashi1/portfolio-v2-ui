@@ -8,10 +8,10 @@ export const TopNav: FC = () => {
         <AppBar
             color='secondary'
             elevation={0}
-            position='fixed'
-            sx={{height: '6rem'}}
+            position='static'
+            sx={{height: '5rem'}}
         >
-            <Container maxWidth='lg' sx={{height: '100%'}}>
+            <Container maxWidth='xl' sx={{height: '100%'}}>
                 <Toolbar disableGutters sx={{height: '100%'}}>
                     <Box
                         sx={{
@@ -37,7 +37,7 @@ export const TopNav: FC = () => {
                                 <Typography
                                     noWrap
                                     sx={{fontWeight: 'semibold', textTransform: 'none'}}
-                                    variant="h6"
+                                    variant='h6'
                                 >
                                     {page}
                                 </Typography>

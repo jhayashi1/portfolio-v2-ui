@@ -13,7 +13,7 @@ export const SkillsList: FC<SkillsListProps> = ({skills}) => {
                 <Card sx={{mr: '1rem', borderWidth: '0.15rem', borderColor: 'steelblue', height: '100%'}} variant='outlined'>
                     <Typography
                         sx={{m: '0.5rem'}}
-                        variant="subtitle1"
+                        variant='subtitle1'
                     >
                         {skill}
                     </Typography>

@@ -14,14 +14,14 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <ThemeProvider theme={theme}>
             <BrowserRouter>
                 <Paper sx={{borderRadius: 0, flex: 1, minHeight: '100vh'}}>
-                    <Box sx={{pt: '6rem', minHeight: '100vh', display: 'flex', flexDirection: 'column'}}>
-                        <Container maxWidth='lg'>
-                            <TopNav />
+                    <TopNav />
+                    <Container maxWidth='xl'>
+                        <Box sx={{mt: '3rem'}}>
                             <Routes>
                                 {routes}
                             </Routes>
-                        </Container>
-                    </Box>
+                        </Box>
+                    </Container>
                 </Paper>
             </BrowserRouter>
         </ThemeProvider>
