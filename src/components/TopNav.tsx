@@ -31,6 +31,11 @@ export const TopNav: FC = () => {
                                     color         : 'inherit',
                                     justifyContent: 'center',
                                     alignItems    : 'center',
+                                    transition    : '0.2s',
+                                    '&:hover'     : {
+                                        backgroundColor: 'primary.main',
+                                        color          : 'white',
+                                    },
                                 }}
                                 to={pages[page]}
                             >

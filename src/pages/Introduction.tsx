@@ -1,77 +1,83 @@
 import {GitHub, LinkedIn} from '@mui/icons-material';
-import {Grid, IconButton, Typography} from '@mui/material';
+import {Grid, IconButton, Typography, Fade, Box} from '@mui/material';
 import type {FC} from 'react';
 import {content} from '../constants';
 
 export const Introduction: FC = () => (
-    <Grid
-        container
-        direction='column'
-        spacing={2}
-    >
+    <Grid container direction='column'>
         <Grid
-            item
-            sm={10}
-            sx={{minHeight: '75vh'}}
+            item lg={10}
+            md={12} sx={{minHeight: '75vh'}}
             xs={12}
         >
-            <Typography
-                noWrap
-                sx={{fontWeight: 'semibold'}}
-                variant='h1'
-            >
-                {content.name}
-            </Typography>
-            <Typography
-                noWrap
-                sx={{mt: '1rem', opacity: 0.6}}
-                variant='h3'
-            >
-                {content.title}
-            </Typography>
-            <Typography
-                noWrap
-                sx={{mt: '4rem', opacity: 0.6}}
-                variant='h4'
-            >
-                {content.statement}
-            </Typography>
+            <Fade in timeout={200}>
+                <Typography
+                    noWrap sx={{fontWeight: 'semibold'}}
+                    variant='h1'
+                >
+                    {content.name}
+                </Typography>
+            </Fade>
+            <Fade in timeout={400}>
+                <Box sx={{mt: '1.5rem'}}>
+                    <Typography
+                        noWrap sx={{opacity: 0.6}}
+                        variant='h3'
+                    >
+                        {content.title}
+                    </Typography>
+                </Box>
+            </Fade>
+            <Fade in timeout={800}>
+                <Box sx={{mt: '4rem'}}>
+                    <Typography
+                        noWrap
+                        sx={{opacity: 0.6}}
+                        variant='h4'
+                    >
+                        {content.statement}
+                    </Typography>
+                </Box>
+            </Fade>
         </Grid>
-        <Grid
-            item
-            sm={2}
-            xs={12}
-        >
+        <Fade in timeout={1000}>
             <Grid
-                container
-                columns={20}
-                display='flex'
-                justifyContent='left'
+                item
+                lg={2}
+                md={6}
+                sm={12}
             >
                 <Grid
-                    item
-                    lg={1}
+                    container
+                    columns={20}
+                    display='flex'
+                    justifyContent='left'
                 >
-                    <IconButton
-                        href='https://github.com/jhayashi1'
-                        size='large'
-                        sx={{color: 'white', p: 0}}
+                    <Grid
+                        item
+                        lg={1}
                     >
-                        <GitHub sx={{fontSize: '3rem'}} />
-                    </IconButton>
-                </Grid>
-                <Grid
-                    item
-                    lg={1}
-                >
-                    <IconButton
-                        href='https://www.linkedin.com/in/jared-hayashi-2656541b7/' size='large'
-                        sx={{color: 'white', p: 0}}
+                        <IconButton
+                            href='https://github.com/jhayashi1'
+                            size='large'
+                            sx={{color: 'white', p: 0}}
+                        >
+                            <GitHub sx={{fontSize: '3rem'}} />
+                        </IconButton>
+                    </Grid>
+                    <Grid
+                        item
+                        lg={1}
                     >
-                        <LinkedIn sx={{fontSize: '3rem'}} />
-                    </IconButton>
+                        <IconButton
+                            href='https://www.linkedin.com/in/jared-hayashi-2656541b7/' size='large'
+                            sx={{color: 'white', p: 0}}
+                        >
+                            <LinkedIn sx={{fontSize: '3rem'}} />
+                        </IconButton>
+                    </Grid>
                 </Grid>
             </Grid>
-        </Grid>
+        </Fade>
     </Grid>
 );
