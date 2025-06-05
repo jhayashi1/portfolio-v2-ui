@@ -88,32 +88,34 @@ const reactRules = {
     ],
 };
 
-
-export default [{
-    plugins: {
-        '@typescript-eslint': TypeScriptESLint,
-    },
-    files          : ['**/*.js', '**/*.mjs', '**/*.ts', '**/*.tsx'],
-    languageOptions: {
-        parser,
-        parserOptions: {
-            ecmaFeatures   : {modules: true},
-            ecmaVersion    : 'latest',
-            sourceType     : 'module',
-            project        : 'tsconfig.eslint.json',
-            tsconfigRootDir: './',
+export default [
+    // JS config (no type-aware rules)
+    {
+        files          : ['**/*.js', '**/*.mjs'],
+        plugins        : {react},
+        languageOptions: {
+            parserOptions: {ecmaVersion: 'latest', sourceType: 'module'},
+            globals      : {...globals.node, ...globals.es2021, ...globals.browser},
         },
-        ecmaVersion: 12,
-        globals    : {
-            ...globals.node,
-            ...globals.es2021,
-            ...globals.browser,
+        rules  : {...commonRules, ...reactRules},
+        ignores: ['dist/**'],
+    },
+    // TS config (with type-aware rules)
+    {
+        files          : ['**/*.ts', '**/*.tsx'],
+        plugins        : {react, '@typescript-eslint': TypeScriptESLint},
+        languageOptions: {
+            parser,
+            parserOptions: {
+                ecmaFeatures   : {modules: true},
+                ecmaVersion    : 'latest',
+                sourceType     : 'module',
+                project        : 'tsconfig.eslint.json', // or 'tsconfig.json'
+                tsconfigRootDir: './',
+            },
+            globals: {...globals.node, ...globals.es2021, ...globals.browser},
         },
+        rules  : {...commonRules, ...typescriptRules, ...reactRules},
+        ignores: ['dist/**'],
     },
-    rules: {
-        ...commonRules,
-        ...typescriptRules,
-        ...reactRules,
-    },
-    ignores: ['dist/**'],
-}];
+];
