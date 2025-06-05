@@ -9,7 +9,6 @@ export const TopNav: FC = () => {
             color='secondary'
             elevation={0}
             position='static'
-            sx={{height: '5rem'}}
         >
             <Container
                 maxWidth='xl'

@@ -17,7 +17,7 @@ export const Introduction: FC = () => (
         >
             <Fade
                 in
-                timeout={200}
+                timeout={1000}
             >
                 <Typography
                     noWrap
@@ -29,7 +29,7 @@ export const Introduction: FC = () => (
             </Fade>
             <Fade
                 in
-                timeout={400}
+                timeout={1500}
             >
                 <Box sx={{mt: '1.5rem'}}>
                     <Typography
@@ -43,7 +43,7 @@ export const Introduction: FC = () => (
             </Fade>
             <Fade
                 in
-                timeout={800}
+                timeout={2000}
             >
                 <Box sx={{mt: '4rem'}}>
                     <Typography
@@ -58,7 +58,7 @@ export const Introduction: FC = () => (
         </Grid>
         <Fade
             in
-            timeout={1000}
+            timeout={2500}
         >
             <Grid
                 item

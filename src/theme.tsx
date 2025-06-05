@@ -55,6 +55,15 @@ export const theme = createTheme({
                 },
             },
         },
+        MuiAppBar: {
+            styleOverrides: {
+                root: {
+                    height      : '5rem',
+                    borderBottom: '1px solid',
+                    borderColor : tertiaryColor,
+                },
+            },
+        },
     },
     typography: {
         fontFamily: 'Mulish',
