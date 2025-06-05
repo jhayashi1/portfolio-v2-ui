@@ -16,6 +16,7 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["src", "eslint.config.js", "esbuild.config.ts", "lambda", "scripts"],
+  "include": ["src", "eslint.config.js", "esbuild.config.ts", "lambda"],
+  "exclude": ["scripts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
