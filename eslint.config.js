@@ -66,11 +66,10 @@ const typescriptRules = {
 };
 
 const reactRules = {
-    'react/jsx-first-prop-new-line'     : [2, 'multiline'],
-    'react/jsx-max-props-per-line'      : [2, {when: 'always', maximum: 2}],
-    'react/jsx-closing-bracket-location': [2, 'tag-aligned'],
-    'react/jsx-curly-newline'           : [2, {multiline: 'consistent', singleline: 'consistent'}],
-    'react/jsx-sort-props'              : [2,
+    'react/jsx-first-prop-new-line': [2, 'multiline'],
+    'react/jsx-max-props-per-line' : [2, {when: 'always', maximum: 1}],
+    'react/jsx-curly-newline'      : [2, {multiline: 'consistent', singleline: 'consistent'}],
+    'react/jsx-sort-props'         : [2,
         {
             callbacksLast       : true,
             shorthandFirst      : true,
@@ -86,7 +85,8 @@ const reactRules = {
             beforeClosing    : 'never',
         },
     ],
-    'jsx-quotes': [2, 'prefer-single'],
+    'jsx-quotes'                        : [2, 'prefer-single'],
+    'react/jsx-closing-bracket-location': [2, 'line-aligned'],
 };
 
 export default [

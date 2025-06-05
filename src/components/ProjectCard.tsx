@@ -45,7 +45,10 @@ export const ProjectCard: FC<ProjectCardProps> = ({
                     >
                         {title}
                     </Typography>
-                    <Divider sx={{mt: '0.5rem', backgroundColor: 'white', width: '7.5%'}} variant='middle' />
+                    <Divider
+                        sx={{mt: '0.5rem', backgroundColor: 'white', width: '7.5%'}}
+                        variant='middle'
+                    />
                     <SkillsList skills={skills} />
                     <Typography
                         sx={{m: '1rem'}}

@@ -9,9 +9,6 @@ on:
 permissions:
   id-token: write
   contents: read 
-env: 
-  AWS_REGION: "us-east-1"
-  S3_BUCKET_NAME: "s3://jaredhayashi.com"
 
 jobs:
   build: 
@@ -119,3 +116,6 @@ jobs:
       - name: s3 sync
         run: |
           aws s3 sync dist ${{ env.S3_BUCKET_NAME }}
+      - name: invalidate cloudfront cache
+        run: |
+          aws cloudfront create-invalidation --distribution-id ${{ env.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"

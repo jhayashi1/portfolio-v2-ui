@@ -4,31 +4,47 @@ import type {FC} from 'react';
 import {content} from '../constants';
 
 export const Introduction: FC = () => (
-    <Grid container direction='column'>
+    <Grid
+        container
+        direction='column'
+    >
         <Grid
-            item lg={10}
-            md={12} sx={{minHeight: '75vh'}}
+            item
+            lg={10}
+            md={12}
+            sx={{minHeight: '75vh'}}
             xs={12}
         >
-            <Fade in timeout={200}>
+            <Fade
+                in
+                timeout={200}
+            >
                 <Typography
-                    noWrap sx={{fontWeight: 'semibold'}}
+                    noWrap
+                    sx={{fontWeight: 'bold'}}
                     variant='h1'
                 >
                     {content.name}
                 </Typography>
             </Fade>
-            <Fade in timeout={400}>
+            <Fade
+                in
+                timeout={400}
+            >
                 <Box sx={{mt: '1.5rem'}}>
                     <Typography
-                        noWrap sx={{opacity: 0.6}}
+                        noWrap
+                        sx={{opacity: 0.6}}
                         variant='h3'
                     >
                         {content.title}
                     </Typography>
                 </Box>
             </Fade>
-            <Fade in timeout={800}>
+            <Fade
+                in
+                timeout={800}
+            >
                 <Box sx={{mt: '4rem'}}>
                     <Typography
                         noWrap
@@ -40,7 +56,10 @@ export const Introduction: FC = () => (
                 </Box>
             </Fade>
         </Grid>
-        <Fade in timeout={1000}>
+        <Fade
+            in
+            timeout={1000}
+        >
             <Grid
                 item
                 lg={2}
@@ -70,7 +89,8 @@ export const Introduction: FC = () => (
                         lg={1}
                     >
                         <IconButton
-                            href='https://www.linkedin.com/in/jared-hayashi-2656541b7/' size='large'
+                            href='https://www.linkedin.com/in/jared-hayashi-2656541b7/'
+                            size='large'
                             sx={{color: 'white', p: 0}}
                         >
                             <LinkedIn sx={{fontSize: '3rem'}} />

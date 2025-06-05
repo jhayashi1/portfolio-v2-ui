@@ -11,8 +11,14 @@ export const TopNav: FC = () => {
             position='static'
             sx={{height: '5rem'}}
         >
-            <Container maxWidth='xl' sx={{height: '100%'}}>
-                <Toolbar disableGutters sx={{height: '100%'}}>
+            <Container
+                maxWidth='xl'
+                sx={{height: '100%'}}
+            >
+                <Toolbar
+                    disableGutters
+                    sx={{height: '100%'}}
+                >
                     <Box
                         sx={{
                             flexGrow: 1,
