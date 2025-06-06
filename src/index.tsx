@@ -10,20 +10,22 @@ import {Box, Container, Paper} from '@mui/material';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
-        <CssBaseline />
         <ThemeProvider theme={theme}>
-            <BrowserRouter>
-                <Paper sx={{borderRadius: 0, flex: 1, minHeight: '100vh'}}>
-                    <TopNav />
-                    <Container maxWidth='xl'>
-                        <Box sx={{mt: '3rem'}}>
-                            <Routes>
-                                {routes}
-                            </Routes>
-                        </Box>
-                    </Container>
+            <CssBaseline />
+            <Box sx={{display: 'flex', flexDirection: 'column', minHeight: '100vh'}}>
+                <Paper sx={{borderRadius: 0, flex: 1, display: 'flex', flexDirection: 'column'}}>
+                    <BrowserRouter>
+                        <TopNav />
+                        <Container maxWidth='xl'>
+                            <Box sx={{mt: '3rem'}}>
+                                <Routes>
+                                    {routes}
+                                </Routes>
+                            </Box>
+                        </Container>
+                    </BrowserRouter>
                 </Paper>
-            </BrowserRouter>
+            </Box>
         </ThemeProvider>
     </React.StrictMode>
 );

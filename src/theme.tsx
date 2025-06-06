@@ -32,6 +32,16 @@ export const theme = createTheme({
         },
     },
     components: {
+        MuiCssBaseline: {
+            styleOverrides: {
+                body: {
+                    backgroundColor: primaryColor,
+                },
+                html: {
+                    backgroundColor: primaryColor,
+                },
+            },
+        },
         MuiDivider: createColorOverride('#303030'),
         MuiCard   : {
             styleOverrides: {
