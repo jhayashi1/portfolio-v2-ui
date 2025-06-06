@@ -4,17 +4,15 @@ import type {FC} from 'react';
 import {content} from '../constants';
 
 export const Introduction: FC = () => (
-    <Grid
-        container
-        direction='column'
+    <Box
+        sx={{
+            mt           : '10vh',
+            minHeight    : '80vh',
+            display      : 'flex',
+            flexDirection: 'column',
+        }}
     >
-        <Grid
-            item
-            lg={10}
-            md={12}
-            sx={{minHeight: '75vh'}}
-            xs={12}
-        >
+        <Box sx={{flex: 1}}>
             <Fade
                 in
                 timeout={1000}
@@ -55,49 +53,42 @@ export const Introduction: FC = () => (
                     </Typography>
                 </Box>
             </Fade>
-        </Grid>
+        </Box>
         <Fade
             in
             timeout={2500}
         >
             <Grid
-                item
-                lg={2}
-                md={6}
-                sm={12}
+                container
+                columns={20}
+                display='flex'
+                justifyContent='left'
             >
                 <Grid
-                    container
-                    columns={20}
-                    display='flex'
-                    justifyContent='left'
+                    item
+                    lg={1}
                 >
-                    <Grid
-                        item
-                        lg={1}
+                    <IconButton
+                        href='https://github.com/jhayashi1'
+                        size='large'
+                        sx={{color: 'white', p: 0}}
                     >
-                        <IconButton
-                            href='https://github.com/jhayashi1'
-                            size='large'
-                            sx={{color: 'white', p: 0}}
-                        >
-                            <GitHub sx={{fontSize: '3rem'}} />
-                        </IconButton>
-                    </Grid>
-                    <Grid
-                        item
-                        lg={1}
+                        <GitHub sx={{fontSize: '3rem'}} />
+                    </IconButton>
+                </Grid>
+                <Grid
+                    item
+                    lg={1}
+                >
+                    <IconButton
+                        href='https://www.linkedin.com/in/jared-hayashi-2656541b7/'
+                        size='large'
+                        sx={{color: 'white', p: 0}}
                     >
-                        <IconButton
-                            href='https://www.linkedin.com/in/jared-hayashi-2656541b7/'
-                            size='large'
-                            sx={{color: 'white', p: 0}}
-                        >
-                            <LinkedIn sx={{fontSize: '3rem'}} />
-                        </IconButton>
-                    </Grid>
+                        <LinkedIn sx={{fontSize: '3rem'}} />
+                    </IconButton>
                 </Grid>
             </Grid>
         </Fade>
-    </Grid>
+    </Box>
 );
