@@ -12,7 +12,6 @@ export const WorkCard: FC<WorkCardProps> = ({
 }) => {
     return (
         <Card
-            raised
             sx={{height: '100%', my: '2rem'}}
             variant='outlined'
         >

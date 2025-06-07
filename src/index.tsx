@@ -7,6 +7,7 @@ import {routes} from './routes';
 import {TopNav} from './components/TopNav';
 import {theme} from './theme';
 import {Box, Container, Paper} from '@mui/material';
+import {UsageTracking} from './components/UsageTracking';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
@@ -15,6 +16,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
             <Box sx={{display: 'flex', flexDirection: 'column', minHeight: '100vh'}}>
                 <Paper sx={{borderRadius: 0, flex: 1, display: 'flex', flexDirection: 'column'}}>
                     <BrowserRouter>
+                        <UsageTracking />
                         <TopNav />
                         <Container maxWidth='xl'>
                             <Box sx={{mt: '3rem'}}>

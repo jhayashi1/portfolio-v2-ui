@@ -16,6 +16,7 @@ export const Work: FC = () => {
                 <WorkCard
                     company={company}
                     description={description}
+                    key={`${company} ${title} ${time}`}
                     skills={skills}
                     team={team}
                     time={time}
