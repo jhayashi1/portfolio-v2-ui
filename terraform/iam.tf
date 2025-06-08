@@ -62,7 +62,7 @@ resource "aws_iam_role" "usage_lambda_role" {
 
 resource "aws_iam_role_policy" "usage_lambda_policy" {
   name   = "usage-lambda-policy"
-  role   = aws_iam_role.lambda_dynamodb_role.id
+  role   = aws_iam_role.usage_lambda_role.id
   policy = jsonencode({
     Version = "2012-10-17"
     Statement = [
