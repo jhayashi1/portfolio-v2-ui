@@ -22,6 +22,6 @@ resource "aws_dynamodb_table" "usage_pages" {
 
   attribute {
     name = "ts"
-    type = "S"
+    type = "N"
   }
 }

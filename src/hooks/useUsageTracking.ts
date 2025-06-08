@@ -1,13 +1,15 @@
 import {useEffect, useRef} from 'react';
 import {useLocation} from 'react-router-dom';
+import {useUserContext} from '../context';
 
 const STORAGE_KEY = 'usageTrackingBuffer';
-const SEND_INTERVAL = 60 * 1000;
+const SEND_INTERVAL = 15 * 1000;
 
 export const useUsageTracking = (): void => {
     const location = useLocation();
     const enterTimeRef = useRef(Date.now());
     const prevPathRef = useRef(location.pathname);
+    const metadata = useUserContext();
 
     const getBuffer = (): UsageData[] => {
         const raw = localStorage.getItem(STORAGE_KEY) ?? '[]';
@@ -22,10 +24,21 @@ export const useUsageTracking = (): void => {
         localStorage.removeItem(STORAGE_KEY);
     };
 
-    const sendBuffer = (): void => {
+    const sendBuffer = async (): Promise<void> => {
         const buffer = getBuffer();
         if (buffer.length > 0) {
-            console.log('Sending usage data:', JSON.stringify(buffer, null, 4));
+            try {
+                await fetch('https://usage.jaredhayashi.com/usage', {
+                    method : 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({buffer, metadata}),
+                });
+            } catch (e) {
+                console.error('Failed to send usage data', e);
+                return;
+            }
             clearBuffer();
         }
     };
@@ -70,7 +83,6 @@ export const useUsageTracking = (): void => {
                 type: 'UNLOAD',
             });
             setBuffer(buffer);
-            sendBuffer();
         };
 
         const handleVisibilityChange = (): void => {
