@@ -1,4 +1,5 @@
-import React, {createContext, useContext} from 'react';
+import React, {createContext, useContext, useEffect} from 'react';
+import type {UsageMetadata} from './hooks/useUsageTracking';
 
 const generateSessionId = (): string => {
     let sessionId = sessionStorage.getItem('usageTrackingSessionId');
@@ -24,7 +25,30 @@ export const UserContextProvider: React.FC<{children: React.ReactNode}> = ({chil
         language : navigator.language,
     };
 
-    console.log(`context initialized with value: ${JSON.stringify(init, null, 4)}`);
+    useEffect(() => {
+        const sendUsageSession = async (body: UsageMetadata): Promise<void> => {
+            try {
+                await fetch('https://usage.jaredhayashi.com/usage/session', {
+                    method : 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({...body}),
+                });
+            } catch (e) {
+                console.error(`Failed to send usage session data ${e}`);
+            }
+        };
+
+        const metadata = {
+            sessionId: init.sessionId,
+            platform : init.platform,
+            timezone : init.timezone,
+            language : init.language,
+        };
+
+        sendUsageSession(metadata);
+    }, []);
 
     return (
         <UserContext.Provider value={init}>

@@ -46,3 +46,9 @@ resource "aws_apigatewayv2_route" "usage_post" {
   route_key          = "POST /usage"
   target             = "integrations/${aws_apigatewayv2_integration.usage.id}"
 }
+
+resource "aws_apigatewayv2_route" "usage_session_post" {
+  api_id             = aws_apigatewayv2_api.api.id
+  route_key          = "POST /usage/session"
+  target             = "integrations/${aws_apigatewayv2_integration.usage.id}"
+}
