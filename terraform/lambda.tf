@@ -34,7 +34,7 @@ resource "aws_lambda_function" "usage" {
   memory_size = "256"
   timeout     = "5"
   runtime     = "nodejs22.x"
-  role        = "arn:aws:iam::${data.aws_caller_identity.current.account_id}:role/cloudfront-kill-switch-role" // todo
+  role        = aws_iam_role.usage_lambda_role.arn
 
   filename         = "api.zip"
   source_code_hash = filebase64sha256("api.zip")
