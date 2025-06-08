@@ -5,7 +5,7 @@ resource "aws_apigatewayv2_api" "api" {
   cors_configuration {
     allow_headers = ["*"]
     allow_methods = ["GET", "POST"]
-    allow_origins = ["https://jaredhayashi.com", "http://localhost:8080"]
+    allow_origins = ["https://jaredhayashi.com"]
   }
 }
 
