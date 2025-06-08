@@ -19,6 +19,7 @@ export const UsageRouteController = {
                 buffer: Joi.array().items(
                     Joi.object({
                         path     : Joi.string().required(),
+                        to       : Joi.string().optional(),
                         timeSpent: Joi.number().required(),
                         ts       : Joi.number().required(),
                         type     : Joi.string().valid('CHANGE_PAGE', 'UNLOAD').required(),

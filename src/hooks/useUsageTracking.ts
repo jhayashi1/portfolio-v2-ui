@@ -3,7 +3,7 @@ import {useLocation} from 'react-router-dom';
 import {useUserContext} from '../context';
 
 const STORAGE_KEY = 'usageTrackingBuffer';
-const SEND_INTERVAL = 15 * 1000;
+const SEND_INTERVAL = 10 * 1000;
 
 export const useUsageTracking = (): void => {
     const location = useLocation();
@@ -36,9 +36,10 @@ export const useUsageTracking = (): void => {
                     body: JSON.stringify({buffer, metadata}),
                 });
             } catch (e) {
-                console.error('Failed to send usage data', e);
+                console.error(`Failed to send usage data ${e}`);
                 return;
             }
+
             clearBuffer();
         }
     };
@@ -52,6 +53,7 @@ export const useUsageTracking = (): void => {
             const buffer = getBuffer();
             buffer.push({
                 path: prevPath,
+                to  : location.pathname,
                 timeSpent,
                 ts  : now,
                 type: 'CHANGE_PAGE',
@@ -106,6 +108,7 @@ export const useUsageTracking = (): void => {
 
 export interface UsageData {
     path: string;
+    to? : string;
     timeSpent: number;
     ts: number;
     type: 'CHANGE_PAGE' | 'UNLOAD';
