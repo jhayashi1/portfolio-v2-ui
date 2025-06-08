@@ -7,7 +7,7 @@
   "scripts": {
     "start": "vite",
     "build:frontend": "vite build",
-    "build:lambda": "tsx scripts/build-lambda.ts",
+    "build:lambdas": "tsx scripts/build-lambda.ts",
     "preview": "vite preview",
     "lint": "eslint .",
     "types": "tsc --noEmit"
