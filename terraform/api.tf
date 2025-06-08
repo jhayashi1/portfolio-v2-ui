@@ -5,7 +5,7 @@ resource "aws_apigatewayv2_api" "api" {
   cors_configuration {
     allow_headers = ["*"]
     allow_methods = ["GET", "POST"]
-    allow_origins = ["https://jaredhayashi.com"]
+    allow_origins = ["https://jaredhayashi.com", "http://localhost:3000"]
   }
 }
 
@@ -16,7 +16,7 @@ resource "aws_apigatewayv2_stage" "stage" {
 }
 
 resource "aws_apigatewayv2_domain_name" "domain" {
-  domain_name = "api.jaredhayashi.com"
+  domain_name = "usage.jaredhayashi.com"
 
   domain_name_configuration {
     certificate_arn = aws_acm_certificate.api_cert.arn
