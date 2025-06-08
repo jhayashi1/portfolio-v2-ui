@@ -12,6 +12,9 @@
     "lint": "eslint .",
     "types": "tsc --noEmit"
   },
+  "engines": {
+    "node": "22.16"
+  },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/jhayashi1/portfolio-v2-ui.git"

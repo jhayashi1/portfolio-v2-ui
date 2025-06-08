@@ -29,10 +29,10 @@ jobs:
         run:  pnpm run types
       - name: lint
         run:  pnpm run lint
-      - name: build frontend
-        run:  pnpm run build:frontend
       - name: build lambda
         run:  pnpm run build:lambdas
+      - name: build frontend
+        run:  pnpm run build:frontend
       - name: list files
         run: ls -lR
       - name: upload frontend artifact
