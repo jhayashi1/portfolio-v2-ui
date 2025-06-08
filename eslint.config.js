@@ -28,7 +28,7 @@ const commonRules = {
         },
     }],
     'object-curly-spacing': [2, 'never'],
-    'object-shorthand': [2, 'always'],
+    'object-shorthand'    : [2, 'always'],
     'prefer-template'     : 2,
     'quote-props'         : [2, 'as-needed'],
     quotes                : [2, 'single'],
