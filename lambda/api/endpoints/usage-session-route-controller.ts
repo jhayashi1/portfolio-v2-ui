@@ -4,7 +4,7 @@ import {parseEventBody} from '../utils';
 import {usageSessionRoute} from './usage-session-route';
 
 
-export const UsageRouteController = {
+export const UsageSessionRouteController = {
     validator: async (event: APIGatewayProxyEventV2WithJWTAuthorizer): Promise<[UsageSessionRequestBody]> => [
         await Joi
             .object<UsageSessionRequestBody>()
