@@ -16,6 +16,7 @@ export const Projects: FC = () => {
                 <ProjectCard
                     description={description}
                     image={image}
+                    key={`${title} ${image} ${link}`}
                     link={link}
                     skills={skills}
                     title={title}

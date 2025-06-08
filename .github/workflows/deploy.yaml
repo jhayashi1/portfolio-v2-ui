@@ -32,17 +32,22 @@ jobs:
       - name: build frontend
         run:  pnpm run build:frontend
       - name: build lambda
-        run:  pnpm run build:lambda
+        run:  pnpm run build:lambdas
       - name: upload frontend artifact
         uses: actions/upload-artifact@v4
         with:
             name: frontend
             path: dist/
-      - name: upload lambda artifact
+      - name: upload switch lambda artifact
         uses: actions/upload-artifact@v4
         with:
-            name: lambda
-            path: lambda.zip
+            name: switch
+            path: switch.zip
+      - name: upload api lambda artifact
+        uses: actions/upload-artifact@v4
+        with:
+            name: api
+            path: api.zip
   terraform-plan:
     needs: build
     runs-on: ubuntu-latest
@@ -50,11 +55,16 @@ jobs:
     steps:
       - name: checkout code
         uses: actions/checkout@v3
-      - name: Download artifact
+      - name: Download switch lambda artifact
         uses: actions/download-artifact@v4
         with:
-          name: lambda
+          name: switch
           path: terraform 
+      - name: Download api lambda artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: api
+          path: terraform
       - name: configure aws credentials
         uses: aws-actions/configure-aws-credentials@v3
         with:
@@ -74,11 +84,16 @@ jobs:
     steps:
       - name: checkout code
         uses: actions/checkout@v3
-      - name: Download artifact
+      - name: Download switch lambda artifact
         uses: actions/download-artifact@v4
         with:
-          name: lambda
+          name: switch
           path: terraform 
+      - name: Download api lambda artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: api
+          path: terraform
       - name: configure aws credentials
         uses: aws-actions/configure-aws-credentials@v3
         with:

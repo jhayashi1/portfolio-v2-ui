@@ -1,11 +1,10 @@
 import type {BuildOptions} from 'esbuild';
 
 export default {
-    entryPoints      : ['lambda/index.ts'],
     format           : 'cjs',
     platform         : 'node',
-    target           : 'node20.10',
-    outdir           : 'dist/lambda',
+    target           : 'node22.10',
+    outdir           : 'dist',
     loader           : {'.html': 'text', '.css': 'text'},
     bundle           : true,
     minifySyntax     : true,

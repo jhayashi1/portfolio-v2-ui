@@ -28,6 +28,7 @@ const commonRules = {
         },
     }],
     'object-curly-spacing': [2, 'never'],
+    'object-shorthand': [2, 'always'],
     'prefer-template'     : 2,
     'quote-props'         : [2, 'as-needed'],
     quotes                : [2, 'single'],
@@ -109,7 +110,7 @@ export default [
                 ecmaFeatures   : {modules: true},
                 ecmaVersion    : 'latest',
                 sourceType     : 'module',
-                project        : 'tsconfig.eslint.json', // or 'tsconfig.json'
+                project        : 'tsconfig.eslint.json',
                 tsconfigRootDir: './',
             },
             globals: {...globals.node, ...globals.es2021, ...globals.browser},

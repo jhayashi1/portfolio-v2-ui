@@ -11,7 +11,6 @@ export const ProjectCard: FC<ProjectCardProps> = ({
 }) => {
     return (
         <Card
-            raised
             component='a'
             href={link}
             sx={{
