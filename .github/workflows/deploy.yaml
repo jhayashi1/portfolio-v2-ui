@@ -42,12 +42,12 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
             name: switch
-            path: switch.zip
+            path: terraform/switch.zip
       - name: upload api lambda artifact
         uses: actions/upload-artifact@v4
         with:
             name: api
-            path: api.zip
+            path: terraform/api.zip
   terraform-plan:
     needs: build
     runs-on: ubuntu-latest
