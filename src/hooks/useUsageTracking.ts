@@ -9,21 +9,6 @@ export const useUsageTracking = (): void => {
     const enterTimeRef = useRef(Date.now());
     const prevPathRef = useRef(location.pathname);
 
-    const generateSessionId = (): string => {
-        let sessionId = sessionStorage.getItem('usageTrackingSessionId');
-        if (!sessionId) {
-            sessionId = crypto.randomUUID();
-            sessionStorage.setItem('usageTrackingSessionId', sessionId);
-            console.log(`using sessionid: ${sessionId}`);
-        }
-        return sessionId;
-    };
-
-    const sessionId = generateSessionId();
-    const platform = navigator.userAgent;
-    const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-    const language = navigator.language;
-
     const getBuffer = (): UsageData[] => {
         const raw = localStorage.getItem(STORAGE_KEY) ?? '[]';
         return JSON.parse(raw);

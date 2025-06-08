@@ -8,26 +8,29 @@ import {TopNav} from './components/TopNav';
 import {theme} from './theme';
 import {Box, Container, Paper} from '@mui/material';
 import {UsageTracking} from './components/UsageTracking';
+import {UserContextProvider} from './context';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
-        <ThemeProvider theme={theme}>
-            <CssBaseline />
-            <Box sx={{display: 'flex', flexDirection: 'column', minHeight: '100vh'}}>
-                <Paper sx={{borderRadius: 0, flex: 1, display: 'flex', flexDirection: 'column'}}>
-                    <BrowserRouter>
-                        <UsageTracking />
-                        <TopNav />
-                        <Container maxWidth='xl'>
-                            <Box sx={{mt: '3rem'}}>
-                                <Routes>
-                                    {routes}
-                                </Routes>
-                            </Box>
-                        </Container>
-                    </BrowserRouter>
-                </Paper>
-            </Box>
-        </ThemeProvider>
+        <UserContextProvider>
+            <ThemeProvider theme={theme}>
+                <CssBaseline />
+                <Box sx={{display: 'flex', flexDirection: 'column', minHeight: '100vh'}}>
+                    <Paper sx={{borderRadius: 0, flex: 1, display: 'flex', flexDirection: 'column'}}>
+                        <BrowserRouter>
+                            <UsageTracking />
+                            <TopNav />
+                            <Container maxWidth='xl'>
+                                <Box sx={{mt: '3rem'}}>
+                                    <Routes>
+                                        {routes}
+                                    </Routes>
+                                </Box>
+                            </Container>
+                        </BrowserRouter>
+                    </Paper>
+                </Box>
+            </ThemeProvider>
+        </UserContextProvider>
     </React.StrictMode>
 );
