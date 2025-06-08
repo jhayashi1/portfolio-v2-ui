@@ -92,21 +92,16 @@ export const useUsageTracking = (): void => {
     }, []);
 };
 
-interface UsageData {
+export interface UsageData {
     path: string;
     timeSpent: number;
     ts: number;
     type: 'CHANGE_PAGE' | 'UNLOAD';
 }
 
-interface UsageMetadata {
+export interface UsageMetadata {
     sessionId: string;
     platform: string;
     timezone: string;
     language: string;
-}
-
-interface UsagePayload {
-    metadata: UsageMetadata;
-    buffer: UsageData[];
 }
