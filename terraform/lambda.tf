@@ -33,7 +33,7 @@ resource "aws_lambda_function" "usage" {
 
   memory_size = "256"
   timeout     = "5"
-  runtime     = "nodejs22.x"
+  runtime     = "nodejs24.x"
   role        = aws_iam_role.usage_lambda_role.arn
 
   filename         = "api.zip"

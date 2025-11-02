@@ -1,0 +1,1 @@
+1. Don't worry about linting errors that involve formatting such as spacing, the user will take care of them

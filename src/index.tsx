@@ -20,8 +20,8 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
                         <BrowserRouter>
                             <UsageTracking />
                             <TopNav />
-                            <Container maxWidth='xl'>
-                                <Box sx={{mt: '3rem'}}>
+                            <Container maxWidth='lg'>
+                                <Box sx={{mt: 12}}>
                                     <Routes>
                                         {routes}
                                     </Routes>

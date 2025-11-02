@@ -1,61 +1,67 @@
-import {AppBar, Box, Button, Container, Toolbar, Typography} from '@mui/material';
+import {Box, Button, Typography} from '@mui/material';
 import type {FC} from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useLocation} from 'react-router-dom';
 import {pages} from '../constants';
 
+// Type declaration for the custom variant
+declare module '@mui/material/Button' {
+    interface ButtonPropsVariantOverrides {
+        navButton: true;
+    }
+}
+
 export const TopNav: FC = () => {
+    const location = useLocation();
+
     return (
-        <AppBar
-            color='secondary'
-            elevation={0}
-            position='static'
+        <Box
+            sx={{
+                display       : 'flex',
+                justifyContent: 'center',
+                pt            : 4,
+                pb            : 2,
+                px            : 4,
+            }}
         >
-            <Container
-                maxWidth='xl'
-                sx={{height: '100%'}}
+            <Box
+                sx={{
+                    display        : 'flex',
+                    alignItems     : 'center',
+                    gap            : 1,
+                    backgroundColor: 'secondary.main',
+                    borderRadius   : 3,
+                    px             : 6,
+                    py             : 2,
+                    boxShadow      : 2,
+                    border         : '1px solid',
+                    borderColor    : 'grey.800',
+                }}
             >
-                <Toolbar
-                    disableGutters
-                    sx={{height: '100%'}}
-                >
-                    <Box
-                        sx={{
-                            flexGrow: 1,
-                            display : 'flex',
-                            height  : '100%',
-                        }}
-                        textAlign='center'
-                    >
-                        {Object.keys(pages).map((page) => (
-                            <Button
-                                component={Link}
-                                key={page}
+                {Object.keys(pages).map((page) => {
+                    const isActive = location.pathname === pages[page];
+                    return (
+                        <Button
+                            className={isActive ? 'active' : ''}
+                            component={Link}
+                            key={page}
+                            to={pages[page]}
+                            variant='navButton'
+                        >
+                            <Typography
+                                noWrap
                                 sx={{
-                                    display       : 'flex',
-                                    p             : '2rem',
-                                    color         : 'inherit',
-                                    justifyContent: 'center',
-                                    alignItems    : 'center',
-                                    transition    : '0.2s',
-                                    '&:hover'     : {
-                                        backgroundColor: 'primary.main',
-                                        color          : 'white',
-                                    },
+                                    fontWeight   : isActive ? 'bold' : 'semibold',
+                                    textTransform: 'none',
+                                    color        : 'inherit',
                                 }}
-                                to={pages[page]}
+                                variant='h6'
                             >
-                                <Typography
-                                    noWrap
-                                    sx={{fontWeight: 'semibold', textTransform: 'none'}}
-                                    variant='h6'
-                                >
-                                    {page}
-                                </Typography>
-                            </Button>
-                        ))}
-                    </Box>
-                </Toolbar>
-            </Container>
-        </AppBar>
+                                {page}
+                            </Typography>
+                        </Button>
+                    );
+                })}
+            </Box>
+        </Box>
     );
 };

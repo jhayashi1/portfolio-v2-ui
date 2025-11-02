@@ -26,6 +26,10 @@ export const UserContextProvider: React.FC<{children: React.ReactNode}> = ({chil
     };
 
     useEffect(() => {
+        if (process.env.NODE_ENV === 'development') {
+            return;
+        }
+
         const sendUsageSession = async (body: UsageMetadata): Promise<void> => {
             try {
                 await fetch('https://usage.jaredhayashi.com/usage/session', {

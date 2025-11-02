@@ -1,6 +1,7 @@
 import {Card, Divider, Grid, ImageList, ImageListItem, Typography} from '@mui/material';
 import type {FC} from 'react';
 import {SkillsList} from './SkillsList';
+import {borders, shadows} from '../tokens';
 
 export const ProjectCard: FC<ProjectCardProps> = ({
     title,
@@ -14,12 +15,14 @@ export const ProjectCard: FC<ProjectCardProps> = ({
             component='a'
             href={link}
             sx={{
-                height    : '100%',
-                my        : '2rem',
-                transition: 'transform 0.2s, box-shadow 0.2s',
-                '&:hover' : {
+                height      : '100%',
+                my          : 8,
+                borderTop   : borders.accent,
+                borderRadius: 2,
+                transition  : 'transform 0.2s, box-shadow 0.2s',
+                '&:hover'   : {
                     transform: 'scale(1.05)',
-                    boxShadow: 6,
+                    boxShadow: shadows.blueGlow,
                 },
                 textDecoration: 'none',
                 color         : 'inherit',
@@ -39,18 +42,22 @@ export const ProjectCard: FC<ProjectCardProps> = ({
                     xs={8}
                 >
                     <Typography
-                        sx={{ml: '1rem', mt: '1rem', fontWeight: 'semibold'}}
+                        sx={{ml: 4, mt: 4, fontWeight: 'semibold'}}
                         variant='h4'
                     >
                         {title}
                     </Typography>
                     <Divider
-                        sx={{mt: '0.5rem', backgroundColor: 'white', width: '7.5%'}}
-                        variant='middle'
+                        sx={{
+                            mt             : 2,
+                            ml             : 4,
+                            backgroundColor: 'white',
+                            width          : '10%',
+                        }}
                     />
                     <SkillsList skills={skills} />
                     <Typography
-                        sx={{m: '1rem'}}
+                        sx={{m: 4}}
                         variant='h6'
                     >
                         {description}
@@ -66,12 +73,13 @@ export const ProjectCard: FC<ProjectCardProps> = ({
                 >
                     <ImageList
                         cols={1}
-                        sx={{mr: '1rem'}}
+                        sx={{mr: 4}}
                     >
                         <ImageListItem
                             sx={{
-                                border      : '0.15rem solid steelblue',
-                                borderRadius: '0.5rem',
+                                border      : 1,
+                                borderColor : 'steelblue',
+                                borderRadius: 2,
                                 overflow    : 'hidden',
                             }}
                         >

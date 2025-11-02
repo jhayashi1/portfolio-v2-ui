@@ -10,7 +10,7 @@ export const CenteredTitle: FC<CenteredTitleProps> = ({title}) => {
             >
                 {title}
             </Typography>
-            <Divider sx={{mt: '1rem', mb: '2rem', backgroundColor: 'white', width: '7.5%'}} />
+            <Divider sx={{mt: 4, mb: 8, backgroundColor: 'white', width: '7.5%'}} />
         </Box>
     );
 };
