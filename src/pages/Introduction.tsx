@@ -3,64 +3,73 @@ import type {FC} from 'react';
 import {content} from '../constants';
 import {SocialLinks} from '../components/SocialLinks';
 
+const PAGE_FADE_DURATION = 600;
+const NAME_FADE_DURATION = 1000;
+const TITLE_FADE_DURATION = 1500;
+const STATEMENT_FADE_DURATION = 2000;
+const SOCIAL_FADE_DURATION = 2500;
+
 export const Introduction: FC = () => (
-    <Box
-        sx={{
-            mt           : '10vh',
-            minHeight    : '70vh',
-            display      : 'flex',
-            flexDirection: 'column',
-        }}
+    <Fade
+        in
+        timeout={PAGE_FADE_DURATION}
     >
-        <Box sx={{flex: 1}}>
-            <Fade
-                in
-                timeout={1000}
-            >
-                <Typography
-                    noWrap
-                    sx={{fontWeight: 'bold'}}
-                    variant='h1'
+        <Box
+            sx={{
+                mt           : '10vh',
+                minHeight    : '70vh',
+                display      : 'flex',
+                flexDirection: 'column',
+            }}
+        >
+            <Box sx={{flex: 1}}>
+                <Fade
+                    in
+                    timeout={NAME_FADE_DURATION}
                 >
-                    {content.name}
-                </Typography>
-            </Fade>
-            <Fade
-                in
-                timeout={1500}
-            >
-                <Box sx={{mt: 6}}>
                     <Typography
                         noWrap
-                        sx={{opacity: 0.6}}
-                        variant='h3'
+                        sx={{fontWeight: 'bold'}}
+                        variant='h1'
                     >
-                        {content.title}
+                        {content.name}
                     </Typography>
-                </Box>
-            </Fade>
+                </Fade>
+                <Fade
+                    in
+                    timeout={TITLE_FADE_DURATION}
+                >
+                    <Box sx={{mt: 6}}>
+                        <Typography
+                            noWrap
+                            sx={{opacity: 0.6}}
+                            variant='h3'
+                        >
+                            {content.title}
+                        </Typography>
+                    </Box>
+                </Fade>
+                <Fade
+                    in
+                    timeout={STATEMENT_FADE_DURATION}
+                >
+                    <Box sx={{mt: 16}}>
+                        <Typography
+                            noWrap
+                            sx={{opacity: 0.6}}
+                            variant='h4'
+                        >
+                            {content.statement}
+                        </Typography>
+                    </Box>
+                </Fade>
+            </Box>
             <Fade
                 in
-                timeout={2000}
+                timeout={SOCIAL_FADE_DURATION}
             >
-                <Box sx={{mt: 16}}>
-                    <Typography
-                        noWrap
-                        sx={{opacity: 0.6}}
-                        variant='h4'
-                    >
-                        {content.statement}
-                    </Typography>
-                </Box>
+                <SocialLinks />
             </Fade>
         </Box>
-        <Fade
-            in
-            timeout={2500}
-        >
-            <Box>
-                <SocialLinks />
-            </Box>
-        </Fade>
-    </Box>
+    </Fade>
 );

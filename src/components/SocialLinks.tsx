@@ -2,6 +2,7 @@ import {GitHub, LinkedIn} from '@mui/icons-material';
 import {Box} from '@mui/material';
 import {forwardRef} from 'react';
 import {SocialIconButton} from './SocialIconButton';
+import {colors} from '../tokens';
 
 export const SocialLinks = forwardRef<HTMLDivElement>((props, ref) => (
     <Box
@@ -18,7 +19,6 @@ export const SocialLinks = forwardRef<HTMLDivElement>((props, ref) => (
             icon={<GitHub sx={{fontSize: 48}} />}
         />
         <SocialIconButton
-            hoverColor='#0077b5'
             href='https://www.linkedin.com/in/jared-hayashi-2656541b7/'
             icon={<LinkedIn sx={{fontSize: 48}} />}
         />

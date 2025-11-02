@@ -1,6 +1,7 @@
 import {Card, Divider, Typography} from '@mui/material';
 import type {FC} from 'react';
 import {SkillsList} from './SkillsList';
+import {borders, colors} from '../tokens';
 
 export const WorkCard: FC<WorkCardProps> = ({
     company,
@@ -15,7 +16,7 @@ export const WorkCard: FC<WorkCardProps> = ({
             sx={{
                 height      : '100%',
                 my          : 8,
-                borderTop   : '4px solid #2196f3',
+                borderTop   : borders.accent,
                 borderRadius: 2,
             }}
             variant='outlined'
@@ -34,7 +35,7 @@ export const WorkCard: FC<WorkCardProps> = ({
                 {`${team ?? title}, ${time}`}
             </Typography>
             <Divider
-                sx={{mt: 2, backgroundColor: 'white', width: '7.5%'}}
+                sx={{mt: 2, backgroundColor: colors.white, width: '7.5%'}}
                 variant='middle'
             />
             <SkillsList skills={skills} />

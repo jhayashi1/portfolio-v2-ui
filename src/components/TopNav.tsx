@@ -3,6 +3,13 @@ import type {FC} from 'react';
 import {Link, useLocation} from 'react-router-dom';
 import {pages} from '../constants';
 
+// Type declaration for the custom variant
+declare module '@mui/material/Button' {
+    interface ButtonPropsVariantOverrides {
+        navButton: true;
+    }
+}
+
 export const TopNav: FC = () => {
     const location = useLocation();
 
@@ -20,6 +27,7 @@ export const TopNav: FC = () => {
                 sx={{
                     display        : 'flex',
                     alignItems     : 'center',
+                    gap            : 1,
                     backgroundColor: 'secondary.main',
                     borderRadius   : 3,
                     px             : 6,
@@ -33,39 +41,11 @@ export const TopNav: FC = () => {
                     const isActive = location.pathname === pages[page];
                     return (
                         <Button
+                            className={isActive ? 'active' : ''}
                             component={Link}
                             key={page}
-                            sx={{
-                                display       : 'flex',
-                                px            : 4,
-                                py            : 2,
-                                color         : 'inherit',
-                                justifyContent: 'center',
-                                alignItems    : 'center',
-                                position      : 'relative',
-                                borderRadius  : 2,
-                                mx            : 1,
-                                '&:hover'     : {
-                                    backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                                },
-                                '&::after': {
-                                    content     : '""',
-                                    position    : 'absolute',
-                                    bottom      : -4,
-                                    left        : '50%',
-                                    transform   : 'translateX(-50%)',
-                                    width       : isActive ? '80%' : '0%',
-                                    height      : '3px',
-                                    bgcolor     : isActive ? '#2196f3' : 'primary.main',
-                                    transition  : 'width 0.3s ease-in-out',
-                                    borderRadius: '2px',
-                                },
-                                '&:hover::after': {
-                                    width  : '80%',
-                                    bgcolor: isActive ? '#2196f3' : 'primary.main',
-                                },
-                            }}
                             to={pages[page]}
+                            variant='navButton'
                         >
                             <Typography
                                 noWrap

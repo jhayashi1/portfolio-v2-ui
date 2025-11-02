@@ -1,6 +1,7 @@
 import {Card, Divider, Grid, ImageList, ImageListItem, Typography} from '@mui/material';
 import type {FC} from 'react';
 import {SkillsList} from './SkillsList';
+import {borders, shadows} from '../tokens';
 
 export const ProjectCard: FC<ProjectCardProps> = ({
     title,
@@ -16,12 +17,12 @@ export const ProjectCard: FC<ProjectCardProps> = ({
             sx={{
                 height      : '100%',
                 my          : 8,
-                borderTop   : '4px solid #2196f3',
+                borderTop   : borders.accent,
                 borderRadius: 2,
                 transition  : 'transform 0.2s, box-shadow 0.2s',
                 '&:hover'   : {
                     transform: 'scale(1.05)',
-                    boxShadow: '0 8px 32px rgba(33, 150, 243, 0.15), 0 4px 16px rgba(33, 150, 243, 0.1)',
+                    boxShadow: shadows.blueGlow,
                 },
                 textDecoration: 'none',
                 color         : 'inherit',

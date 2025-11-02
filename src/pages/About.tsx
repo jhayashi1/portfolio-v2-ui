@@ -1,6 +1,7 @@
-import {Card, Container, Typography, Fade} from '@mui/material';
-import {content} from '../constants';
+import {Card, Container, Fade, Typography} from '@mui/material';
 import type {FC} from 'react';
+import {content} from '../constants';
+import {borders} from '../tokens';
 
 const PAGE_FADE_DURATION = 600;
 const TITLE_FADE_DURATION = 400;
@@ -35,7 +36,7 @@ export const About: FC = () => {
                         raised
                         sx={{
                             mt          : 8,
-                            borderTop   : '4px solid #2196f3',
+                            borderTop   : borders.accent,
                             borderRadius: 2,
                         }}
                         variant='outlined'
