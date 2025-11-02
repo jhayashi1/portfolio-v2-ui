@@ -2,7 +2,6 @@ import {GitHub, LinkedIn} from '@mui/icons-material';
 import {Box} from '@mui/material';
 import {forwardRef} from 'react';
 import {SocialIconButton} from './SocialIconButton';
-import {colors} from '../tokens';
 
 export const SocialLinks = forwardRef<HTMLDivElement>((props, ref) => (
     <Box
