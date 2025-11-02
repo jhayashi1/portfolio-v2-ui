@@ -15,10 +15,26 @@ export const content = {
 export const workContent = [
     {
         company    : 'John Deere',
-        description: 'Currently developing and maintaining REST API\'s that provide automation for document processing and text extraction while maintaining General Data Protection Regulation (GDPR) compliance.\n\nThe API\'s are delivered in the form of a serverless design using API Gateway, Lambda, SQS, SNS, Eventbridge, and S3. They are rigorously tested using a combination of unit, fullstack, and regression tests utilizing Vitest and Cypress.\n\nCurrently focusing on developing features for our API that utilizes AWS Textract\'s machine learning model to automate the extraction of information from PDFs and images.',
-        skills     : ['Typescript', 'React', 'Node', 'AWS', 'Terraform', 'API Gateway', 'PostgreSQL'],
+        description: '',
+        skills     : ['Typescript', 'React', 'Node', 'AWS', 'Terraform', 'Docker'],
+        team       : 'Customer Crew',
+        time       : '2025 - Present',
+        title      : 'Software Engineer',
+    },
+    {
+        company    : 'John Deere',
+        description: '',
+        skills     : ['Python', 'Typescript', 'React', 'AWS', 'Terraform', 'Jenkins'],
+        team       : 'Cloudabunga',
+        time       : '2025',
+        title      : 'Software Engineer',
+    },
+    {
+        company    : 'John Deere',
+        description: 'Developed and maintained REST API\'s that provide automation for document processing and text extraction while maintaining General Data Protection Regulation (GDPR) compliance.\n\nThe API\'s are delivered in the form of a serverless design using API Gateway, Lambda, SQS, SNS, Eventbridge, and S3. They are rigorously tested using a combination of unit, fullstack, and regression tests utilizing Vitest and Cypress.\n\nFocused on developing features for our API that utilizes AWS Textract\'s machine learning model to automate the extraction of information from PDFs and images.',
+        skills     : ['Typescript', 'React', 'Node', 'AWS', 'Terraform'],
         team       : 'Digitize My Docs',
-        time       : '2024 - Present',
+        time       : '2024 - 2025',
         title      : 'Software Engineer',
     },
     {

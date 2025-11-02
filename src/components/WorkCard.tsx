@@ -12,29 +12,34 @@ export const WorkCard: FC<WorkCardProps> = ({
 }) => {
     return (
         <Card
-            sx={{height: '100%', my: '2rem'}}
+            sx={{
+                height      : '100%',
+                my          : 8,
+                borderTop   : '4px solid #2196f3',
+                borderRadius: 2,
+            }}
             variant='outlined'
         >
             <Typography
-                sx={{ml: '1rem', mt: '1rem', fontWeight: 'semibold'}}
+                sx={{ml: 4, mt: 4, fontWeight: 'semibold'}}
                 variant='h4'
             >
                 {company}
             </Typography>
             <Typography
                 noWrap
-                sx={{ml: '1rem', opacity: 0.6}}
+                sx={{ml: 4, opacity: 0.6}}
                 variant='h5'
             >
                 {`${team ?? title}, ${time}`}
             </Typography>
             <Divider
-                sx={{mt: '0.5rem', backgroundColor: 'white', width: '7.5%'}}
+                sx={{mt: 2, backgroundColor: 'white', width: '7.5%'}}
                 variant='middle'
             />
             <SkillsList skills={skills} />
             <Typography
-                sx={{m: '1rem'}}
+                sx={{m: 4}}
                 variant='h6'
             >
                 {description}

@@ -11,6 +11,11 @@ export const useUsageTracking = (): void => {
     const prevPathRef = useRef(location.pathname);
     const metadata = useUserContext();
 
+    // Skip usage tracking in development to avoid CORS issues
+    if (process.env.NODE_ENV === 'development') {
+        return;
+    }
+
     const getBuffer = (): UsageData[] => {
         const raw = localStorage.getItem(STORAGE_KEY) ?? '[]';
         return JSON.parse(raw);

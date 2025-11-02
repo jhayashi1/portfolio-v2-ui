@@ -1,13 +1,13 @@
-import {GitHub, LinkedIn} from '@mui/icons-material';
-import {Grid, IconButton, Typography, Fade, Box} from '@mui/material';
+import {Typography, Fade, Box} from '@mui/material';
 import type {FC} from 'react';
 import {content} from '../constants';
+import {SocialLinks} from '../components/SocialLinks';
 
 export const Introduction: FC = () => (
     <Box
         sx={{
             mt           : '10vh',
-            minHeight    : '80vh',
+            minHeight    : '70vh',
             display      : 'flex',
             flexDirection: 'column',
         }}
@@ -29,7 +29,7 @@ export const Introduction: FC = () => (
                 in
                 timeout={1500}
             >
-                <Box sx={{mt: '1.5rem'}}>
+                <Box sx={{mt: 6}}>
                     <Typography
                         noWrap
                         sx={{opacity: 0.6}}
@@ -43,7 +43,7 @@ export const Introduction: FC = () => (
                 in
                 timeout={2000}
             >
-                <Box sx={{mt: '4rem'}}>
+                <Box sx={{mt: 16}}>
                     <Typography
                         noWrap
                         sx={{opacity: 0.6}}
@@ -58,37 +58,9 @@ export const Introduction: FC = () => (
             in
             timeout={2500}
         >
-            <Grid
-                container
-                columns={20}
-                display='flex'
-                justifyContent='left'
-            >
-                <Grid
-                    item
-                    lg={1}
-                >
-                    <IconButton
-                        href='https://github.com/jhayashi1'
-                        size='large'
-                        sx={{color: 'white', p: 0}}
-                    >
-                        <GitHub sx={{fontSize: '3rem'}} />
-                    </IconButton>
-                </Grid>
-                <Grid
-                    item
-                    lg={1}
-                >
-                    <IconButton
-                        href='https://www.linkedin.com/in/jared-hayashi-2656541b7/'
-                        size='large'
-                        sx={{color: 'white', p: 0}}
-                    >
-                        <LinkedIn sx={{fontSize: '3rem'}} />
-                    </IconButton>
-                </Grid>
-            </Grid>
+            <Box>
+                <SocialLinks />
+            </Box>
         </Fade>
     </Box>
 );

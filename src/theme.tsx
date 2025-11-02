@@ -13,6 +13,7 @@ const createColorOverride = (color: string): object => ({
 });
 
 export const theme = createTheme({
+    spacing: (factor: number) => `${0.25 * factor}rem`,
     palette: {
         primary: {
             main        : primaryColor,
@@ -65,13 +66,9 @@ export const theme = createTheme({
                 },
             },
         },
-        MuiAppBar: {
-            styleOverrides: {
-                root: {
-                    height      : '5rem',
-                    borderBottom: '1px solid',
-                    borderColor : tertiaryColor,
-                },
+        MuiButton: {
+            defaultProps: {
+                disableRipple: true,
             },
         },
     },
