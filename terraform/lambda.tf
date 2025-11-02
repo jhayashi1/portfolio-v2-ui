@@ -2,7 +2,7 @@ resource "aws_lambda_function" "cloudfront_kill_switch_lambda" {
   filename         = "switch.zip"
   function_name    = "cloudfront-kill-switch"
   handler          = "index.handler"
-  runtime          = "nodejs20.x"
+  runtime          = "nodejs22.x"
   role             = aws_iam_role.cloudfront_kill_switch_role.arn
   source_code_hash = filebase64sha256("switch.zip")
   environment {
@@ -33,7 +33,7 @@ resource "aws_lambda_function" "usage" {
 
   memory_size = "256"
   timeout     = "5"
-  runtime     = "nodejs24.x"
+  runtime     = "nodejs22.x"
   role        = aws_iam_role.usage_lambda_role.arn
 
   filename         = "api.zip"
