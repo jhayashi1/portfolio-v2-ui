@@ -3,7 +3,7 @@ import type {BuildOptions} from 'esbuild';
 export default {
     format           : 'cjs',
     platform         : 'node',
-    target           : 'node22.10',
+    target           : 'node24.5',
     outdir           : 'dist',
     loader           : {'.html': 'text', '.css': 'text'},
     bundle           : true,

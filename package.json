@@ -13,7 +13,7 @@
     "types": "tsc --noEmit"
   },
   "engines": {
-    "node": "22.16"
+    "node": "24.5"
   },
   "repository": {
     "type": "git",
@@ -25,36 +25,36 @@
     "url": "https://github.com/jhayashi1/portfolio-v2-ui/issues"
   },
   "dependencies": {
-    "@aws-sdk/client-cloudfront": "3.699.0",
-    "@aws-sdk/client-dynamodb": "^3.826.0",
-    "@aws-sdk/lib-dynamodb": "^3.826.0",
-    "@hapi/boom": "^10.0.1",
+    "@aws-sdk/client-cloudfront": "3.922.0",
+    "@aws-sdk/client-dynamodb": "3.922.0",
+    "@aws-sdk/lib-dynamodb": "3.922.0",
+    "@hapi/boom": "10.0.1",
     "@mui/icons-material": "5.16.6",
     "@mui/material": "5.16.6",
-    "joi": "^17.13.3",
+    "joi": "17.13.3",
     "jszip": "3.10.1",
-    "react": "17.0.0 || 18.0.0",
-    "react-dom": "17.0.0 || 18.0.0",
-    "react-router-dom": "6.26.0"
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-router-dom": "7.9.5"
   },
   "homepage": "https://github.com/jhayashi1/portfolio-v2-ui#readme",
   "devDependencies": {
-    "@eslint/js": "9.28.0",
-    "@types/aws-lambda": "^8.10.149",
-    "@types/node": "22.1.0",
-    "@types/react": "18.3.3",
-    "@types/react-dom": "18.3.0",
-    "@typescript-eslint/eslint-plugin": "8.33.1",
-    "@typescript-eslint/parser": "8.33.1",
-    "@vitejs/plugin-react": "4.5.1",
-    "esbuild": "0.25.5",
-    "eslint": "9.28.0",
+    "@eslint/js": "9.39.0",
+    "@types/aws-lambda": "8.10.157",
+    "@types/node": "24.9.2",
+    "@types/react": "19.2.2",
+    "@types/react-dom": "19.2.2",
+    "@typescript-eslint/eslint-plugin": "8.46.2",
+    "@typescript-eslint/parser": "8.46.2",
+    "@vitejs/plugin-react": "5.1.0",
+    "esbuild": "0.25.12",
+    "eslint": "9.39.0",
     "eslint-config-react-app": "7.0.1",
-    "eslint-plugin-react": "7.34.3",
-    "globals": "16.2.0",
-    "tsx": "4.19.2",
-    "typescript": "5.8.3",
-    "vite": "6.3.5"
+    "eslint-plugin-react": "7.37.5",
+    "globals": "16.5.0",
+    "tsx": "4.20.6",
+    "typescript": "5.9.3",
+    "vite": "7.1.12"
   },
-  "packageManager": "pnpm@10.12.1+sha512.f0dda8580f0ee9481c5c79a1d927b9164f2c478e90992ad268bbb2465a736984391d6333d2c327913578b2804af33474ca554ba29c04a8b13060a717675ae3ac"
+  "packageManager": "pnpm@10.20.0+sha512.cf9998222162dd85864d0a8102e7892e7ba4ceadebbf5a31f9c2fce48dfce317a9c53b9f6464d1ef9042cba2e02ae02a9f7c143a2b438cd93c91840f0192b9dd"
 }

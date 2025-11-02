@@ -3,6 +3,10 @@ import parser from '@typescript-eslint/parser';
 import TypeScriptESLint from '@typescript-eslint/eslint-plugin';
 import js from '@eslint/js';
 import globals from 'globals';
+import {dirname} from 'node:path';
+import {fileURLToPath} from 'node:url';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const commonRules = {
     ...js.configs.recommended.rules,
@@ -111,7 +115,7 @@ export default [
                 ecmaVersion    : 'latest',
                 sourceType     : 'module',
                 project        : 'tsconfig.eslint.json',
-                tsconfigRootDir: './',
+                tsconfigRootDir: __dirname,
             },
             globals: {...globals.node, ...globals.es2021, ...globals.browser},
         },
