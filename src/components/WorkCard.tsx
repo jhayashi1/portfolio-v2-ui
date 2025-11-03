@@ -35,8 +35,12 @@ export const WorkCard: FC<WorkCardProps> = ({
                 {`${team ?? title}, ${time}`}
             </Typography>
             <Divider
-                sx={{mt: 2, backgroundColor: colors.white, width: '7.5%'}}
-                variant='middle'
+                sx={{
+                    mt             : 2,
+                    ml             : 4,
+                    backgroundColor: 'white',
+                    width          : '10%',
+                }}
             />
             <SkillsList skills={skills} />
             <Typography
