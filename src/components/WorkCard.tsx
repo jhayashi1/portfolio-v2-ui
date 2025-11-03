@@ -1,7 +1,7 @@
 import {Card, Divider, Typography} from '@mui/material';
 import type {FC} from 'react';
 import {SkillsList} from './SkillsList';
-import {borders, colors} from '../tokens';
+import {borders} from '../tokens';
 
 export const WorkCard: FC<WorkCardProps> = ({
     company,
