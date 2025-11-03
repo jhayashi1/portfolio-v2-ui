@@ -14,7 +14,7 @@ export const content = {
 
 export const workContent = [
     {
-        company    : 'John Deere',
+        company    : 'John Deere Financial',
         description: 'Supporting and developing two customer-facing applications with over 50,000 users, MyFinancial and the John Deere Online Credit Application. \n\nDeveloped a Model Context Protocol (MCP) server that provides ~1000 technical documents as contextual knowledge for GitHub Copilot, significantly enhancing AI-assisted development and streamlining knowledge transfer for new team members.',
         skills     : ['Typescript', 'React', 'Node', 'AWS', 'Terraform', 'Docker'],
         team       : 'Customer Crew',
