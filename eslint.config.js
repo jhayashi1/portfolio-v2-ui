@@ -114,7 +114,12 @@ export default [
             'react-hooks'  : eslintPluginReactHooks,
             'react-refresh': eslintPluginReactRefresh,
         },
-        rules: {...commonRules, ...reactRules},
+        rules   : {...commonRules, ...reactRules},
+        settings: {
+            react: {
+                version: 'detect',
+            },
+        },
     },
     {
         files          : ['**/*.ts', '**/*.tsx'],
@@ -139,6 +144,11 @@ export default [
             'react-hooks'       : eslintPluginReactHooks,
             'react-refresh'     : eslintPluginReactRefresh,
         },
-        rules: {...commonRules, ...typescriptRules, ...reactRules},
+        rules   : {...commonRules, ...typescriptRules, ...reactRules},
+        settings: {
+            react: {
+                version: 'detect',
+            },
+        },
     },
 ];
