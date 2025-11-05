@@ -1,5 +1,6 @@
-import {useEffect, useRef} from 'react';
+import {useCallback, useEffect, useRef} from 'react';
 import {useLocation} from 'react-router-dom';
+
 import {useUserContext} from '../context';
 
 const STORAGE_KEY = 'usageTrackingBuffer';
@@ -7,14 +8,9 @@ const SEND_INTERVAL = 10 * 1000;
 
 export const useUsageTracking = (): void => {
     const location = useLocation();
-    const enterTimeRef = useRef(Date.now());
+    const enterTimeRef = useRef<number>(0);
     const prevPathRef = useRef(location.pathname);
     const metadata = useUserContext();
-
-    // Skip usage tracking in development to avoid CORS issues
-    if (process.env.NODE_ENV === 'development') {
-        return;
-    }
 
     const getBuffer = (): UsageData[] => {
         const raw = localStorage.getItem(STORAGE_KEY) ?? '[]';
@@ -29,16 +25,16 @@ export const useUsageTracking = (): void => {
         localStorage.removeItem(STORAGE_KEY);
     };
 
-    const sendBuffer = async (): Promise<void> => {
+    const sendBuffer = useCallback(async (): Promise<void> => {
         const buffer = getBuffer();
         if (buffer.length > 0) {
             try {
                 await fetch('https://usage.jaredhayashi.com/usage', {
-                    method : 'POST',
+                    body   : JSON.stringify({buffer, metadata}),
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify({buffer, metadata}),
+                    method: 'POST',
                 });
             } catch (e) {
                 console.error(`Failed to send usage data ${e}`);
@@ -47,9 +43,13 @@ export const useUsageTracking = (): void => {
 
             clearBuffer();
         }
-    };
+    }, [metadata]);
 
     useEffect(() => {
+        if (process.env.NODE_ENV === 'development') {
+            return;
+        }
+
         const now = Date.now();
         const prevPath = prevPathRef.current;
         const timeSpent = now - enterTimeRef.current;
@@ -58,8 +58,8 @@ export const useUsageTracking = (): void => {
             const buffer = getBuffer();
             buffer.push({
                 path: prevPath,
-                to  : location.pathname,
                 timeSpent,
+                to  : location.pathname,
                 ts  : now,
                 type: 'CHANGE_PAGE',
             });
@@ -71,6 +71,11 @@ export const useUsageTracking = (): void => {
     }, [location]);
 
     useEffect(() => {
+        // Skip usage tracking in development to avoid CORS issues
+        if (process.env.NODE_ENV === 'development') {
+            return;
+        }
+
         let hasSent = false;
         const handleUnloadOrHide = (): void => {
             if (hasSent) {
@@ -108,20 +113,20 @@ export const useUsageTracking = (): void => {
             document.removeEventListener('visibilitychange', handleVisibilityChange);
             clearInterval(interval);
         };
-    }, []);
+    }, [sendBuffer]);
 };
 
 export interface UsageData {
     path: string;
-    to? : string;
     timeSpent: number;
+    to? : string;
     ts: number;
     type: 'CHANGE_PAGE' | 'UNLOAD';
 }
 
 export interface UsageMetadata {
-    sessionId: string;
-    platform: string;
-    timezone: string;
     language: string;
+    platform: string;
+    sessionId: string;
+    timezone: string;
 }

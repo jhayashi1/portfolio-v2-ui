@@ -1,6 +1,8 @@
-import {Box, Button, Typography} from '@mui/material';
 import type {FC} from 'react';
+
+import {Box, Button, Typography} from '@mui/material';
 import {Link, useLocation} from 'react-router-dom';
+
 import {pages} from '../constants';
 
 // Type declaration for the custom variant
@@ -18,23 +20,23 @@ export const TopNav: FC = () => {
             sx={{
                 display       : 'flex',
                 justifyContent: 'center',
-                pt            : 4,
                 pb            : 2,
+                pt            : 4,
                 px            : 4,
             }}
         >
             <Box
                 sx={{
-                    display        : 'flex',
                     alignItems     : 'center',
-                    gap            : 1,
                     backgroundColor: 'secondary.main',
-                    borderRadius   : 3,
-                    px             : 6,
-                    py             : 2,
-                    boxShadow      : 2,
                     border         : '1px solid',
                     borderColor    : 'grey.800',
+                    borderRadius   : 3,
+                    boxShadow      : 2,
+                    display        : 'flex',
+                    gap            : 1,
+                    px             : 6,
+                    py             : 2,
                 }}
             >
                 {Object.keys(pages).map((page) => {
@@ -50,9 +52,9 @@ export const TopNav: FC = () => {
                             <Typography
                                 noWrap
                                 sx={{
+                                    color        : 'inherit',
                                     fontWeight   : isActive ? 'bold' : 'semibold',
                                     textTransform: 'none',
-                                    color        : 'inherit',
                                 }}
                                 variant='h6'
                             >

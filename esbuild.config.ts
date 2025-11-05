@@ -1,17 +1,17 @@
 import type {BuildOptions} from 'esbuild';
 
 export default {
-    format           : 'cjs',
-    platform         : 'node',
-    target           : 'node24.5',
-    outdir           : 'dist',
-    loader           : {'.html': 'text', '.css': 'text'},
     bundle           : true,
+    format           : 'cjs',
+    keepNames        : true,
+    loader           : {'.css': 'text', '.html': 'text'},
+    logLevel         : 'info',
+    minifyIdentifiers: false,
     minifySyntax     : true,
     minifyWhitespace : true,
-    minifyIdentifiers: false,
-    keepNames        : true,
+    outdir           : 'dist',
+    platform         : 'node',
     sourcemap        : true,
     sourcesContent   : false,
-    logLevel         : 'info',
+    target           : 'node24.5',
 } satisfies BuildOptions;

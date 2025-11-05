@@ -1,28 +1,30 @@
-import {Card, Divider, Typography} from '@mui/material';
 import type {FC} from 'react';
-import {SkillsList} from './SkillsList';
+
+import {Card, Divider, Typography} from '@mui/material';
+
 import {borders} from '../tokens';
+import {SkillsList} from './SkillsList';
 
 export const WorkCard: FC<WorkCardProps> = ({
     company,
-    title,
-    time,
-    team,
     description,
     skills,
+    team,
+    time,
+    title,
 }) => {
     return (
         <Card
             sx={{
+                borderRadius: 2,
+                borderTop   : borders.accent,
                 height      : '100%',
                 my          : 8,
-                borderTop   : borders.accent,
-                borderRadius: 2,
             }}
             variant='outlined'
         >
             <Typography
-                sx={{ml: 4, mt: 4, fontWeight: 'semibold'}}
+                sx={{fontWeight: 'semibold', ml: 4, mt: 4}}
                 variant='h4'
             >
                 {company}
@@ -36,9 +38,9 @@ export const WorkCard: FC<WorkCardProps> = ({
             </Typography>
             <Divider
                 sx={{
-                    mt             : 2,
-                    ml             : 4,
                     backgroundColor: 'white',
+                    ml             : 4,
+                    mt             : 2,
                     width          : '10%',
                 }}
             />
@@ -55,9 +57,9 @@ export const WorkCard: FC<WorkCardProps> = ({
 
 interface WorkCardProps {
     company    : string;
-    title      : string;
-    time       : string;
-    team?      : string;
     description: string;
     skills     : string[];
+    team?      : string;
+    time       : string;
+    title      : string;
 }

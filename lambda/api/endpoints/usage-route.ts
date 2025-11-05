@@ -1,7 +1,9 @@
 import type {APIGatewayProxyEventV2WithJWTAuthorizer, Context} from 'aws-lambda';
+
 import type {UsageRequestBody, UsageRequestResp} from './usage-route-controller';
-import {parseEventBody} from '../utils';
+
 import {putDynamoDb} from '../dynamo';
+import {parseEventBody} from '../utils';
 
 const USAGE_PAGE_TABLE = 'portfolio-usage-pages';
 
@@ -12,11 +14,11 @@ export const usageRoute = async (event: APIGatewayProxyEventV2WithJWTAuthorizer,
     await Promise.all(
         buffer.map(async (entry) => {
             await putDynamoDb({
-                TableName: USAGE_PAGE_TABLE,
-                Item     : {
+                Item: {
                     ...entry,
                     sessionId,
                 },
+                TableName: USAGE_PAGE_TABLE,
             });
         })
     );

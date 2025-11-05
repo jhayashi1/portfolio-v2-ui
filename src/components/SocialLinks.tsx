@@ -1,15 +1,16 @@
 import {GitHub, LinkedIn} from '@mui/icons-material';
 import {Box} from '@mui/material';
 import {forwardRef} from 'react';
+
 import {SocialIconButton} from './SocialIconButton';
 
 export const SocialLinks = forwardRef<HTMLDivElement>((props, ref) => (
     <Box
         ref={ref}
         sx={{
+            alignItems: 'flex-start',
             display   : 'flex',
             gap       : 12,
-            alignItems: 'flex-start',
         }}
         {...props}
     >

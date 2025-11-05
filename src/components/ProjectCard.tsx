@@ -1,32 +1,34 @@
-import {Card, Divider, Grid, ImageList, ImageListItem, Typography} from '@mui/material';
 import type {FC} from 'react';
-import {SkillsList} from './SkillsList';
+
+import {Card, Divider, Grid, ImageList, ImageListItem, Typography} from '@mui/material';
+
 import {borders, shadows} from '../tokens';
+import {SkillsList} from './SkillsList';
 
 export const ProjectCard: FC<ProjectCardProps> = ({
-    title,
     description,
-    skills,
     image,
     link,
+    skills,
+    title,
 }) => {
     return (
         <Card
             component='a'
             href={link}
             sx={{
-                height      : '100%',
-                my          : 8,
-                borderTop   : borders.accent,
-                borderRadius: 2,
-                transition  : 'transform 0.2s, box-shadow 0.2s',
-                '&:hover'   : {
-                    transform: 'scale(1.05)',
+                '&:hover': {
                     boxShadow: shadows.blueGlow,
+                    transform: 'scale(1.05)',
                 },
-                textDecoration: 'none',
+                borderRadius  : 2,
+                borderTop     : borders.accent,
                 color         : 'inherit',
                 display       : 'block',
+                height        : '100%',
+                my            : 8,
+                textDecoration: 'none',
+                transition    : 'transform 0.2s, box-shadow 0.2s',
             }}
             variant='outlined'
         >
@@ -42,16 +44,16 @@ export const ProjectCard: FC<ProjectCardProps> = ({
                     xs={8}
                 >
                     <Typography
-                        sx={{ml: 4, mt: 4, fontWeight: 'semibold'}}
+                        sx={{fontWeight: 'semibold', ml: 4, mt: 4}}
                         variant='h4'
                     >
                         {title}
                     </Typography>
                     <Divider
                         sx={{
-                            mt             : 2,
-                            ml             : 4,
                             backgroundColor: 'white',
+                            ml             : 4,
+                            mt             : 2,
                             width          : '10%',
                         }}
                     />
@@ -64,9 +66,9 @@ export const ProjectCard: FC<ProjectCardProps> = ({
                     </Typography>
                 </Grid>
                 <Grid
-                    item
                     alignItems='center'
                     display='flex'
+                    item
                     justifyContent='center'
                     sm={4}
                     xs={4}
@@ -93,9 +95,9 @@ export const ProjectCard: FC<ProjectCardProps> = ({
 };
 
 interface ProjectCardProps {
-    title      : string;
     description: string;
-    skills     : string[];
     image      : string;
     link       : string;
+    skills     : string[];
+    title      : string;
 }

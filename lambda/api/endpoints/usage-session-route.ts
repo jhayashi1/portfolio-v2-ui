@@ -1,7 +1,9 @@
 import type {APIGatewayProxyEventV2WithJWTAuthorizer, Context} from 'aws-lambda';
-import {parseEventBody} from '../utils';
-import {putDynamoDb, getDynamoDb} from '../dynamo';
+
 import type {UsageSessionRequestBody, UsageSessionResp} from './usage-session-route-controller';
+
+import {getDynamoDb, putDynamoDb} from '../dynamo';
+import {parseEventBody} from '../utils';
 
 const USAGE_SESSION_TABLE = 'portfolio-usage-sessions';
 
@@ -10,15 +12,15 @@ export const usageSessionRoute = async (event: APIGatewayProxyEventV2WithJWTAuth
     const {sessionId} = body;
 
     const existing = await getDynamoDb({
-        TableName: USAGE_SESSION_TABLE,
         Key      : {sessionId},
+        TableName: USAGE_SESSION_TABLE,
     });
 
     if (!existing.Item) {
         console.info(`session with id ${sessionId} doesn't exist, updating session table`);
         await putDynamoDb({
-            TableName: USAGE_SESSION_TABLE,
             Item     : body,
+            TableName: USAGE_SESSION_TABLE,
         });
     }
 

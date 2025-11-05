@@ -1,6 +1,7 @@
+import type {Router} from './types';
+
 import {UsageRouteController} from './endpoints/usage-route-controller';
 import {UsageSessionRouteController} from './endpoints/usage-session-route-controller';
-import type {Router} from './types';
 import {apiGatewayHandler} from './utils';
 
 const router: Router = {

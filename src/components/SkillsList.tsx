@@ -1,5 +1,6 @@
-import {Box, Card, Typography} from '@mui/material';
 import type {FC} from 'react';
+
+import {Box, Card, Typography} from '@mui/material';
 
 export const SkillsList: FC<SkillsListProps> = ({skills}) => {
     return (
@@ -13,7 +14,7 @@ export const SkillsList: FC<SkillsListProps> = ({skills}) => {
             {skills.map((skill) => (
                 <Card
                     key={skill}
-                    sx={{borderWidth: 1, borderColor: 'steelblue', height: '100%'}}
+                    sx={{borderColor: 'steelblue', borderWidth: 1, height: '100%'}}
                     variant='outlined'
                 >
                     <Typography

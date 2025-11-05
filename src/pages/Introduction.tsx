@@ -1,7 +1,9 @@
-import {Typography, Fade, Box} from '@mui/material';
 import type {FC} from 'react';
-import {content} from '../constants';
+
+import {Box, Fade, Typography} from '@mui/material';
+
 import {SocialLinks} from '../components/SocialLinks';
+import {content} from '../constants';
 
 const PAGE_FADE_DURATION = 600;
 const NAME_FADE_DURATION = 1000;
@@ -16,10 +18,10 @@ export const Introduction: FC = () => (
     >
         <Box
             sx={{
-                mt           : '10vh',
-                minHeight    : '70vh',
                 display      : 'flex',
                 flexDirection: 'column',
+                minHeight    : '70vh',
+                mt           : '10vh',
             }}
         >
             <Box sx={{flex: 1}}>

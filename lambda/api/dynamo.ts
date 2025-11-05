@@ -1,5 +1,5 @@
 import {DynamoDBClient} from '@aws-sdk/client-dynamodb';
-import {DynamoDBDocument, type DeleteCommandInput, type DeleteCommandOutput, type GetCommandInput, type GetCommandOutput, type PutCommandInput, type PutCommandOutput, type QueryCommandInput, type QueryCommandOutput, type UpdateCommandInput, type UpdateCommandOutput} from '@aws-sdk/lib-dynamodb';
+import {type DeleteCommandInput, type DeleteCommandOutput, DynamoDBDocument, type GetCommandInput, type GetCommandOutput, type PutCommandInput, type PutCommandOutput, type QueryCommandInput, type QueryCommandOutput, type UpdateCommandInput, type UpdateCommandOutput} from '@aws-sdk/lib-dynamodb';
 
 const dynamoDbClient = new DynamoDBClient({
     region: 'us-east-1',

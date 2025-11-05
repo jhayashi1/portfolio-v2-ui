@@ -12,8 +12,8 @@ export const handler = async (): Promise<void> => {
         DistributionConfig!.Enabled = false;
 
         const updateDistConfig = new UpdateDistributionCommand({
-            Id     : distributionId,
             DistributionConfig,
+            Id     : distributionId,
             IfMatch: ETag,
         });
         const updateResp = await cloudfront.send(updateDistConfig);

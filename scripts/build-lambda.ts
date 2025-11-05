@@ -1,9 +1,10 @@
 import {build} from 'esbuild';
-import config from '../esbuild.config';
-import {readdirSync, readFileSync, writeFileSync} from 'node:fs';
-import {resolve, join} from 'node:path';
-import {rm} from 'node:fs/promises';
 import JSZip from 'jszip';
+import {readdirSync, readFileSync, writeFileSync} from 'node:fs';
+import {rm} from 'node:fs/promises';
+import {join, resolve} from 'node:path';
+
+import config from '../esbuild.config';
 
 const [,, keepOutput] = process.argv;
 
@@ -12,7 +13,7 @@ const root = resolve(__dirname);
 const fromRoot = (path: string): string => resolve(root, path);
 
 try {
-    await rm(fromRoot('dist'), {recursive: true, force: true});
+    await rm(fromRoot('dist'), {force: true, recursive: true});
 
     const endpointNames = readdirSync(fromRoot('lambda')).filter((name) => name.split('.').length < 2);
     const endpointDirectories = endpointNames.map((name) => `lambda/${name}/index.ts`);
@@ -39,7 +40,7 @@ try {
     }
 
     if (!keepOutput) {
-        await rm(fromRoot('dist'), {recursive: true, force: true});
+        await rm(fromRoot('dist'), {force: true, recursive: true});
     }
 } catch (e) {
     console.error(`Error while building lambdas: ${e}`);

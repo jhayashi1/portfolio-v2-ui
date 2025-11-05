@@ -1,4 +1,5 @@
 import {createTheme} from '@mui/material';
+
 import {colors} from './tokens';
 
 const createColorOverride = (color: string): object => ({
@@ -10,26 +11,58 @@ const createColorOverride = (color: string): object => ({
 });
 
 export const theme = createTheme({
-    spacing: (factor: number) => `${0.25 * factor}rem`,
-    palette: {
-        primary: {
-            main        : colors.primary,
-            contrastText: colors.white,
-        },
-        secondary: {
-            main        : colors.secondary,
-            contrastText: colors.white,
-        },
-        background: {
-            default: colors.primary,
-            paper  : colors.primary,
-        },
-        text: {
-            primary  : colors.white,
-            secondary: colors.lightGrey,
-        },
-    },
     components: {
+        MuiButton: {
+            defaultProps: {
+                disableRipple: true,
+            },
+            variants: [
+                {
+                    props: {variant: 'navButton'},
+                    style: {
+                        '&.active .MuiTypography-root': {
+                            fontWeight: 'bold',
+                        },
+                        '&.active::after': {
+                            width: '80%',
+                        },
+                        '&::after': {
+                            backgroundColor: colors.blue,
+                            borderRadius   : '2px',
+                            bottom         : -4,
+                            content        : '""',
+                            height         : '3px',
+                            left           : '50%',
+                            position       : 'absolute',
+                            transform      : 'translateX(-50%)',
+                            transition     : 'width 0.2s ease-in-out',
+                            width          : '0%',
+                        },
+                        '&:hover': {
+                            backgroundColor: colors.hover.light,
+                        },
+                        alignItems    : 'center',
+                        borderRadius  : 8,
+                        color         : 'inherit',
+                        display       : 'flex',
+                        justifyContent: 'center',
+                        paddingBottom : 8,
+                        paddingLeft   : 16,
+                        paddingRight  : 16,
+                        paddingTop    : 8,
+                        position      : 'relative',
+                    },
+                },
+            ],
+        },
+        MuiCard: {
+            styleOverrides: {
+                root: {
+                    backgroundColor: colors.secondary,
+                    borderColor    : colors.tertiary,
+                },
+            },
+        },
         MuiCssBaseline: {
             styleOverrides: {
                 body: {
@@ -40,73 +73,41 @@ export const theme = createTheme({
                 },
             },
         },
-        MuiDivider: createColorOverride(colors.dividerGrey),
-        MuiCard   : {
-            styleOverrides: {
-                root: {
-                    backgroundColor: colors.secondary,
-                    borderColor    : colors.tertiary,
-                },
-            },
-        },
+        MuiDivider   : createColorOverride(colors.dividerGrey),
         MuiTypography: {
             styleOverrides: {
                 //@ts-ignore
                 root: {
+                    fontSize: {
+                        lg: '1.5rem',
+                        md: '1.25rem',
+                        xs: '1rem',
+                    },
                     fontWeight: 'normal',
                     whiteSpace: 'pre-wrap',
-                    fontSize  : {
-                        xs: '1rem',
-                        md: '1.25rem',
-                        lg: '1.5rem',
-                    },
                 },
             },
-        },
-        MuiButton: {
-            defaultProps: {
-                disableRipple: true,
-            },
-            variants: [
-                {
-                    props: {variant: 'navButton'},
-                    style: {
-                        display       : 'flex',
-                        paddingLeft   : 16,
-                        paddingRight  : 16,
-                        paddingTop    : 8,
-                        paddingBottom : 8,
-                        color         : 'inherit',
-                        justifyContent: 'center',
-                        alignItems    : 'center',
-                        position      : 'relative',
-                        borderRadius  : 8,
-                        '&:hover'     : {
-                            backgroundColor: colors.hover.light,
-                        },
-                        '&::after': {
-                            content        : '""',
-                            position       : 'absolute',
-                            bottom         : -4,
-                            left           : '50%',
-                            transform      : 'translateX(-50%)',
-                            width          : '0%',
-                            height         : '3px',
-                            backgroundColor: colors.blue,
-                            transition     : 'width 0.2s ease-in-out',
-                            borderRadius   : '2px',
-                        },
-                        '&.active::after': {
-                            width: '80%',
-                        },
-                        '&.active .MuiTypography-root': {
-                            fontWeight: 'bold',
-                        },
-                    },
-                },
-            ],
         },
     },
+    palette: {
+        background: {
+            default: colors.primary,
+            paper  : colors.primary,
+        },
+        primary: {
+            contrastText: colors.white,
+            main        : colors.primary,
+        },
+        secondary: {
+            contrastText: colors.white,
+            main        : colors.secondary,
+        },
+        text: {
+            primary  : colors.white,
+            secondary: colors.lightGrey,
+        },
+    },
+    spacing   : (factor: number) => `${0.25 * factor}rem`,
     typography: {
         fontFamily: 'Mulish',
     },

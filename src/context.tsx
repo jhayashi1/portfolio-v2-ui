@@ -1,4 +1,5 @@
 import React, {createContext, useContext, useEffect} from 'react';
+
 import type {UsageMetadata} from './hooks/useUsageTracking';
 
 const generateSessionId = (): string => {
@@ -11,18 +12,18 @@ const generateSessionId = (): string => {
 };
 
 const UserContext = createContext<UserContextProps>({
-    sessionId: '',
-    platform : '',
-    timezone : '',
     language : '',
+    platform : '',
+    sessionId: '',
+    timezone : '',
 });
 
 export const UserContextProvider: React.FC<{children: React.ReactNode}> = ({children}) => {
     const init: UserContextProps = {
-        sessionId: generateSessionId(),
-        platform : navigator.userAgent,
-        timezone : Intl.DateTimeFormat().resolvedOptions().timeZone,
         language : navigator.language,
+        platform : navigator.userAgent,
+        sessionId: generateSessionId(),
+        timezone : Intl.DateTimeFormat().resolvedOptions().timeZone,
     };
 
     useEffect(() => {
@@ -33,11 +34,11 @@ export const UserContextProvider: React.FC<{children: React.ReactNode}> = ({chil
         const sendUsageSession = async (body: UsageMetadata): Promise<void> => {
             try {
                 await fetch('https://usage.jaredhayashi.com/usage/session', {
-                    method : 'POST',
+                    body   : JSON.stringify({...body}),
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify({...body}),
+                    method: 'POST',
                 });
             } catch (e) {
                 console.error(`Failed to send usage session data ${e}`);
@@ -45,14 +46,14 @@ export const UserContextProvider: React.FC<{children: React.ReactNode}> = ({chil
         };
 
         const metadata = {
-            sessionId: init.sessionId,
-            platform : init.platform,
-            timezone : init.timezone,
             language : init.language,
+            platform : init.platform,
+            sessionId: init.sessionId,
+            timezone : init.timezone,
         };
 
         sendUsageSession(metadata);
-    }, []);
+    }, [init.language, init.platform, init.sessionId, init.timezone]);
 
     return (
         <UserContext.Provider value={init}>
@@ -61,11 +62,12 @@ export const UserContextProvider: React.FC<{children: React.ReactNode}> = ({chil
     );
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useUserContext = (): UserContextProps => useContext(UserContext);
 
 interface UserContextProps {
-    sessionId: string;
-    platform: string;
-    timezone: string;
     language: string;
+    platform: string;
+    sessionId: string;
+    timezone: string;
 }

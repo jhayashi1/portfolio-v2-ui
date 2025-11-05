@@ -1,7 +1,8 @@
 import {Route} from 'react-router-dom';
+
 import {Introduction} from './pages/Introduction';
-import {Work} from './pages/Work';
 import {Projects} from './pages/Projects';
+import {Work} from './pages/Work';
 
 export const routes = [
     <Route

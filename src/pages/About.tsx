@@ -1,5 +1,7 @@
-import {Card, Container, Fade, Typography} from '@mui/material';
 import type {FC} from 'react';
+
+import {Card, Container, Fade, Typography} from '@mui/material';
+
 import {content} from '../constants';
 import {borders} from '../tokens';
 
@@ -22,7 +24,7 @@ export const About: FC = () => {
                     timeout={TITLE_FADE_DURATION}
                 >
                     <Typography
-                        sx={{ml: 0, fontWeight: 'semibold'}}
+                        sx={{fontWeight: 'semibold', ml: 0}}
                         variant='h2'
                     >
                         {'About me'}
@@ -35,14 +37,14 @@ export const About: FC = () => {
                     <Card
                         raised
                         sx={{
-                            mt          : 8,
-                            borderTop   : borders.accent,
                             borderRadius: 2,
+                            borderTop   : borders.accent,
+                            mt          : 8,
                         }}
                         variant='outlined'
                     >
                         <Typography
-                            sx={{m: 4, fontWeight: 'normal'}}
+                            sx={{fontWeight: 'normal', m: 4}}
                             variant='h6'
                         >
                             {content.about}

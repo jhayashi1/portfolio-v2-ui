@@ -1,7 +1,9 @@
 import type {Boom} from '@hapi/boom';
-import {badImplementation, badRequest, clientTimeout} from '@hapi/boom';
-import type {ApiGatewayInit, ApiLambdaError, ApiResult, LambdaFunction} from './types';
 import type {APIGatewayProxyEventV2WithJWTAuthorizer} from 'aws-lambda';
+
+import {badImplementation, badRequest, clientTimeout} from '@hapi/boom';
+
+import type {ApiGatewayInit, ApiLambdaError, ApiResult, LambdaFunction} from './types';
 
 export const boomApiError = (error: ApiLambdaError): Boom => (
     error.name === 'LambdaTimeoutError' ? clientTimeout()
@@ -38,8 +40,8 @@ export const apiGatewayHandler = (init: ApiGatewayInit): LambdaFunction<ApiResul
             const {statusCode, ...restBoomOutput} = boomError.output.payload;
 
             return {
-                statusCode,
                 body: JSON.stringify(restBoomOutput, null, 4),
+                statusCode,
             };
         }
     };

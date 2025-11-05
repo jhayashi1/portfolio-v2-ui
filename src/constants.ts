@@ -1,15 +1,15 @@
 export const pages: Record<string, string> = {
     Home    : '/',
+    Projects: '/projects',
     // About   : '/about',
     Work    : '/work',
-    Projects: '/projects',
 };
 
 export const content = {
-    name     : 'Jared Hayashi',
-    title    : 'Cloud Software Engineer',
-    statement: 'I am a software engineer that is experienced in building efficient and robust fullstack applications for the cloud.',
     about    : 'Hi, my name is Jared Hayashi. I graduated from Iowa State University in Fall of 2022 with a Bachelor\'s in Software Engineering. Since graduating, I have had the privilege to employ my skills at John Deere where I discovered my passion for creating cloud applications. \n\nMy current focus is on gaining experience with building fullstack cloud applications primarily using Node and React. \n\nIn my free time, I can usually be found playing video games, tennis, pickleball, ping pong, or rock climbing.',
+    name     : 'Jared Hayashi',
+    statement: 'I am a software engineer that is experienced in building efficient and robust fullstack applications for the cloud.',
+    title    : 'Cloud Software Engineer',
 };
 
 export const workContent = [
@@ -57,45 +57,45 @@ export const workContent = [
 
 export const projectContent = [
     {
-        title      : 'Portfolio v2',
         description: 'This website created using Typescript, React, Material UI, and Vite. Deployed to AWS Cloudfront using Terraform and GitHub Actions.',
-        skills     : ['Typescript', 'React', 'AWS', 'Terraform', 'Github Actions'],
         image      : 'portfolio-v2-image.png',
         link       : 'https://github.com/jhayashi1/portfolio-v2-ui',
+        skills     : ['Typescript', 'React', 'AWS', 'Terraform', 'Github Actions'],
+        title      : 'Portfolio v2',
     },
     {
-        title      : 'Discord Bot (js)',
         description: 'Most recent discord bot created to start and stop EC2 instances to host game servers. Uses discord\'s new slash command API.\n\nImplemented using Typescript and Node. Bundled in a docker container and deployed to AWS ECS.\n\nStill in development.',
-        skills     : ['Typescript', 'Node', 'AWS'],
         image      : 'discord-js-image.png',
         link       : 'https://github.com/jhayashi1/berry-bot-js',
+        skills     : ['Typescript', 'Node', 'AWS'],
+        title      : 'Discord Bot (js)',
     },
     {
-        title      : 'Shorts Extension',
         description: 'Simple chrome extension to inject a button to redirect a youtube shorts video to the normal video player\n\nPlan to add other functionality to improve youtube experience.',
-        skills     : ['Typescript', 'React', 'Chrome'],
         image      : 'shorts-extension-image.png',
         link       : 'https://github.com/jhayashi1/shorts-extension',
+        skills     : ['Typescript', 'React', 'Chrome'],
+        title      : 'Shorts Extension',
     },
     {
-        title      : 'Toolkit',
         description: 'Archive of tools that I use for development',
-        skills     : ['Bash'],
         image      : 'toolkit-image.png',
         link       : 'https://github.com/jhayashi1/toolkit',
+        skills     : ['Bash'],
+        title      : 'Toolkit',
     },
     {
-        title      : 'Discord Bot (py)',
         description: 'Old discord bot created to perform miscellaneous tasks including AWS and reddit. Located in the discord-bot directory of the repository. No longer in development',
-        skills     : ['Python', 'AWS'],
         image      : 'discord-py-image.png',
         link       : 'https://github.com/jhayashi1/aws-server',
+        skills     : ['Python', 'AWS'],
+        title      : 'Discord Bot (py)',
     },
     {
-        title      : 'Portfolio v1',
         description: 'Older website created with React and Typescript and deployed to github pages.',
-        skills     : ['React', 'Javascript'],
         image      : 'portfolio-v1-image.png',
         link       : 'https://github.com/jhayashi1/jhayashi1.github.io',
+        skills     : ['React', 'Javascript'],
+        title      : 'Portfolio v1',
     },
 ];
