@@ -12,18 +12,20 @@ const generateSessionId = (): string => {
 };
 
 const UserContext = createContext<UserContextProps>({
-    language : '',
-    platform : '',
-    sessionId: '',
-    timezone : '',
+    currentTime: '',
+    language   : '',
+    platform   : '',
+    sessionId  : '',
+    timezone   : '',
 });
 
 export const UserContextProvider: React.FC<{children: React.ReactNode}> = ({children}) => {
     const init: UserContextProps = {
-        language : navigator.language,
-        platform : navigator.userAgent,
-        sessionId: generateSessionId(),
-        timezone : Intl.DateTimeFormat().resolvedOptions().timeZone,
+        currentTime: new Date().toISOString(),
+        language   : navigator.language,
+        platform   : navigator.userAgent,
+        sessionId  : generateSessionId(),
+        timezone   : Intl.DateTimeFormat().resolvedOptions().timeZone,
     };
 
     useEffect(() => {
@@ -46,10 +48,11 @@ export const UserContextProvider: React.FC<{children: React.ReactNode}> = ({chil
         };
 
         const metadata = {
-            language : init.language,
-            platform : init.platform,
-            sessionId: init.sessionId,
-            timezone : init.timezone,
+            currentTime: init.currentTime,
+            language   : init.language,
+            platform   : init.platform,
+            sessionId  : init.sessionId,
+            timezone   : init.timezone,
         };
 
         sendUsageSession(metadata);
@@ -66,6 +69,7 @@ export const UserContextProvider: React.FC<{children: React.ReactNode}> = ({chil
 export const useUserContext = (): UserContextProps => useContext(UserContext);
 
 interface UserContextProps {
+    currentTime: string;
     language: string;
     platform: string;
     sessionId: string;

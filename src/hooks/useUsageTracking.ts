@@ -125,6 +125,7 @@ export interface UsageData {
 }
 
 export interface UsageMetadata {
+    currentTime: string;
     language: string;
     platform: string;
     sessionId: string;
