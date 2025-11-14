@@ -1,8 +1,8 @@
 export const pages: Record<string, string> = {
     Home    : '/',
+    Work    : '/work',
     Projects: '/projects',
     // About   : '/about',
-    Work    : '/work',
 };
 
 export const content = {
