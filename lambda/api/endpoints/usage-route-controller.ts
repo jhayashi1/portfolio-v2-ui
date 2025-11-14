@@ -26,10 +26,11 @@ export const UsageRouteController = {
                     })
                 ).required(),
                 metadata: Joi.object({
-                    language : Joi.string().required(),
-                    platform : Joi.string().required(),
-                    sessionId: Joi.string().required(),
-                    timezone : Joi.string().required(),
+                    currentTime: Joi.string().required(),
+                    language   : Joi.string().required(),
+                    platform   : Joi.string().required(),
+                    sessionId  : Joi.string().required(),
+                    timezone   : Joi.string().required(),
                 }).required(),
             })
             .validateAsync(parseEventBody<UsageRequestBody>(event)),

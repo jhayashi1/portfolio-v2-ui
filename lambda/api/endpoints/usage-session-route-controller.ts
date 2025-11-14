@@ -14,16 +14,18 @@ export const UsageSessionRouteController = {
         await Joi
             .object<UsageSessionRequestBody>()
             .keys({
-                language : Joi.string().required(),
-                platform : Joi.string().required(),
-                sessionId: Joi.string().required(),
-                timezone : Joi.string().required(),
+                currentTime: Joi.string().required(),
+                language   : Joi.string().required(),
+                platform   : Joi.string().required(),
+                sessionId  : Joi.string().required(),
+                timezone   : Joi.string().required(),
             })
             .validateAsync(parseEventBody<UsageSessionRequestBody>(event)),
     ],
 };
 
 export interface UsageSessionRequestBody {
+    currentTime: string;
     language: string;
     platform: string;
     sessionId: string;
@@ -31,6 +33,7 @@ export interface UsageSessionRequestBody {
 }
 
 export interface UsageSessionResp {
+    currentTime: string;
     language: string;
     platform: string;
     sessionId: string;
