@@ -14,7 +14,14 @@ export const SkillsList: FC<SkillsListProps> = ({skills}) => {
             {skills.map((skill) => (
                 <Card
                     key={skill}
-                    sx={{borderColor: 'steelblue', borderWidth: 1, height: '100%'}}
+                    sx={{
+                        backdropFilter : 'blur(8px)',
+                        backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                        borderColor    : 'rgba(255, 255, 255, 0.15)',
+                        borderRadius   : 2,
+                        borderWidth    : 1,
+                        height         : '100%',
+                    }}
                     variant='outlined'
                 >
                     <Typography

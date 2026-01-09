@@ -1,8 +1,7 @@
 import type {FC} from 'react';
 
-import {Card, Divider, Grid, ImageList, ImageListItem, Typography} from '@mui/material';
+import {Box, Card, Divider, Grid, Typography} from '@mui/material';
 
-import {borders, shadows} from '../tokens';
 import {SkillsList} from './SkillsList';
 
 export const ProjectCard: FC<ProjectCardProps> = ({
@@ -13,84 +12,124 @@ export const ProjectCard: FC<ProjectCardProps> = ({
     title,
 }) => {
     return (
-        <Card
-            component='a'
-            href={link}
+        <Box
             sx={{
-                '&:hover': {
-                    boxShadow: shadows.blueGlow,
-                    transform: 'scale(1.05)',
+                '&::before': {
+                    background         : 'linear-gradient(90deg, #2196f3 0%, #1976d2 20%, #0097a7 40%, #00acc1 60%, #3f51b5 80%, #2196f3 100%)',
+                    backgroundSize     : '200% 100%',
+                    borderRadius       : 'inherit',
+                    content            : '""',
+                    inset              : 0,
+                    mask               : 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+                    maskComposite      : 'exclude',
+                    opacity            : 0,
+                    padding            : '2px',
+                    pointerEvents      : 'none',
+                    position           : 'absolute',
+                    transition         : 'opacity 0.3s ease-in-out',
+                    WebkitMask         : 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+                    WebkitMaskComposite: 'xor',
+                    zIndex             : 2,
                 },
-                borderRadius  : 2,
-                borderTop     : borders.accent,
-                color         : 'inherit',
-                display       : 'block',
-                height        : '100%',
-                my            : 8,
-                textDecoration: 'none',
-                transition    : 'transform 0.2s, box-shadow 0.2s',
+                '&:hover': {
+                    '&::before': {
+                        animation: 'gradientFlow 3s ease infinite',
+                        opacity  : 1,
+                    },
+                    transform: 'scale(1.01)',
+                },
+                '@keyframes gradientFlow': {
+                    '0%': {
+                        backgroundPosition: '0% 50%',
+                    },
+                    '50%': {
+                        backgroundPosition: '100% 50%',
+                    },
+                    '100%': {
+                        backgroundPosition: '200% 50%',
+                    },
+                },
+                borderRadius: 2,
+                my          : 8,
+                position    : 'relative',
+                transition  : 'transform 0.2s, box-shadow 0.2s',
             }}
-            variant='outlined'
         >
-            <Grid
-                container
-                direction='row'
-                display='flex'
-                spacing={2}
+            <Card
+                component='a'
+                href={link}
+                sx={{
+                    backdropFilter : 'blur(16px)',
+                    backgroundColor: 'rgba(26, 35, 50, 0.95)',
+                    border         : '1px solid rgba(255, 255, 255, 0.08)',
+                    borderRadius   : 2,
+                    boxShadow      : '0 8px 32px rgba(0, 0, 0, 0.3)',
+                    color          : 'inherit',
+                    display        : 'block',
+                    height         : '100%',
+                    position       : 'relative',
+                    textDecoration : 'none',
+                    zIndex         : 1,
+                }}
+                variant='outlined'
             >
                 <Grid
-                    item
-                    sm={8}
-                    xs={8}
+                    container
+                    direction='row'
                 >
-                    <Typography
-                        sx={{fontWeight: 'semibold', ml: 4, mt: 4}}
-                        variant='h4'
+                    <Grid
+                        item
+                        sm={8}
+                        xs={8}
                     >
-                        {title}
-                    </Typography>
-                    <Divider
-                        sx={{
-                            backgroundColor: 'white',
-                            ml             : 4,
-                            mt             : 2,
-                            width          : '10%',
-                        }}
-                    />
-                    <SkillsList skills={skills} />
-                    <Typography
-                        sx={{m: 4}}
-                        variant='h6'
-                    >
-                        {description}
-                    </Typography>
-                </Grid>
-                <Grid
-                    alignItems='center'
-                    display='flex'
-                    item
-                    justifyContent='center'
-                    sm={4}
-                    xs={4}
-                >
-                    <ImageList
-                        cols={1}
-                        sx={{mr: 4}}
-                    >
-                        <ImageListItem
-                            sx={{
-                                border      : 1,
-                                borderColor : 'steelblue',
-                                borderRadius: 2,
-                                overflow    : 'hidden',
-                            }}
+                        <Typography
+                            sx={{fontWeight: 'semibold', ml: 4, mt: 4}}
+                            variant='h4'
                         >
-                            <img src={`/images/${image}`}></img>
-                        </ImageListItem>
-                    </ImageList>
+                            {title}
+                        </Typography>
+                        <Divider
+                            sx={{
+                                backgroundColor: 'white',
+                                ml             : 4,
+                                mt             : 2,
+                                width          : '10%',
+                            }}
+                        />
+                        <SkillsList skills={skills} />
+                        <Typography
+                            sx={{m: 4}}
+                            variant='h6'
+                        >
+                            {description}
+                        </Typography>
+                    </Grid>
+                    <Grid
+                        item
+                        sm={4}
+                        sx={{
+                            display : 'flex',
+                            overflow: 'hidden',
+                            position: 'relative',
+                        }}
+                        xs={4}
+                    >
+                        <Box
+                            component='img'
+                            src={`/images/${image}`}
+                            sx={{
+                                borderRadius  : 2,
+                                height        : (theme) => `calc(100% - ${theme.spacing(4)})`,
+                                m             : 2,
+                                objectFit     : 'cover',
+                                objectPosition: 'left center',
+                                width         : (theme) => `calc(100% - ${theme.spacing(4)})`,
+                            }}
+                        />
+                    </Grid>
                 </Grid>
-            </Grid>
-        </Card>
+            </Card>
+        </Box>
     );
 };
 

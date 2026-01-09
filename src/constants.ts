@@ -8,8 +8,8 @@ export const pages: Record<string, string> = {
 export const content = {
     about    : 'Hi, my name is Jared Hayashi. I graduated from Iowa State University in Fall of 2022 with a Bachelor\'s in Software Engineering. Since graduating, I have had the privilege to employ my skills at John Deere where I discovered my passion for creating cloud applications. \n\nMy current focus is on gaining experience with building fullstack cloud applications primarily using Node and React. \n\nIn my free time, I can usually be found playing video games, tennis, pickleball, ping pong, or rock climbing.',
     name     : 'Jared Hayashi',
-    statement: 'I am a software engineer that is experienced in building efficient and robust fullstack applications for the cloud.',
-    title    : 'Cloud Software Engineer',
+    statement: 'who likes to build efficient and robust fullstack applications for the cloud.',
+    title    : 'Software Engineer',
 };
 
 export const workContent = [
@@ -54,6 +54,13 @@ export const workContent = [
         title      : 'Application Developer Intern',
     },
 ];
+
+export const socialLinks = {
+    email   : 'mailto:jaredhayashi@gmail.com',
+    github  : 'https://github.com/jhayashi1',
+    linkedin: 'https://www.linkedin.com/in/jared-hayashi-2656541b7/',
+    resume  : '/resume.pdf',
+};
 
 export const projectContent = [
     {

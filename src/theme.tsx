@@ -66,10 +66,13 @@ export const theme = createTheme({
         MuiCssBaseline: {
             styleOverrides: {
                 body: {
-                    backgroundColor: colors.primary,
+                    background          : `linear-gradient(135deg, ${colors.primary} 0%, #1a2332 50%, ${colors.primary} 100%)`,
+                    backgroundAttachment: 'fixed',
+                    minHeight           : '100vh',
                 },
                 html: {
-                    backgroundColor: colors.primary,
+                    background          : `linear-gradient(135deg, ${colors.primary} 0%, #1a2332 50%, ${colors.primary} 100%)`,
+                    backgroundAttachment: 'fixed',
                 },
             },
         },

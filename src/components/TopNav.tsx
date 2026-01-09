@@ -28,15 +28,13 @@ export const TopNav: FC = () => {
             <Box
                 sx={{
                     alignItems     : 'center',
-                    backgroundColor: 'secondary.main',
-                    border         : '1px solid',
-                    borderColor    : 'grey.800',
-                    borderRadius   : 3,
-                    boxShadow      : 2,
+                    backdropFilter : 'blur(16px)',
+                    backgroundColor: 'rgba(30, 30, 30, 0.5)',
+                    border         : '1px solid rgba(255, 255, 255, 0.05)',
+                    borderRadius   : '50px',
                     display        : 'flex',
                     gap            : 1,
-                    px             : 6,
-                    py             : 2,
+                    p              : 2,
                 }}
             >
                 {Object.keys(pages).map((page) => {
@@ -46,17 +44,27 @@ export const TopNav: FC = () => {
                             className={isActive ? 'active' : ''}
                             component={Link}
                             key={page}
+                            sx={{
+                                '&:hover': {
+                                    backgroundColor: isActive ? 'rgba(255, 255, 255, 0.15)' : 'rgba(255, 255, 255, 0.08)',
+                                },
+                                backgroundColor: isActive ? 'rgba(255, 255, 255, 0.12)' : 'transparent',
+                                borderRadius   : '50px',
+                                color          : isActive ? '#fff' : 'rgba(255, 255, 255, 0.6)',
+                                minWidth       : 'auto',
+                                px             : 8,
+                                py             : 2,
+                                textTransform  : 'none',
+                            }}
                             to={pages[page]}
-                            variant='navButton'
                         >
                             <Typography
                                 noWrap
                                 sx={{
-                                    color        : 'inherit',
-                                    fontWeight   : isActive ? 'bold' : 'semibold',
-                                    textTransform: 'none',
+                                    color     : 'inherit',
+                                    fontSize  : '1rem',
+                                    fontWeight: isActive ? 600 : 500,
                                 }}
-                                variant='h6'
                             >
                                 {page}
                             </Typography>

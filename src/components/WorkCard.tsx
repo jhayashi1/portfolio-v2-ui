@@ -16,10 +16,14 @@ export const WorkCard: FC<WorkCardProps> = ({
     return (
         <Card
             sx={{
-                borderRadius: 2,
-                borderTop   : borders.accent,
-                height      : '100%',
-                my          : 8,
+                backdropFilter : 'blur(16px)',
+                backgroundColor: 'rgba(26, 35, 50, 0.75)',
+                border         : '1px solid rgba(255, 255, 255, 0.08)',
+                borderRadius   : 2,
+                borderTop      : borders.accent,
+                boxShadow      : '0 8px 32px rgba(0, 0, 0, 0.3)',
+                height         : '100%',
+                my             : 8,
             }}
             variant='outlined'
         >

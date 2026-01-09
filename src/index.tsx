@@ -16,7 +16,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
             <ThemeProvider theme={theme}>
                 <CssBaseline />
                 <Box sx={{display: 'flex', flexDirection: 'column', minHeight: '100vh'}}>
-                    <Paper sx={{borderRadius: 0, display: 'flex', flex: 1, flexDirection: 'column'}}>
+                    <Paper sx={{backgroundColor: 'transparent', borderRadius: 0, display: 'flex', flex: 1, flexDirection: 'column'}}>
                         <BrowserRouter>
                             <UsageTracking />
                             <TopNav />
