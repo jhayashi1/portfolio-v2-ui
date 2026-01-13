@@ -79,8 +79,9 @@ export const ProjectCard: FC<ProjectCardProps> = ({
                 >
                     <Grid
                         item
-                        sm={8}
-                        xs={8}
+                        md={8}
+                        sm={12}
+                        xs={12}
                     >
                         <Typography
                             sx={{fontWeight: 'semibold', ml: 4, mt: 4}}
@@ -106,13 +107,14 @@ export const ProjectCard: FC<ProjectCardProps> = ({
                     </Grid>
                     <Grid
                         item
-                        sm={4}
+                        md={4}
+                        sm={12}
                         sx={{
-                            display : 'flex',
-                            overflow: 'hidden',
-                            position: 'relative',
+                            display       : {md: 'flex', xs: 'none'},
+                            overflow      : 'hidden',
+                            position      : 'relative',
                         }}
-                        xs={4}
+                        xs={12}
                     >
                         <Box
                             component='img'
